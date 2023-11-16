@@ -16,4 +16,5 @@ class Offer extends Model
         'broj_mesta',
         'cena',
     ];
+    
 }

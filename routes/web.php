@@ -4,6 +4,7 @@ use App\Models\Offer;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OfferController;
+use App\Http\Controllers\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +50,6 @@ Route::post('/create-offer', [OfferController::class , 'createOffer']);
 Route::get('/edit-offer/{offer}',[OfferController::class,'showEditScreen']);
 Route::put('/edit-offer/{offer}',[OfferController::class,'updateOffer']);
 Route::delete('/delete-offer/{offer}',[OfferController::class,'deleteOffer']);
+Route::get('reserve/{offer}',[OfferController::class,'showOffer']);
+Route::post('reserve/{offer}',[ReservationController::class,'reserve']);
+Route::get('myReservations', [ReservationController::class,'showMyReservations']);

@@ -27,7 +27,7 @@
         <a class="nav-link" href="/my-offers">Moje ponude</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/rezervacije">Moje rezervacije</a>
+        <a class="nav-link" href="/myReservations">Moje rezervacije</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/logout">Logout</a>

@@ -62,4 +62,7 @@ class OfferController extends Controller
         }
         return redirect('/my-offers');
     }
+    public function showOffer(Offer $offer){
+            return view('reserve',['offer' =>$offer]);
+    }
 }
