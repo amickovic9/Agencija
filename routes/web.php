@@ -38,6 +38,9 @@ Route::get('/offers',function(){
     return view('offers', ['offers' => $offers]);
 });
 
+Route::get('/about',function(){
+    return view('about');
+});
 
 
 Route::post("/register",[UserController::class,'register']);
@@ -53,3 +56,4 @@ Route::delete('/delete-offer/{offer}',[OfferController::class,'deleteOffer']);
 Route::get('reserve/{offer}',[OfferController::class,'showOffer']);
 Route::post('reserve/{offer}',[ReservationController::class,'reserve']);
 Route::get('myReservations', [ReservationController::class,'showMyReservations']);
+Route::delete('delete-reservation/{reservation}',[ReservationController::class,'deleteReservation']);

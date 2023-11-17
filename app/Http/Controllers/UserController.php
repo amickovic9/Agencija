@@ -32,6 +32,9 @@ class UserController extends Controller
         if(auth()->attempt(['name' => $fields['loginname'], 'password' => $fields['loginpassword']])){
             $request->session()->regenerate();
         }
+        else{
+            return redirect('/login');
+        }
         return redirect('/');
     }
 }

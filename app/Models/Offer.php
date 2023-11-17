@@ -11,6 +11,7 @@ class Offer extends Model
         'user_id',
         'destinacija',
         'opis',
+        'photo',
         'datum_polaska',
         'datum_povratka',
         'broj_mesta',

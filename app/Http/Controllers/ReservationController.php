@@ -17,10 +17,15 @@ class ReservationController extends Controller
             'broj_telefona' => 'required',
             'broj_osoba' => 'required',
         ]);
+
+        $brojRezervacija = Reservation::where('offer_id',$offer['id'])->sum('broj_osoba');
+        if(($brojRezervacija+$fields['broj_osoba'])>$offer['broj_mesta']){
+            return redirect('/offers');
+        }
         $fields['user_id'] = auth()->id();
         $fields['offer_id'] = $offer['id'];
         Reservation::Create($fields);
-        return redirect('/rezervacije');
+        return redirect('/myReservations');
         }
         return redirect('login');
     }
@@ -30,5 +35,11 @@ class ReservationController extends Controller
             return view('myReservations',['reservations' => $reservations]);
         }
         return redirect('/login');
+    }
+    public function deleteReservation(Reservation $reservation){
+        if(auth()->check()){
+            $reservation->delete();
+            return redirect('/myReservations');
+        }
     }
 }

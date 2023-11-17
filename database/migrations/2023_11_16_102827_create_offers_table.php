@@ -18,6 +18,7 @@ class CreateOffersTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->string('destinacija');
             $table->string('opis');
+            $table->string('photo');
             $table->date('datum_polaska');
             $table->date('datum_povratka');
             $table->integer('broj_mesta');

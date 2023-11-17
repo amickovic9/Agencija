@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Offer;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class OfferController extends Controller
 {
@@ -20,13 +22,21 @@ class OfferController extends Controller
     public function createOffer(Request $request){
         $fields = $request ->validate([
             'destinacija' => 'required',
+            'photo' => 'image',
             'opis' => 'required',
             'datum_polaska' => 'required',
             'datum_povratka' => 'required',
             'broj_mesta' => 'required',
             'cena' => 'required'
         ]);
+        
         $fields['user_id'] = auth()->id();
+        $extension = $request->file('photo')->getClientOriginalExtension();
+        
+        $imageName = time() . '.' . $extension;
+        $image = $request->file('photo');
+        $image->storeAs('public/images', $imageName);
+        $fields['photo'] = $imageName;
         Offer::create($fields);
         return redirect('/my-offers');
     }
@@ -49,20 +59,40 @@ class OfferController extends Controller
         $fields = $request->validate([
             'destinacija' => 'required',
             'opis' => 'required',
+            'photo' => 'image',
             'datum_polaska' => 'required',
             'datum_povratka' => 'required',
             'broj_mesta' => 'required',
             'cena' => 'required']);
+        if($request->hasFile('photo')){
+            $extension = $request->file('photo')->getClientOriginalExtension();
+            $imageName = time() . '.' . $extension;
+            $image = $request->file('photo');
+            $image->storeAs('public/images', $imageName);
+            $putanjaDoSlike = storage_path('app/public/images/'.$offer['photo']);
+            unlink($putanjaDoSlike);
+            $fields['photo'] = $imageName;
+        }
+        else{
+        $fields['photo'] = $offer['photo'];
+
+        }
         $offer->update($fields);
         return redirect('/my-offers');
     }
     public function deleteOffer(Offer $offer){
         if(auth()->user()->id == $offer['user_id']){
+        $putanjaDoSlike = storage_path('app/public/images/'.$offer['photo']);
+        unlink($putanjaDoSlike);
         $offer->delete();
         }
         return redirect('/my-offers');
     }
     public function showOffer(Offer $offer){
+        $existingReservations = Reservation::where('offer_id', $offer['id'])->sum('broj_osoba');
+
+        $offer['broj_mesta']-=$existingReservations;
             return view('reserve',['offer' =>$offer]);
     }
+   
 }
