@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Offer;
+use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OfferController;
@@ -28,7 +29,6 @@ Route::get('/my-offers',function(){
     if(auth()->check()){
         $offers = auth()->user()->offers()->get();
         return view('myOffers', ['offers' => $offers]);
-
     }
     return redirect('login');
 });
@@ -57,3 +57,7 @@ Route::get('reserve/{offer}',[OfferController::class,'showOffer']);
 Route::post('reserve/{offer}',[ReservationController::class,'reserve']);
 Route::get('myReservations', [ReservationController::class,'showMyReservations']);
 Route::delete('delete-reservation/{reservation}',[ReservationController::class,'deleteReservation']);
+Route::get('reservations/{offer}',[OfferController::class,'showReservations']);
+Route::get('offers/search',[OfferController::class,'offersSearch']);
+Route::get('my-offers/search',[OfferController::class,'myOffersSearch']);
+Route::get('reservations/search/{offer}',[OfferController::class,'reservationsSearch']);

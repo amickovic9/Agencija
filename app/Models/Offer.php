@@ -17,5 +17,8 @@ class Offer extends Model
         'broj_mesta',
         'cena',
     ];
+    public function reservations(){
+        return $this->hasMany(Reservation::class,'offer_id');
+    }
     
 }

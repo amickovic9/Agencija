@@ -94,5 +94,67 @@ class OfferController extends Controller
         $offer['broj_mesta']-=$existingReservations;
             return view('reserve',['offer' =>$offer]);
     }
+    public function showReservations(Offer $offer){
+        $reservations = $offer->reservations()->get();
+        return view('reservations',['reservations' => $reservations,'offer' =>$offer]);
+    }
+    public function offersSearch(Request $request){
+        $query = Offer::query();
+        if($request->filled('destinacija')){
+            $query->where('destinacija' , 'like' , '%' . $request['destinacija']);
+        }
+
+    if ($request->filled('polazak')) {
+        $query->whereDate('datum_polaska', '>=', $request->input('polazak'));
+    }
+
+    if ($request->filled('povratak')) {
+        $query->whereDate('datum_povratka', '<=', $request->input('povratak'));
+    }
+
+    $offers = $query->get();
+    return view('offers', ['offers' => $offers]);
+
+    }
+    public function myOffersSearch(Request $request){
+        $query = Offer::where('user_id', auth()->id());
+        if($request->filled('destinacija')){
+            $query->where('destinacija' , 'like' , '%' . $request['destinacija']);
+        }
+
+    if ($request->filled('polazak')) {
+        $query->whereDate('datum_polaska', '>=', $request->input('polazak'));
+    }
+
+    if ($request->filled('povratak')) {
+        $query->whereDate('datum_povratka', '<=', $request->input('povratak'));
+    }
+
+    $offers = $query->get();
+    return view('myOffers', ['offers' => $offers]);
+
+    }
+    public function reservationsSearch(Request $request, Offer $offer){
+    $reservations = $offer->reservations();
+
+    $name = $request->input('name');
+    $email = $request->input('email');
+    $phone = $request->input('broj_telefona');
+
+    if($name){
+        $reservations->where('user_name', 'like', '%' .$name. '%');
+    }
+    if($email){
+        $reservations->where('email' , 'like', '%'.$email.'%');
+    }
+    if($phone){
+        $reservations->where('broj_telefona' ,'like','%'.$phone.'%');
+    }
+
+    $filteredReservations = $reservations->get(); 
+
+    return view("reservations", ['reservations' => $filteredReservations, 'offer' => $offer]);
+}
+
    
 }
