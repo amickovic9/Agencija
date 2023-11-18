@@ -4,6 +4,7 @@ use App\Models\Offer;
 use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OfferController;
 use App\Http\Controllers\ReservationController;
 
@@ -61,3 +62,11 @@ Route::get('reservations/{offer}',[OfferController::class,'showReservations']);
 Route::get('offers/search',[OfferController::class,'offersSearch']);
 Route::get('my-offers/search',[OfferController::class,'myOffersSearch']);
 Route::get('reservations/search/{offer}',[OfferController::class,'reservationsSearch']);
+
+//admini
+Route::get('/admin',[AdminController::class,'showAdminPanel']);
+Route::get('/admin/users',[AdminController::class,'showUsers']);
+Route::get('/admin/delete-user/{user}',[AdminController::class,'deleteUser']);
+Route::get('/admin/edit-user/{user}',[AdminController::class,'showEditUser']);
+Route::post('/admin/edit-user/{user}',[AdminController::class,'updateUser']);
+

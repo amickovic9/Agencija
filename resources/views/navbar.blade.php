@@ -29,6 +29,13 @@
       <li class="nav-item">
         <a class="nav-link" href="/myReservations">Moje rezervacije</a>
       </li>
+       @if(Auth::user()->is_admin)
+        <li class="nav-item">
+        <a class="nav-link" href="/admin">Admin panel</a>
+      </li>
+     
+     @endif
+
       <li class="nav-item">
         <a class="nav-link" href="/logout">Logout</a>
       </li>
