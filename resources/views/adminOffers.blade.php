@@ -1,5 +1,12 @@
 @include('navbar');
 <h1>Sve ponude</h1>
+<form action="/admin/offers" method="get">
+    @csrf
+    Pretrazi ponude po destinaciji:<input type="text" name="destinacija" value="{{ request()->input('destinacija') }}">
+    Datum polaska od:<input type="date" name="polazak" value="{{ request()->input('polazak') }}">
+    Datum povratka do :<input type="date" name="povratak" value="{{ request()->input('povratak') }}">
+    <button type="submit">Pretrazi</button>
+</form>
 <table class="table">
   <thead>
     <tr>

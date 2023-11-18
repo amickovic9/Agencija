@@ -19,11 +19,20 @@ class AdminController extends Controller
 
         }
     }
-    public function showUsers(){
+    public function showUsers(Request $request){
         if(Auth::user()->is_admin){
-            $users = User::all();
+            $query = User::query();
+            if($request->filled('name')){
+                $query->where('name', 'like','%' . $request['name']);
+            }
+            if($request->filled('email')){
+                $query->where('email', 'like','%' . $request['email']);
+            }
+            $users = $query->get();
+
             return view('adminUsers',['users' =>$users]);
         }
+        return redirect('/');
     }
     public function deleteUser(User $user){
         if(Auth::user()->is_admin){
@@ -33,6 +42,7 @@ class AdminController extends Controller
         return redirect('/');
     }
     public function showEditUser(User $user){
+        if(Auth::user()->is_admin)
         return view('adminEditUser',['user' =>$user]);
     }
     public function updateUser(User $user, Request $request){
@@ -48,9 +58,22 @@ class AdminController extends Controller
         return redirect('/');
         
     }
-    public function showOffers(){
+    public function showOffers(Request $request){
         if(Auth::user()->is_admin){
-            $offers = Offer::all();
+            $query = Offer::query();
+            if($request->filled('destinacija')){
+            $query->where('destinacija' , 'like' , '%' . $request['destinacija']);
+            }
+
+            if ($request->filled('polazak')) {
+                $query->whereDate('datum_polaska', '>=', $request->input('polazak'));
+            }
+
+            if ($request->filled('povratak')) {
+                $query->whereDate('datum_povratka', '<=', $request->input('povratak'));
+            }
+
+            $offers = $query->get();
             return view('adminOffers',['offers'=>$offers]);
         }
         return redirect('/');
@@ -60,9 +83,19 @@ class AdminController extends Controller
              return view('adminEditOffer',['offer'=>$offer]);
         }
     }
-    public function showReservations(){
-        $reservations = Reservation::all();
+    public function showReservations(Request $request){
         if(Auth::user()->is_admin){
+            $query = Reservation::query();
+            if($request->filled('name')){
+                $query->where('user_name','like','%'.$request['name']);
+            }
+            if($request->filled('email')){
+                $query->where('email','like','%' .$request['email']);
+            }
+            if($request->filled('broj_telefona')){
+                $query->where('broj_telefona','like','%' .$request['broj_telefona']);
+            }
+            $reservations=$query->get();
             return view('adminReservations',['reservations' => $reservations]);
         }
     }

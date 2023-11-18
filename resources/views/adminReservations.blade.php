@@ -1,5 +1,11 @@
 @include('navbar')
-
+<form action="/admin/reservations" method="get">
+    @csrf
+     Ime:<input type="text" name="name" value="{{ request()->input('name') }}">
+    Email:<input type="text" name="email" value="{{ request()->input('email') }}">
+    Broj telefona:<input type="text" name="broj_telefona" value="{{ request()->input('broj_telefona') }}">
+    <button type="submit">Pretrazi</button>
+</form>
 <table class="table" >
     <thead>
         <tr>

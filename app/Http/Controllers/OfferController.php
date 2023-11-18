@@ -59,7 +59,7 @@ class OfferController extends Controller
         $fields = $request->validate([
             'destinacija' => 'required',
             'opis' => 'required',
-            'photo' => 'image',
+            'photo' => 'image,required',
             'datum_polaska' => 'required',
             'datum_povratka' => 'required',
             'broj_mesta' => 'required',

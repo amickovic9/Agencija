@@ -1,5 +1,11 @@
 @include('navbar')
 <h1>Svi korisnici</h1>
+<form action="/admin/users">
+Ime:<input type="text" name='name' value="{{ request()->input('name') }}">
+Email:<input type="text" name='email' value="{{ request()->input('email') }}">
+<button type="submit" class="search">Pretrazi</button>
+</form>
+
 <table class="table">
   <thead>
     <tr>
