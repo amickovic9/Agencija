@@ -78,6 +78,9 @@ class OfferController extends Controller
 
         }
         $offer->update($fields);
+        if(Auth::user()->is_admin){
+            return redirect("/admin/offers");
+        }
         return redirect('/my-offers');
     }
     public function deleteOffer(Offer $offer){
@@ -85,9 +88,15 @@ class OfferController extends Controller
         $putanjaDoSlike = storage_path('app/public/images/'.$offer['photo']);
         unlink($putanjaDoSlike);
         $offer->delete();
+         if(Auth::user()->is_admin){
+            return redirect('/admin/offers');
         }
         return redirect('/my-offers');
-    }
+        }
+       
+        return redirect('/');
+        
+        }
     public function showOffer(Offer $offer){
         $existingReservations = Reservation::where('offer_id', $offer['id'])->sum('broj_osoba');
 

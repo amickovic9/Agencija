@@ -69,4 +69,12 @@ Route::get('/admin/users',[AdminController::class,'showUsers']);
 Route::get('/admin/delete-user/{user}',[AdminController::class,'deleteUser']);
 Route::get('/admin/edit-user/{user}',[AdminController::class,'showEditUser']);
 Route::post('/admin/edit-user/{user}',[AdminController::class,'updateUser']);
+Route::get('/admin/offers',[AdminController::class,'showOffers']);
+Route::get('/admin/edit-offer/{offer}',[AdminController::class,'showEditOffer']);
+Route::put('/admin/edit-offer/{offer}',[OfferController::class,'updateOffer']);
+Route::get('/admin/delete-offer/{offer}',[OfferController::class,'deleteOffer']);
+Route::get('admin/reservations',[AdminController::class,'showReservations']);
+Route::get('/admin/edit-reservation/{reservation}',[AdminController::class,'showEditReservation']);
+Route::post('/admin/edit-reservation/{reservation}',[AdminController::class,'editReservation']);
+Route::get('/admin/delete-reservation/{reservation}',[AdminController::class,'deleteReservation']);
 

@@ -48,4 +48,47 @@ class AdminController extends Controller
         return redirect('/');
         
     }
+    public function showOffers(){
+        if(Auth::user()->is_admin){
+            $offers = Offer::all();
+            return view('adminOffers',['offers'=>$offers]);
+        }
+        return redirect('/');
+    }
+    public function showEditOffer(Offer $offer){
+        if(Auth::user()->is_admin){
+             return view('adminEditOffer',['offer'=>$offer]);
+        }
+    }
+    public function showReservations(){
+        $reservations = Reservation::all();
+        if(Auth::user()->is_admin){
+            return view('adminReservations',['reservations' => $reservations]);
+        }
+    }
+    public function showEditReservation(Reservation $reservation){
+        if(Auth::user()->is_admin){
+            return view('adminEditReservation',['reservation'=>$reservation]);
+        }
+    }
+
+    public function editReservation(Reservation $reservation,Request $request){
+        if(Auth::user()->is_admin){
+            $fields = $request->validate([
+                'user_name'=>'',
+                'email'=>'',
+                'broj_telefona'=>'',
+                'broj_osoba'=>'',
+                'napomena'=>'',
+            ]);
+            $reservation->update($fields);
+            return redirect('/admin/reservations');
+        }
+    }
+    public function deleteReservation(Reservation $reservation){
+        if(Auth::user()->is_admin){
+            $reservation->delete();
+            return redirect('/admin/reservations');
+        }
+    }
 }

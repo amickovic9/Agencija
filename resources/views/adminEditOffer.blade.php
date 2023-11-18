@@ -1,13 +1,10 @@
-@include('navbar')
-
-<h1>Edit offer</h1>
-<form action="/edit-offer/{{$offer->id}}" method="post" enctype="multipart/form-data">
+@include('navbar');
+<h1>Uredi ponudu</h1>
+<form action="/admin/edit-offer/{{$offer->id}}" method="post" enctype="multipart/form-data">
     @csrf
     @method('put')
     <input type="text" name = 'destinacija' value="{{$offer->destinacija}}"><br>
     <textarea  name='opis' >{{$offer->opis}}</textarea><br>
-    <img src="{{ Storage::url('images/' . $offer['photo']) }}" alt="Opis slike" width="300px" height="300px">
-    
     <input type="file" name="photo">       
     <br>
     <br>
