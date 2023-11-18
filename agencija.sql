@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 17, 2023 at 12:20 PM
+-- Generation Time: Nov 18, 2023 at 11:01 AM
 -- Server version: 8.0.31
 -- PHP Version: 7.4.33
 
@@ -90,7 +90,15 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `offers_user_id_foreign` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `offers`
+--
+
+INSERT INTO `offers` (`id`, `user_id`, `destinacija`, `opis`, `photo`, `datum_polaska`, `datum_povratka`, `broj_mesta`, `cena`, `created_at`, `updated_at`) VALUES
+(24, 3, 'Beograd', '12', '1700257031.jpg', '2023-11-02', '2023-11-03', 12, 12, '2023-11-17 20:37:11', '2023-11-17 20:37:11'),
+(25, 3, 'fasfsa', 'fsafsa', '1700261132.jpg', '2023-11-04', '2023-11-10', 12, 12, '2023-11-17 21:45:32', '2023-11-17 21:45:32');
 
 -- --------------------------------------------------------
 
@@ -147,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `reservations` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -160,6 +168,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `is_admin` tinyint(1) NOT NULL DEFAULT '0',
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -167,15 +176,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(3, 'proba', 'proba@gmaik.com', NULL, '$2y$10$e7e39AVdOiM4/3uhUzRpmeL/j.EWsq7m36NJZ5Fm8rFRROLprbAV.', NULL, '2023-11-16 08:21:35', '2023-11-16 08:21:35'),
-(4, 'proba2', 'proba2@gmail.com', NULL, '$2y$10$9tyoSJkFDZxGmHfs.TVh6elRsyIm5mkXuzYDLbgPnN8MzI6SUcYJm', NULL, '2023-11-16 10:12:19', '2023-11-16 10:12:19');
+INSERT INTO `users` (`id`, `name`, `email`, `is_admin`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(3, 'proba', 'proba@gmail.com', 1, NULL, '$2y$10$e7e39AVdOiM4/3uhUzRpmeL/j.EWsq7m36NJZ5Fm8rFRROLprbAV.', NULL, '2023-11-16 08:21:35', '2023-11-18 09:29:07'),
+(4, 'proba2', 'proba2@gmail.com', 1, NULL, '$2y$10$9tyoSJkFDZxGmHfs.TVh6elRsyIm5mkXuzYDLbgPnN8MzI6SUcYJm', NULL, '2023-11-16 10:12:19', '2023-11-18 09:29:12');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
