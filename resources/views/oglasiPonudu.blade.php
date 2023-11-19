@@ -7,7 +7,7 @@
     <input type="text" name="destinacija" required>
     <br><br>
 
-    <input type="file" name="photo">Slika       
+    <input type="file" name="photo">    
     <br>
     <br>
     <label for="opis">Opis:</label>

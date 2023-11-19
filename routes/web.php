@@ -5,7 +5,9 @@ use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\OfferController;
+use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ReservationController;
 
 /*
@@ -78,3 +80,8 @@ Route::get('/admin/edit-reservation/{reservation}',[AdminController::class,'show
 Route::post('/admin/edit-reservation/{reservation}',[AdminController::class,'editReservation']);
 Route::get('/admin/delete-reservation/{reservation}',[AdminController::class,'deleteReservation']);
 
+//galerija
+
+Route::get('/gallery',[PhotoController::class, 'showPhotos']);
+Route::post('/gallery/upload',[PhotoController::class,'upload']);
+Route::get('/gallery/uploaded',[PhotoController::class,'showUploadedView']);

@@ -45,9 +45,11 @@
         <a class="nav-link" href="/login">Login</a>
       </li>
       @endauth
-      
       <li class="nav-item">
-        <a class="nav-link" href="about">O nama</a>
+        <a class="nav-link" href="/gallery">Galerija</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">O nama</a>
       </li>
     </ul>
   </div>
