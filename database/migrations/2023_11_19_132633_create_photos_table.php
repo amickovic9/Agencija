@@ -18,6 +18,7 @@ class CreatePhotosTable extends Migration
             $table->foreignId('user_id');
             $table->string('photo');
             $table->boolean('is_allowed');
+            $table->boolean('is_checked');
             $table->timestamps();
         });
     }

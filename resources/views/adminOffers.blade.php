@@ -30,8 +30,11 @@
 </td>
       <td>{{$offer['datum_polaska']}}</td>
       <td>{{$offer['datum_povratka']}}</td>
-      <td><a href="/admin/edit-offer/{{$offer['id']}}" >Izmeni      </a> 
-        <a href="/admin/delete-offer/{{$offer['id']}}" style="margin-left:3px">Izbrisi</a></td>
+      <td>
+        <a href="/admin/edit-offer/{{$offer['id']}}" >Izmeni      </a> 
+        <a href="/admin/delete-offer/{{$offer['id']}}" style="margin-left:3px">Izbrisi</a>
+        <a href="/admin-reservations-offer/{{$offer['id']}}" style="margin-left:3px">Rezervacije</a>
+      </td>
     </tr>
     
     @endforeach

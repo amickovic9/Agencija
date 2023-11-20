@@ -27,14 +27,7 @@ Route::get('/', function () {
 Route::get('/login',function(){
     return view('login');
 });
-Route::get('/my-offers',function(){
-    
-    if(auth()->check()){
-        $offers = auth()->user()->offers()->get();
-        return view('myOffers', ['offers' => $offers]);
-    }
-    return redirect('login');
-});
+
 
 Route::get('/offers',function(){
     $offers = Offer::all();
@@ -53,16 +46,12 @@ Route::post("/login",[UserController::class,'login']);
 // Ponude
 Route::get('/create-offer',[OfferController::class, 'show']);
 Route::post('/create-offer', [OfferController::class , 'createOffer']);
-Route::get('/edit-offer/{offer}',[OfferController::class,'showEditScreen']);
-Route::put('/edit-offer/{offer}',[OfferController::class,'updateOffer']);
-Route::delete('/delete-offer/{offer}',[OfferController::class,'deleteOffer']);
 Route::get('reserve/{offer}',[OfferController::class,'showOffer']);
 Route::post('reserve/{offer}',[ReservationController::class,'reserve']);
 Route::get('myReservations', [ReservationController::class,'showMyReservations']);
 Route::delete('delete-reservation/{reservation}',[ReservationController::class,'deleteReservation']);
 Route::get('reservations/{offer}',[OfferController::class,'showReservations']);
 Route::get('offers/search',[OfferController::class,'offersSearch']);
-Route::get('my-offers/search',[OfferController::class,'myOffersSearch']);
 Route::get('reservations/search/{offer}',[OfferController::class,'reservationsSearch']);
 
 //admini
@@ -79,9 +68,20 @@ Route::get('admin/reservations',[AdminController::class,'showReservations']);
 Route::get('/admin/edit-reservation/{reservation}',[AdminController::class,'showEditReservation']);
 Route::post('/admin/edit-reservation/{reservation}',[AdminController::class,'editReservation']);
 Route::get('/admin/delete-reservation/{reservation}',[AdminController::class,'deleteReservation']);
+Route::get('/admin/allow/{photo}',[AdminController::class,'allowPhoto']);
+Route::get('/admin/decline/{photo}',[AdminController::class,'declinePhoto']);
+Route::get('admin/photos', [AdminController::class, 'showPhotos']);
+Route::get('admin/photo-delete/{photo}' , [AdminController::class, 'deletePhoto']);
+Route::get('/admin/photo-hide/{photo}',[AdminController::class, 'hidePhoto']);
+Route::get('/admin/photo-show/{photo}',[AdminController::class, 'showPhoto']);
+Route::get('admin-reservations-offer/{offer}',[AdminController::class,'reservationsForOffer']);
+Route::get('/admin-reservations-offer/search/{offer}',[AdminController::class,'reservationsForOffer']);
+
 
 //galerija
 
 Route::get('/gallery',[PhotoController::class, 'showPhotos']);
 Route::post('/gallery/upload',[PhotoController::class,'upload']);
 Route::get('/gallery/uploaded',[PhotoController::class,'showUploadedView']);
+
+

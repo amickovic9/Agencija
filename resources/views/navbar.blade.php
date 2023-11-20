@@ -19,23 +19,28 @@
       <li class="nav-item">
         <a class="nav-link" href="/offers">Ponude</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/create-offer">Oglasi ponudu</a>
-      </li>
+      
+      
+      
       @auth
-      <li class="nav-item">
-        <a class="nav-link" href="/my-offers">Moje ponude</a>
-      </li>
       <li class="nav-item">
         <a class="nav-link" href="/myReservations">Moje rezervacije</a>
       </li>
+      
        @if(Auth::user()->is_admin)
+       <li class="nav-item">
+        <a class="nav-link" href="/create-offer">Oglasi ponudu</a>
+      </li>
         <li class="nav-item">
         <a class="nav-link" href="/admin">Admin panel</a>
       </li>
-     
+      
      @endif
-
+     @endauth
+      <li class="nav-item">
+        <a class="nav-link" href="/gallery">Galerija</a>
+      </li>
+      @auth
       <li class="nav-item">
         <a class="nav-link" href="/logout">Logout</a>
       </li>
@@ -45,9 +50,6 @@
         <a class="nav-link" href="/login">Login</a>
       </li>
       @endauth
-      <li class="nav-item">
-        <a class="nav-link" href="/gallery">Galerija</a>
-      </li>
       <li class="nav-item">
         <a class="nav-link" href="/about">O nama</a>
       </li>
