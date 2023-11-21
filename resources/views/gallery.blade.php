@@ -11,7 +11,7 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{{ Storage::url('gallery/aktivna.jpg') }}" class="d-block w-100" style=" max-width: 70%; height: 70%; margin: 0 auto;">
+            <img src="{{ Storage::url('gallery/aktivna.jpg') }}" class="d-block w-100" style=" max-`width: 70%; height: 70%; margin: 0 auto;">
         </div>
         @foreach ($photos as $photo)
             <div class="carousel-item">

@@ -5,9 +5,10 @@ use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\OfferController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ReservationController;
 
 /*
@@ -34,9 +35,7 @@ Route::get('/offers',function(){
     return view('offers', ['offers' => $offers]);
 });
 
-Route::get('/about',function(){
-    return view('about');
-});
+
 
 
 Route::post("/register",[UserController::class,'register']);
@@ -76,6 +75,7 @@ Route::get('/admin/photo-hide/{photo}',[AdminController::class, 'hidePhoto']);
 Route::get('/admin/photo-show/{photo}',[AdminController::class, 'showPhoto']);
 Route::get('admin-reservations-offer/{offer}',[AdminController::class,'reservationsForOffer']);
 Route::get('/admin-reservations-offer/search/{offer}',[AdminController::class,'reservationsForOffer']);
+Route::get('/admin/izbrisi-komentar/{comment}',[AdminController::class, 'deleteComment']);
 
 
 //galerija
@@ -83,5 +83,10 @@ Route::get('/admin-reservations-offer/search/{offer}',[AdminController::class,'r
 Route::get('/gallery',[PhotoController::class, 'showPhotos']);
 Route::post('/gallery/upload',[PhotoController::class,'upload']);
 Route::get('/gallery/uploaded',[PhotoController::class,'showUploadedView']);
+
+//komentari
+
+Route::post('/oceni',[CommentController::class,'dodajOcenu']);
+Route::get('/about',[CommentController::class, 'showComments']);
 
 

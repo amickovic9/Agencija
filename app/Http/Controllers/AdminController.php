@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Offer;
 use App\Models\Photo;
+use App\Models\Comment;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -77,11 +78,11 @@ class AdminController extends Controller
         
     }
     public function showOffers(Request $request){
-        if(Auth::check()){
-            if(Auth::user()->is_admin){
+    if(Auth::check()){
+        if(Auth::user()->is_admin){
             $query = Offer::query();
             if($request->filled('destinacija')){
-            $query->where('destinacija' , 'like' , '%' . $request['destinacija']);
+                $query->where('destinacija' , 'like' , '%' . $request['destinacija']);
             }
 
             if ($request->filled('polazak')) {
@@ -93,9 +94,15 @@ class AdminController extends Controller
             }
 
             $offers = $query->get();
-            return view('adminOffers',['offers'=>$offers]);
+            $zauzeto = [];
+
+            foreach ($offers as $offer) {
+                $zauzeto[$offer->id] = Reservation::where('offer_id', $offer->id)->sum('broj_osoba');
             }
+
+            return view('adminOffers', ['offers' => $offers, 'zauzeto' => $zauzeto]);
         }
+    }
         return redirect('/');
     }
     public function showEditOffer(Offer $offer){
@@ -238,7 +245,17 @@ class AdminController extends Controller
             }
         }
     
-    return redirect('/');
-}
+        return redirect('/');
+    }
+    public function deleteComment(Comment $comment){
+        if(Auth::check()){
+            if(Auth::user()->is_admin){
+                $comment->delete();
+                return redirect('/about');
+            }
+            return redirect('/');
+        }
+    }
+
 
 }

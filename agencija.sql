@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 20, 2023 at 10:24 PM
+-- Generation Time: Nov 21, 2023 at 05:04 PM
 -- Server version: 8.0.31
 -- PHP Version: 7.4.33
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `agencija`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+DROP TABLE IF EXISTS `comments`;
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` bigint UNSIGNED NOT NULL,
+  `komentar` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ocena` int NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `user_id`, `komentar`, `ocena`, `created_at`, `updated_at`) VALUES
+(1, 4, 'Sve je super!', 5, '2023-11-21 15:25:56', '2023-11-21 15:25:56');
 
 -- --------------------------------------------------------
 
@@ -52,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -68,7 +92,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (7, '2023_11_16_092945_create_ponude_table', 3),
 (8, '2023_11_16_102827_create_offers_table', 4),
 (9, '2023_11_16_180958_create_reservations_table', 5),
-(11, '2023_11_19_132633_create_photos_table', 6);
+(11, '2023_11_19_132633_create_photos_table', 6),
+(12, '2023_11_21_153740_create_comments_table', 7);
 
 -- --------------------------------------------------------
 
@@ -91,7 +116,14 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `offers_user_id_foreign` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `offers`
+--
+
+INSERT INTO `offers` (`id`, `user_id`, `destinacija`, `opis`, `photo`, `datum_polaska`, `datum_povratka`, `broj_mesta`, `cena`, `created_at`, `updated_at`) VALUES
+(31, 3, 'Beograd', 'ye', '1700579533.png', '2023-11-22', '2023-11-18', 121, 120, '2023-11-21 14:12:13', '2023-11-21 14:12:13');
 
 -- --------------------------------------------------------
 
@@ -166,7 +198,15 @@ CREATE TABLE IF NOT EXISTS `reservations` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `reservations`
+--
+
+INSERT INTO `reservations` (`id`, `user_id`, `offer_id`, `user_name`, `email`, `broj_telefona`, `broj_osoba`, `napomena`, `created_at`, `updated_at`) VALUES
+(12, 3, 31, 'Aleksandar Mickovic', 'amickovic9@gmail.com', '066101412', 12, 'Nema napomene', '2023-11-21 14:22:31', '2023-11-21 14:22:31'),
+(13, 4, 31, 'aa', 'a@aa.com', '066101412', 25, 'Nema napomene', '2023-11-21 14:23:12', '2023-11-21 14:23:12');
 
 -- --------------------------------------------------------
 

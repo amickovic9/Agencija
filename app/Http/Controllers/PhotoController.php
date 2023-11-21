@@ -12,6 +12,9 @@ class PhotoController extends Controller
 {
     public function showPhotos(){
         $photos = Photo::where('is_allowed',1)->get();
+        if($photos->count()>=2){
+            shuffle($photos); 
+        }
         return view('gallery',['photos' => $photos]);
     }
 

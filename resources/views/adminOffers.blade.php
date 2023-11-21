@@ -14,6 +14,7 @@
       <th scope="col">Destinacija</th>
       <th scope="col">Opis</th>
       <th scope="col">Slika</th>
+      <th scope="col">Rezervisano</th>
       <th scope="col">Datum polaska</th>
       <th scope="col">Datum povratka</th>
       <th scope="col">Akcije</th>
@@ -28,6 +29,7 @@
       <td>{{$offer['opis']}}</td>
       <td>        <img src="{{ Storage::url('images/' . $offer['photo']) }}" alt="Opis slike" width="50px" height="50px">
 </td>
+<td>{{$zauzeto[$offer['id']]}}/{{$offer['broj_mesta']}}</td>
       <td>{{$offer['datum_polaska']}}</td>
       <td>{{$offer['datum_povratka']}}</td>
       <td>
