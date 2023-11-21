@@ -1,34 +1,45 @@
 @include('navbar')
-<h1>Oglasi ponudu</h1>
-<form action="/create-offer" method="POST" enctype="multipart/form-data">
-    @csrf 
 
-    <label for="destinacija">Destinacija:</label>
-    <input type="text" name="destinacija" required>
-    <br><br>
+<div class="container mt-5">
+    <h1>Oglasi ponudu</h1>
+    <form action="/create-offer" method="POST" enctype="multipart/form-data" class="mt-4">
+        @csrf 
 
-    <input type="file" name="photo">    
-    <br>
-    <br>
-    <label for="opis">Opis:</label>
-    <textarea name="opis" required></textarea>
-    <br><br>
+        <div class="form-group">
+            <label for="destinacija">Destinacija:</label>
+            <input type="text" class="form-control" name="destinacija" required>
+        </div>
 
-    <label for="datum_polaska">Datum polaska:</label>
-    <input type="date"  name="datum_polaska" required>
-    <br><br>
+        <div class="form-group mt-3">
+            <label for="photo">Fotografija:</label>
+            <input type="file" class="form-control-file" name="photo" accept="image/*">
+        </div>
 
-    <label for="datum_povratka">Datum povratka:</label>
-    <input type="date"  name="datum_povratka" required>
-    <br><br>
+        <div class="form-group mt-3">
+            <label for="opis">Opis:</label>
+            <textarea class="form-control" name="opis" required></textarea>
+        </div>
 
-    <label for="broj_mesta">Broj mesta:</label>
-    <input type="number"  name="broj_mesta" required>
-    <br><br>
+        <div class="form-group mt-3">
+            <label for="datum_polaska">Datum polaska:</label>
+            <input type="date" class="form-control" name="datum_polaska" required>
+        </div>
 
-    <label for="cena">Cena:</label>
-    <input type="number" name="cena" required>
-    <br><br>
+        <div class="form-group mt-3">
+            <label for="datum_povratka">Datum povratka:</label>
+            <input type="date" class="form-control" name="datum_povratka" required>
+        </div>
 
-    <button type="submit">Sačuvaj ponudu</button>
-</form>
+        <div class="form-group mt-3">
+            <label for="broj_mesta">Broj mesta:</label>
+            <input type="number" class="form-control" name="broj_mesta" required>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="cena">Cena:</label>
+            <input type="number" class="form-control" name="cena" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Sačuvaj ponudu</button>
+    </form>
+</div>

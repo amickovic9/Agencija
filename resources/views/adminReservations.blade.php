@@ -1,11 +1,32 @@
 @include('navbar')
-<form action="/admin/reservations" method="get">
-    @csrf
-     Ime:<input type="text" name="name" value="{{ request()->input('name') }}">
-    Email:<input type="text" name="email" value="{{ request()->input('email') }}">
-    Broj telefona:<input type="text" name="broj_telefona" value="{{ request()->input('broj_telefona') }}">
-    <button type="submit">Pretrazi</button>
-</form>
+<div class="container mt-5">
+    <form action="/admin/reservations" method="get" class="mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="name">Ime:</label>
+                    <input type="text" class="form-control" name="name" value="{{ request()->input('name') }}">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" class="form-control" name="email" value="{{ request()->input('email') }}">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="broj_telefona">Broj telefona:</label>
+                    <input type="text" class="form-control" name="broj_telefona" value="{{ request()->input('broj_telefona') }}">
+                </div>
+            </div>
+            <div class="col-md-12 mt-3">
+                <button type="submit" class="btn btn-primary">Pretraži</button>
+            </div>
+        </div>
+    </form>
+</div>
+
 <table class="table" >
     <thead>
         <tr>

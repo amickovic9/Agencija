@@ -1,10 +1,29 @@
 @include('navbar')
-<h1>Svi korisnici</h1>
-<form action="/admin/users">
-Ime:<input type="text" name='name' value="{{ request()->input('name') }}">
-Email:<input type="text" name='email' value="{{ request()->input('email') }}">
-<button type="submit" class="search">Pretrazi</button>
-</form>
+<div class="container mt-5">
+    <h1>Svi korisnici</h1>
+    <form action="/admin/users" method="GET" class="mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="name">Ime:</label>
+                    <input type="text" class="form-control" name="name" value="{{ request()->input('name') }}">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" class="form-control" name="email" value="{{ request()->input('email') }}">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>&nbsp;</label> 
+                    <button type="submit" class="btn btn-primary form-control">Pretraži</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
 
 <table class="table">
   <thead>

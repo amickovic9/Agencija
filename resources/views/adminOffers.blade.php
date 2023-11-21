@@ -1,12 +1,33 @@
 @include('navbar');
-<h1>Sve ponude</h1>
-<form action="/admin/offers" method="get">
-    @csrf
-    Pretrazi ponude po destinaciji:<input type="text" name="destinacija" value="{{ request()->input('destinacija') }}">
-    Datum polaska od:<input type="date" name="polazak" value="{{ request()->input('polazak') }}">
-    Datum povratka do :<input type="date" name="povratak" value="{{ request()->input('povratak') }}">
-    <button type="submit">Pretrazi</button>
-</form>
+<div class="container mt-5">
+    <h1>Sve ponude</h1>
+    <form action="/admin/offers" method="get" class="mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="destinacija">Pretraži ponude po destinaciji:</label>
+                    <input type="text" class="form-control" name="destinacija" value="{{ request()->input('destinacija') }}">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="polazak">Datum polaska od:</label>
+                    <input type="date" class="form-control" name="polazak" value="{{ request()->input('polazak') }}">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="povratak">Datum povratka do:</label>
+                    <input type="date" class="form-control" name="povratak" value="{{ request()->input('povratak') }}">
+                </div>
+            </div>
+            <div class="col-md-12 mt-3">
+                <button type="submit" class="btn btn-primary">Pretraži</button>
+            </div>
+        </div>
+    </form>
+</div>
+
 <table class="table">
   <thead>
     <tr>
