@@ -37,8 +37,8 @@
     <form action="/oceni" method="post">
       @csrf
       <div class="form-group">
-        <label for="rating">Ocena:</label><br>
-        <div class="rating">
+        <label for="rating" >Ocena:</label><br>
+        <div class="rating" required>
           <input type="radio" id="star5" name="ocena" value="5">
           <label for="star5"></label>
           <input type="radio" id="star4" name="ocena" value="4">

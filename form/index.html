@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title></title>
+  </head>
+
+  <body>
+    <div class="container" id="container">
+      <div class="form-container sign-up">
+        <form>
+          <h1>Kreiraj nalog</h1>
+          <br />
+          <input type="text" placeholder="Ime" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Lozinka" />
+          <button>Registracija</button>
+        </form>
+      </div>
+      <div class="form-container sign-in">
+        <form>
+          <h1>Prijava</h1>
+          <br />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Lozinka" />
+          <a href="#">Zaboravljena lozinka?</a>
+          <button>Prijavi se</button>
+        </form>
+      </div>
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggle-panel toggle-left">
+            <h1>Dobrodošao nazad!</h1>
+            <p>
+              Unesi svoje podatke, kako bi mogao da koristiš sve mogućnosti
+              našeg sajta
+            </p>
+            <button class="hidden" id="login">Prijavi se</button>
+          </div>
+          <div class="toggle-panel toggle-right">
+            <h1>Pozdrav!</h1>
+            <p>
+              Registruj se sa svojim podacima, kako bi mogao da zakažeš svoje
+              putovanje na vreme!
+            </p>
+            <button class="hidden" id="register">Registracija</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
