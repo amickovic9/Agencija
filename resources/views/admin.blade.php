@@ -74,8 +74,8 @@
                         </div>
                         <div class="card-body">
                             <div class="btn-group d-flex" role="group" aria-label="Basic example">
-                                <a href="admin/allow/{{$photo['id']}}" class="btn btn-success flex-fill mr-1">Odobri</a>
-                                <a href="admin/decline/{{$photo['id']}}" class="btn btn-danger flex-fill ml-1">Odbij</a>
+                                <a href="/admin/allow/{{$photo['id']}}" class="btn btn-success flex-fill mr-1">Odobri</a>
+                                <a href="/admin/decline/{{$photo['id']}}" class="btn btn-danger flex-fill ml-1">Odbij</a>
                             </div>
                         </div>
                     </div>

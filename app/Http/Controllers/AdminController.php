@@ -173,8 +173,10 @@ class AdminController extends Controller
     }
     public function declinePhoto(Photo $photo){
          if(Auth::check()){if(Auth::user()->is_admin){
-               
-                 $photo->delete();
+                 $putanjaDoSlike = storage_path('app/public/gallery/'.$photo['photo']);
+                 unlink($putanjaDoSlike);
+                
+                $photo->delete();
                 return redirect('/admin');
             }
         }
@@ -193,14 +195,14 @@ class AdminController extends Controller
     }
 
     public function showPhotos(){
-        if(Auth::check()){
-            if(Auth::user()->is_admin){
-                $photos = Photo::all();
-                return view('adminPhotos',['photos' =>$photos]);
-            }
-        }
-      return redirect('/');  
+    if(Auth::check() && Auth::user()->is_admin){
+        $photos = Photo::where('is_checked', 1)->get();
+        return view('adminPhotos', ['photos' => $photos]);
     }
+    
+    return redirect('/');
+}
+
     public function showPhoto(Photo $photo){
         if(Auth::check()){
             if(Auth::user()->is_admin){
