@@ -18,7 +18,7 @@ class CommentController extends Controller
             $fields['user_id'] = auth()->id();
             
             Comment::create($fields);
-            return redirect('/about');
+            return redirect('/about')->with('success', ' Uspesno ste dodali komentar i ocenu!');                
         }
         return redirect('/login');
     }

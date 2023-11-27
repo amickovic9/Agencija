@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Prijava | Registracija</title>
+    
     <link href="/css/login.css" rel="stylesheet">
     <style>
         /* Dodatni stil za margine između elemenata */
@@ -15,12 +16,17 @@
     </style>
 </head>
 <body>
+  
+
 <div class="container" id="container">
       <div class="form-container sign-up">
+        
         <form action="/register" method="post">
         @csrf
           <h1>Kreiraj nalog</h1>
           <br />
+          
+
           <input type="text" name="name" id="name" placeholder="Korisnicko Ime" />
           <input type="email" name="email" id="email" placeholder="Email" />
           <input type="password" name="password" id="password" placeholder="Lozinka" />

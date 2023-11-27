@@ -42,12 +42,12 @@ public function upload(Request $request){
             $photo->photo = $imageName;
             $photo->save();
 
-            return redirect('/gallery/uploaded');
-        } else {
-            return redirect()->back()->with('error', 'Niste izabrali sliku.');
-        }
+             return redirect('/gallery')->with('success', 'Slika je uspesno upload-ovana, nas tim proverava da li je prikladna za galeriju!');                
+
+        } 
     }
-    return redirect('/login');
+     return redirect('/login')->with('success', 'Morate se ulogovati prvo!');                
+
 }
 
 

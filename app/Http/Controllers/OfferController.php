@@ -40,7 +40,8 @@ class OfferController extends Controller
             $image->storeAs('public/images', $imageName);
             $fields['photo'] = $imageName;
             Offer::create($fields);
-            return redirect('/admin/offers');
+            return redirect('/admin/offers')->with('success', ' Uspesno ste kreirali ponudu!');                
+
              }
              return redirect('/');
             }
@@ -85,16 +86,12 @@ class OfferController extends Controller
                  $putanjaDoSlike = storage_path('app/public/images/'.$offer['photo']);
                 unlink($putanjaDoSlike);
                 $offer->delete();
-                if(Auth::user()->is_admin){
-                    return redirect('/admin/offers');
+                return redirect('/admin/offers')->with('success', ' Uspesno ste obrisali ponudu!');                
                 }
-                return redirect('/my-offers');
-                }
-            
                 return redirect('/');
-                
-                }
+
             }
+        }
         
     public function showOffer(Offer $offer){
         $existingReservations = Reservation::where('offer_id', $offer['id'])->sum('broj_osoba');
@@ -123,5 +120,9 @@ class OfferController extends Controller
     $offers = $query->get();
     return view('offers', ['offers' => $offers]);
 
+    }
+    public function showFiveOffers(){
+        $ponude = Offer::orderBy('created_at', 'desc')->take(5)->get();
+        return view('home',['offers' =>$ponude]);
     }
 }

@@ -48,7 +48,8 @@ class AdminController extends Controller
         if(Auth::check()){
             if(Auth::user()->is_admin){}{
                 $user->delete();
-            return redirect('admin/users');
+             return redirect('/admin/users')->with('success', 'Uspesno ste obrisali korisnika!');                
+
             }
             
         }
@@ -71,7 +72,8 @@ class AdminController extends Controller
                 'is_admin' =>'',
             ]);
             $user->update($fields);
-            return redirect('admin/users');
+            return redirect('/admin/users')->with('success', 'Uspesno ste izmenili korisnika!');                
+
             }
         }
         return redirect('/');
@@ -147,7 +149,7 @@ class AdminController extends Controller
                 'napomena'=>'',
             ]);
             $reservation->update($fields);
-            return redirect('/admin/reservations');
+            return redirect('/admin/reservations')->with('success', 'Uspesno ste izmenili rezervaciju!');                
         }
         }
     }
@@ -155,7 +157,7 @@ class AdminController extends Controller
         if(Auth::check()){
             if(Auth::user()->is_admin){
             $reservation->delete();
-            return redirect('/admin/reservations');
+            return redirect('/admin/reservations')->with('success', 'Uspesno ste obrisali rezervaciju!');                
         }
         }
     }
@@ -184,7 +186,7 @@ class AdminController extends Controller
                  $putanjaDoSlike = storage_path('app/public/gallery/'.$photo['photo']);
                  unlink($putanjaDoSlike);
                  $photo->delete();
-                return redirect ('admin/photos');
+            return redirect('/admin/photos')->with('success', 'Uspesno ste obrisali fotografiju!');                
             }
         }
         return redirect("/");
@@ -251,7 +253,8 @@ class AdminController extends Controller
         if(Auth::check()){
             if(Auth::user()->is_admin){
                 $comment->delete();
-                return redirect('/about');
+            return redirect('/about')->with('success', 'Uspesno ste obrisali komentar!');                
+
             }
             return redirect('/');
         }

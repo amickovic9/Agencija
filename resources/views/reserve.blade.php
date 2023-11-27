@@ -1,6 +1,6 @@
 @include('navbar')
 <h4>{{$offer['destinacija']}}</h4>
-        <img src="{{ Storage::url('images/' . $offer['photo']) }}" alt="Opis slike" width="300px" height="300px">
+        <img src="{{ Storage::url('images/' . $offer['photo']) }}" width="300px" height="300px">
 
         <p>{{$offer['opis']}}</p>
         <p>Datum polaska: {{$offer['datum_polaska']}}</p>

@@ -25,7 +25,7 @@
         @foreach ($offers as $offer)
             <div class="col mb-4">
                 <div class="card h-100">
-                    <img src="{{ Storage::url('images/' . $offer['photo']) }}" class="card-img-top" alt="Opis slike">
+                    <img src="{{ Storage::url('images/' . $offer['photo']) }}" class="card-img-top" >
                     <div class="card-body">
                         <h4 class="card-title">{{$offer['destinacija']}}</h4>
                         <p class="card-text">Datum polaska: {{$offer['datum_polaska']}}</p>

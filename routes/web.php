@@ -22,9 +22,7 @@ use App\Http\Controllers\ReservationController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+
 Route::get('/login',function(){
     return view('login');
 });
@@ -43,6 +41,7 @@ Route::get("/logout",[UserController::class,'logout']);
 Route::post("/login",[UserController::class,'login']);
 
 // Ponude
+Route::get('/',[OfferController::class,'showFiveOffers']);
 Route::get('/create-offer',[OfferController::class, 'show']);
 Route::post('/create-offer', [OfferController::class , 'createOffer']);
 Route::get('reserve/{offer}',[OfferController::class,'showOffer']);

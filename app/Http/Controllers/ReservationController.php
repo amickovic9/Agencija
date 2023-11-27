@@ -20,26 +20,30 @@ class ReservationController extends Controller
 
         $brojRezervacija = Reservation::where('offer_id',$offer['id'])->sum('broj_osoba');
         if(($brojRezervacija+$fields['broj_osoba'])>$offer['broj_mesta']){
-            return redirect('/offers');
+            return redirect('/offers')->with('success', 'Nema dovoljno dostpupnih mesta!');
+
         }
         $fields['user_id'] = auth()->id();
         $fields['offer_id'] = $offer['id'];
         Reservation::Create($fields);
         return redirect('/myReservations');
         }
-        return redirect('login');
+        return redirect('/login')->with('success', ' Morate biti ulogovani da biste mogli da rezervisete!');
+
     }
     public function showMyReservations(){
         if(auth()->check()){
             $reservations = auth()->user()->reservations()->get();
             return view('myReservations',['reservations' => $reservations]);
         }
-        return redirect('/login');
+        return redirect('/login')->with('success', ' Morate biti ulogovani da biste mogli da vidite vase rezervacije!');
+
     }
     public function deleteReservation(Reservation $reservation){
         if(auth()->check()){
             $reservation->delete();
-            return redirect('/myReservations');
+            return redirect('/myReservations')->with('success', 'Uspesno ste otkazali rezervaciju!');
+
         }
     }
 }

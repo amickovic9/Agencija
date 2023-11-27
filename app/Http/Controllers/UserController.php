@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Routing\Redirector;
 
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -16,8 +17,9 @@ class UserController extends Controller
        ]);
        $fields['password'] = bcrypt($fields['password']);
        $user = User::create($fields);
-       auth()->login($user);
-       return redirect('/');
+       return redirect('/login')->with('success', 'Uspesno ste se registrovali!');
+
+
     }
 
     public function logout(){
@@ -35,6 +37,7 @@ class UserController extends Controller
         else{
             return redirect('/login');
         }
-        return redirect('/');
+               return redirect('/')->with('success', ' Uspesno ste se ulogovali!');
+
     }
 }
