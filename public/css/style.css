@@ -1,0 +1,80 @@
+body{
+     
+    font-family: 'Poppins', sans-serif;
+}
+.search-bar{
+    background: linear-gradient(145deg, #4259b6, #4e6ad8), url('/img/search-back.g');
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    
+}
+.form-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+.text h3 { 
+    padding-top: 5rem;
+    color: black;
+    font-weight: 100;
+    font-size: 1.2rem;
+    
+}
+.text h1 { 
+    padding-top: 1rem;
+    font-weight: 500;
+    
+}
+.prva-boja {
+    color: #091D36; 
+}
+
+.druga-boja {
+    color: #F0EFF5;
+}
+.form-row label { 
+    color: white;
+    font-style: bold;
+}
+.search-form{
+    height: 15vh;
+}
+.search-form input { 
+    width: 15rem;
+    height: 3rem;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.search-form button { 
+    height: 3rem;
+    height: 3rem;
+    background-color: #0B4C84;
+}
+.form-row { 
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 30px 10px 30px 10px;;
+}
+.search-form div { 
+    padding: 0.5rem;
+}
+.search-form { 
+    width: 70%;
+    min-height: 30vh;
+}
+.search-button {
+    padding-top: 1rem;
+}

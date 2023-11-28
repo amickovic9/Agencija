@@ -3,29 +3,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <title>Pocetna</title>
 </head>
 <body>
-    <form action="/offers/search" method="get" class="mb-4">
+    <section class="search-bar">
+        <div class="text">
+        <h1>
+    <span class="prva-boja">Istraži svet sa nama,</span>
+    <span class="druga-boja">Tvoja avantura počinje ovde!</span>
+</h1>
+
+        <h3>Vaše putovanje snova je na samo jedan klik daleko od vas! </h3>
+</div>
+        <form action="/offers/search" method="get" class="search-form">
         @csrf
         <div class="form-row">
-            <div class="col-md-4 mb-3">
-                <label for="destinacija">Pretraži ponude po destinaciji:</label>
+            <div>   
+                <label for="destinacija">Destinacija:</label>
                 <input type="text" class="form-control" id="destinacija" name="destinacija" value="{{ request()->input('destinacija') }}">
-            </div>
-            <div class="col-md-4 mb-3">
-                <label for="polazak">Datum polaska od:</label>
+</div>
+<div>    
+                <label for="polazak">Polazak:</label>
                 <input type="date" class="form-control" id="polazak" name="polazak" value="{{ request()->input('polazak') }}">
-            </div>
-            <div class="col-md-4 mb-3">
-                <label for="povratak">Datum povratka do:</label>
+</div>
+<div>
+                <label for="povratak">Povratak:</label>
                 <input type="date" class="form-control" id="povratak" name="povratak" value="{{ request()->input('povratak') }}">
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Pretraži</button>
+</div>  
+<div>
+<button type="submit" name="button" class="">Pretraži</button>     
+</div>
+</div>
+        
     </form>
-    <!-- home.blade.php -->
-
+</section>
 <!-- Ovo je samo primer kako bi moglo izgledati, zameni sa tvojom stvarnom strukturom -->
 
 <div class="container">
