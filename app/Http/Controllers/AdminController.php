@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Offer;
 use App\Models\Photo;
 use App\Models\Comment;
+use App\Models\ContactUs;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,8 @@ class AdminController extends Controller
             $users = User::count();
             $offers = Offer::count();
             $photos = Photo::where('is_checked',0)->get();
-            return view('admin',['users' => $users,'offers' =>$offers,'reservations' =>$reservations,'photos'=>$photos]);
+            $contactUs = ContactUs::where('is_handled',0)->count();
+            return view('admin',['users' => $users,'offers' =>$offers,'reservations' =>$reservations,'photos'=>$photos,'contactUs' =>$contactUs]);
             }
             
 
@@ -260,6 +262,16 @@ class AdminController extends Controller
             }
             return redirect('/');
         }
+    }
+
+    public function showContactUs(){
+        if(Auth::check()){
+            if(Auth::user()->is_admin){
+                $contactUs = ContactUs::all();
+                return view('adminContactUs',['contacts' => $contactUs]);
+            }
+        }
+        return redirect('/');
     }
 
 

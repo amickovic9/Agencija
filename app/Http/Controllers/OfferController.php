@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Offer;
+use App\Models\Comment;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -123,6 +125,11 @@ class OfferController extends Controller
     }
     public function showFiveOffers(){
         $ponude = Offer::orderBy('created_at', 'desc')->take(5)->get();
-        return view('home',['offers' =>$ponude]);
+        $comments = Comment::orderBy('created_at', 'desc')->get();
+        foreach ($comments as $comment){
+            $user = User::where('id', $comment->user_id)->first(); 
+            $ime[$comment->id] = $user->name;
+        }
+        return view('home',['offers' =>$ponude,'comments' => $comments, 'ime' => $ime]);
     }
 }

@@ -49,6 +49,15 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Ukupan broj neodgovorenih contact-us</h5>
+                        <p class="card-text">{{$contactUs}}</p>
+                        <a href="/admin/contact-us" class="btn btn-primary">Upravljanje contact-us</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="row">

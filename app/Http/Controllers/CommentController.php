@@ -20,7 +20,9 @@ class CommentController extends Controller
             Comment::create($fields);
             return redirect('/about')->with('success', ' Uspesno ste dodali komentar i ocenu!');                
         }
-        return redirect('/login');
+            return redirect('/login')->with('success', 'Morate se ulogovati prvo!');                
+           
+
     }
 
         public function showComments(){
