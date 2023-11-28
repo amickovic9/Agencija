@@ -1,6 +1,7 @@
 body{
      
     font-family: 'Poppins', sans-serif;
+        padding-top: 60px !important; 
 }
 .search-bar{
     background: linear-gradient(145deg, #4259b6, #4e6ad8), url('/img/search-back.g');
@@ -24,8 +25,8 @@ body{
     text-align: center;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 30px 10px 30px 10px;
-    padding-top: 10px; /* Adjust if needed to match the current top padding */
-    padding-bottom: 30px !important; /* Add bottom padding to match the top padding */
+    padding-top: 10px; 
+    padding-bottom: 30px !important; 
 }
 
 
@@ -89,3 +90,5 @@ body{
 .search-button {
     padding-top: 1rem;
 }
+
+
