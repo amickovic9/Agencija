@@ -27,9 +27,9 @@
           <br />
           
 
-          <input type="text" name="name" id="name" placeholder="Korisnicko Ime" />
-          <input type="email" name="email" id="email" placeholder="Email" />
-          <input type="password" name="password" id="password" placeholder="Lozinka" />
+          <input type="text" name="name" required id="name" placeholder="Korisnicko Ime" />
+          <input type="email" name="email"  required id="email" placeholder="Email" />
+          <input type="password" name="password" required id="password" placeholder="Lozinka" />
           <button type="submit">Registracija</button>
         </form>
       </div>
@@ -38,9 +38,8 @@
         @csrf
           <h1>Prijava</h1>
           <br />
-          <input type="text" placeholder="Korisnicko ime" name="loginname" id="loginname"/>
-          <input type="password" placeholder="Lozinka" name="loginpassword" id="loginpassword"/>
-          <a href="#">Zaboravljena lozinka?</a>
+          <input type="text" placeholder="Korisnicko ime" required name="loginname" id="loginname"/>
+          <input type="password" placeholder="Lozinka"  required name="loginpassword" id="loginpassword"/>
           <button type="submit">Prijavi se</button>
         </form>
       </div>

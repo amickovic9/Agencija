@@ -10,12 +10,19 @@ use Illuminate\Support\Facades\Storage;
 
 class PhotoController extends Controller
 {
-    public function showPhotos(){
-        $photos = Photo::where('is_allowed',1)->get();
-        if($photos->count()>=2){
-            shuffle($photos); 
-        }
-        return view('gallery',['photos' => $photos]);
+    public function showPhotos() {
+    // Dohvaćanje fotografija gdje je is_allowed jednako 1
+    $photos = Photo::where('is_allowed', 1)->get();
+
+    // Pretvaranje kolekcije fotografija u polje
+    $photosArray = $photos->toArray();
+
+    // Provjera da li ima barem dvije dozvoljene fotografije
+    if (count($photosArray) >= 2) {
+        // Miješanje redoslijeda fotografija
+        shuffle($photosArray);
+    }
+        return view('gallery',['photos' => $photosArray]);
     }
 
 public function upload(Request $request){

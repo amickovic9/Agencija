@@ -49,6 +49,15 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Ukupan broj neodgovorenih contact-us</h5>
+                        <p class="card-text">{{$contactUs}}</p>
+                        <a href="/admin/contact-us" class="btn btn-primary">Upravljanje contact-us</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="row">
@@ -74,8 +83,8 @@
                         </div>
                         <div class="card-body">
                             <div class="btn-group d-flex" role="group" aria-label="Basic example">
-                                <a href="admin/allow/{{$photo['id']}}" class="btn btn-success flex-fill mr-1">Odobri</a>
-                                <a href="admin/decline/{{$photo['id']}}" class="btn btn-danger flex-fill ml-1">Odbij</a>
+                                <a href="/admin/allow/{{$photo['id']}}" class="btn btn-success flex-fill mr-1">Odobri</a>
+                                <a href="/admin/decline/{{$photo['id']}}" class="btn btn-danger flex-fill ml-1">Odbij</a>
                             </div>
                         </div>
                     </div>

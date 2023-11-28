@@ -2,7 +2,7 @@
 <h1>Galerija</h1>
 <form action="/gallery/upload" method="POST" enctype="multipart/form-data">
     @csrf 
-    <input type="file" name="photo">      
+    <input type="file" name="photo" required>      
     <br>
     <br>
     <button type='submit'>Dodajte vasu fotografiju u galeriju</button>
