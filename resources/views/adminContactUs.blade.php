@@ -1,6 +1,8 @@
 @include('navbar')
 <h1>Upravljanje Contact us </h1>
-
+@if($contacts->isEmpty())
+    <p>Nema neodgovorenih pitanja</p>
+@else
 <div class="container mt-5">
     <div class="row">
         @foreach($contacts as $contact)
@@ -10,10 +12,11 @@
                         <h5 class="card-title">Ime: {{ $contact['name'] }}</h5>
                         <p class="card-text">Email: {{ $contact['email'] }}</p>
                         <p class="card-text">Poruka: {{ $contact['message'] }}</p>
-                        <a href="#" class = 'btn btn-primary'>Odgovori</a>
+                        <a href="/admin/reply/{{$contact['id']}}" class = 'btn btn-primary'>Odgovori</a>
                     </div>
                 </div>
             </div>
         @endforeach
     </div>
 </div>
+@endif

@@ -257,7 +257,7 @@ class AdminController extends Controller
         if(Auth::check()){
             if(Auth::user()->is_admin){
                 $comment->delete();
-            return redirect('/about')->with('success', 'Uspesno ste obrisali komentar!');                
+            return redirect('/')->with('success', 'Uspesno ste obrisali komentar!');                
 
             }
             return redirect('/');
