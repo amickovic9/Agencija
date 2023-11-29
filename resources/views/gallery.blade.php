@@ -28,9 +28,10 @@
     <br>
     <br>
     <button type='submit'>Dodajte vasu fotografiju u galeriju</button>
-</form>
+</form> 
 
 <script src="../js/gallery.js"></script>
+<script></script>
 
 
 </body>
