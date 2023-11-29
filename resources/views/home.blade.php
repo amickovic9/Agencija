@@ -61,6 +61,7 @@
 <div class="button-container">
     <button type="submit" name="button" class="btn btn-outline-dark">Pretraži</button>  
 </div>
+
 </div>
         
     </form>
@@ -69,19 +70,19 @@
 <section class="middle-section" id="ponuda">
     <h3> Šta nudimo? </h3> 
     <h1>Nudimo širok spektar putničkih usluga koje obuhvataju različite vrste prevoza, personalizovane opcije ishrane, autentične kulturne doživljaje i pažljivo odabrane smještajne opcije. Vaše putovanje, bez obzira na destinaciju, prilagođava se vašim željama, obezbeđujući nezaboravna iskustva i bezbrižnu avanturu. </h1>
-      <div class="cards">
+      <div class="benefits">
       
         
-          <div class="card-icon">
+          <div class="benefits-icon">
           <img src="/img/route-solid.svg" alt=""></div>
         
         
-          <div class="card-icon">
+          <div class="benefits-icon">
           <img src="/img/bed-solid.svg" alt=""></div>
     
-            <div class="card-icon">
+            <div class="benefits-icon">
             <img src="/img/plane-departure-solid.svg" alt=""></div>
-            <div class="card-icon">
+            <div class="benefits-icon">
             <img src="/img/food-solid.svg" alt=""></div>
         
        </div>
@@ -109,7 +110,21 @@
 @endforeach
         </div>
   </section>
-<div class="container mt-4">
+  <section class="gallery-section">
+      
+      <h1>Ovde delimo trenutke sa putovanja naših zadovoljnih putnika.</h1>
+      <h3> Naša misija je stvaranje nezaboravnih iskustava, a ove slike su samo mali uvid u bogatstvo destinacija koje možete istražiti sa nama. Bez obzira da li se radi o impresivnim pejzažima, kulturnim blagom ili uzbudljivim avanturama, svaka destinacija nosi svoju jedinstvenu priču.</h3>
+    
+      <a href="/gallery" class="gallery-btn">
+  <span class="circle" aria-hidden="true">
+  <span class="icon arrow"></span>
+  </span>
+  <span class="button-text">Galerija</span>
+  </a>
+  </section> 
+
+<section class="comment-section">
+<div class="leave-comment">
     <h2>Oceni i ostavi komentar</h2>
     <form action="/oceni" method="post">
       @csrf
@@ -132,48 +147,45 @@
         <label for="comment">Komentar:</label>
         <textarea class="form-control" id="comment" name="komentar" rows="4" required></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Pošalji</button>
+      <button type="submit" class="comm-btn">
+        <span>Pošalji komentar</span></button>
     </form>
   </div>
-<section style="background-color: #6c9ef5;">
-  <div class="container my-5 py-5">
-    <div class="row d-flex justify-content-center">
-      <div class="col-md-12 col-lg-10">
-        <div class="card text-dark">
-          <div class="card-body p-4">
-            <h4 class="mb-0">Skorašnji komentari</h4>
-            <p class="fw-light mb-4 pb-2"></p>
-
-            @foreach ($comments as $komentar)
-              <div>
-                <h6 class="fw-bold mb-1">{{$ime[$komentar['id']]}}</h6>
-                <div class="d-flex align-items-center mb-3">
-                  <p class="mb-0">
-                    {{$komentar['created_at']}}
-                  </p>
-                </div>
-                <p class="mb-0">
-                  {{$komentar['komentar']}}
-                </p>
-                <div class="mt-2">
-                  @for ($i = 1; $i <= $komentar['ocena']; $i++)
-                    &#9733; 
-                  @endfor
-                </div>
-                @auth
-                @if(Auth::user()->is_admin)
-                <a href="/admin/izbrisi-komentar/{{$komentar['id']}}">Izbrisi</a>
-                @endif
-              @endauth
-                <hr style="width: 100%; margin-top: 1rem;">
-              </div>
-            @endforeach
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
+
+  <div class="user-comments">
+      
+            @foreach ($comments as $komentar)
+                <div class="comment shadow">
+                    <h6 class="">{{$ime[$komentar['id']]}}</h6>
+                    <div class="comment-info">
+                        <p class="">
+                            {{$komentar['created_at']}}
+                        </p>
+                    </div>
+                    <p class="">
+                        {{$komentar['komentar']}}
+                    </p>
+                    <div class="rating">
+                        @for ($i = 1; $i <= $komentar['ocena']; $i++)
+                            &#9733;
+                        @endfor
+                    </div>
+                    @auth
+                        @if(Auth::user()->is_admin)
+                            <a href="/admin/izbrisi-komentar/{{$komentar['id']}}">Izbrisi</a>
+                        @endif
+                    @endauth
+                    
+                </div>
+            @endforeach
+    </div>
+
+
 </section>
+
+
+
 <section>
     <form action="/contact-us" method="post" class="container">
         @csrf

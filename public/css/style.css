@@ -1,8 +1,12 @@
+*{
+    box-sizing: border-box;
 
+}
 body{
      
     font-family: 'Poppins', sans-serif;
 }
+/*search  sekcija*/
 .search-bar{
     background: linear-gradient(rgba(0, 0, 0, 1), transparent), url('/img/search-back.jpg');
     min-height: 90vh;
@@ -65,7 +69,7 @@ body{
     font-style: bold;
 }
 .search-form{
-    height: 15vh;
+    height: 25vh;
 }
 .search-form input { 
     width: 15rem;
@@ -78,8 +82,9 @@ body{
 }
 .form-row { 
     background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 30px 10px 30px 10px;;
-}
+    border-radius: 30px 10px 30px 10px;
+ 
+ }
 .search-form div { 
     padding: 0.5rem;
 }
@@ -90,18 +95,19 @@ body{
 .search-button {
     padding-top: 1rem;
 }
+/*middle sekcija*/
 .middle-section{ 
     background-color: #3C6A6F;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 40vh;
+    min-height: 20vh;
 
 }
 .middle-section h3 { 
     padding-top: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
     color: white;
 }
@@ -112,39 +118,29 @@ body{
     color: white;
 
 }
-.cards{ 
+.benefits{ 
 width: 90%;
 margin: auto;
 display: flex;
-min-height: 40vh;
+min-height: 20vh;
 align-items: center;
 justify-content: space-evenly;
 flex-wrap: wrap;
 
 }
-.cards img  { 
+.benefits img  { 
 height: 50px;
-max-width: 60%;
-margin: 2rem;
+margin: 1rem;
 }
 
-.card-icon { 
+.benefits-icon { 
     border-radius: 55px;
     background: linear-gradient(145deg, #7ba1a6, #68878c);
     box-shadow:  5px 5px 10px #5b777a;
 
 
 }
-.card {
-    width: 300px;
-    height: auto;
-    border-radius: 10px;
-    background: #f3f3f3;
-    position: relative;
-    transition: 0.5s ease-out;
-    overflow: visible;
-
-   }
+/*sekcija ponuda*/
    
    .card-details {
     color: black;
@@ -152,24 +148,9 @@ margin: 2rem;
     gap: .5em;
     display: grid;
     place-content: center;
+    padding: 2rem;
    }
    
-   .card-button {
-    transform: translate(-50%, 125%);
-    width: 60%;
-    border-radius: 1rem;
-    border: none;
-    background-color: #fff;
-    color: #3C6A6F;
-    border: 2px solid #3C6A6F;
-    font-size: 1rem;
-    padding: .5rem 1rem;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    opacity: 0;
-    transition: 0.3s ease-out;
-   }
    
    .text-body {
     color: rgb(134, 134, 134);
@@ -179,10 +160,13 @@ margin: 2rem;
     font-size: 1.5em;
     font-weight: 800;
    }
+
    
    .card:hover {
     border-color: #3C6A6F;
     box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+    opacity: 1;
+    bottom:30px;
    }
    
    .card:hover .card-button {
@@ -192,23 +176,19 @@ margin: 2rem;
     color: #413B2E;
    }
    .container{ 
+    padding: 1rem;
     width: 90%;
-    min-height: 90vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
+    flex-wrap: nowrap;
+    justify-content: center;
     
    }
 
    .card-img-top {
     object-fit: cover;
     border-radius: 10px 10px 0 0; 
-  }
-  .card-img { 
-    width: 100%;
-    height: 30%;
   }
 
   .card-section{ 
@@ -224,3 +204,260 @@ margin: 2rem;
     font-size: small;
   }
   
+  
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card {
+    margin: 1rem 1rem;
+    width: 300px;
+    border-radius: 10px;
+    background: #f3f3f3;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s ease-out;
+}
+
+.card-button {
+    transform: translate(-50%, 0); 
+    width: 70%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #fff;
+    color: #3C6A6F;
+    border: 2px solid #3C6A6F;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    opacity: 0;
+    transition: 0.3s ease-out;
+    text-decoration: none;
+    display: block;
+    justify-content: center;
+}
+
+
+/* sekcija galerije */
+.gallery-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.9), transparent), url('/img/gallery-section.jpg');
+    min-height: 40vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.gallery-section h3 {
+    padding: 1rem;
+    font-size: medium;
+    
+}
+a {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+   }
+   
+   a.gallery-btn {
+    width: 15rem;
+    height: auto;
+   }
+   
+   a.gallery-btn .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #3C6A6F;
+    border-radius: 1.625rem;
+   }
+   
+   a.gallery-btn .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+   }
+   a.gallery-btn .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+   }
+   
+   a.gallery-btn .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+   }
+   
+   a.gallery-btn .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #98c9cf;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+   }
+   
+   a:hover .circle {
+    width: 100%;
+   }
+   
+   a:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+   }
+   
+   a:hover .button-text {
+    color: #fff;
+   }
+
+/*komentar sekcija */
+
+.comment-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leave-comment,
+.comment-card {
+    width: 40%;
+    box-sizing: border-box;
+}
+
+
+.leave-comment {
+    margin: 3rem 2rem;
+    padding: 3rem;
+    box-shadow:  9px 9px 18px #d9d9d9,
+             -9px -9px 18px #e7e7e7;
+    border-radius: 20px;
+}
+
+.comment-card {
+    padding: 10rem;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media (max-width: 768px) {
+    .comment-section {
+        flex-direction: column;
+    }
+
+    .leave-comment,
+    .comment-card {
+        width: 100%;
+    }
+}
+
+button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #3C6A6F;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
+    width: 15rem;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+   }
+   
+   button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+   }
+   
+   button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+   }
+   
+   button:hover span {
+    padding-right: 15px;
+   }
+   
+   button:hover span:after {
+    opacity: 1;
+    right: 0;
+   }
+
+   .user-comments {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 2rem;
+}
+.comment {
+    margin: 1rem;
+    padding: 2rem;
+    width: 20%;
+    height: auto;
+    background: white;
+    border-radius: 10px;
+    transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+   }
+   
+   .shadow {
+    box-shadow:  9px 9px 18px #d9d9d9,
+             -9px -9px 18px #e7e7e7;
+   }
+   
+   
+/*kontakt sekcija*/
+
