@@ -87,25 +87,28 @@
        </div>
       
     </section>
-<section class="offers-cards">
-    <div class="container">
-            @foreach($offers as $index => $offer)
-                    <div class="card">
-                        <img src="{{ Storage::url('images/' . $offer['photo']) }}" class="card-img-top" >
-
-                        <div class="card-body">
-                            <h1>{{$offer->destinacija}}</h1>
-                            <p class="card-text">Datum polaska: {{ $offer->datum_polaska }}</p>
-                            <p class="card-text">Datum povratka: {{ $offer->datum_povratka }}</p>
-                            <p class="card-text">Cena: {{ $offer->cena }}€</p>
-                            <a href="/reserve/{{$offer['id']}}" class="btn btn-primary">Više informacija</a>
-                        </div>
-                    </div>
-                
-            @endforeach
-        </div>
+    <section class="card-section">
+      <h1> Korisnici najviše pretražuju</h1> 
+      <h3> Preporučujemo neodoljive destinacije koje oduzimaju dah i zadovoljavaju različite interese. </h3>
+  <div class="container">
+  @foreach($offers as $index => $offer)
+<div class="card">
+  <div class="card-img">
+<img src="{{ Storage::url('images/' . $offer['photo']) }}" class="card-img-top" >
+  </div>
+<div class="card-details">
+    <p class="text-title">{{$offer->destinacija}}</p>
+    <p class="text-body">Datum polaska: {{ $offer->datum_polaska }}</p>
+    <p class="text-body">Datum povratka: {{ $offer->datum_povratka }}</p>
+    <p class="text-body">Cena: {{ $offer->cena }}€</p>
+                       
+  </div>
+  <a href="/reserve/{{$offer['id']}}" class="card-button">Više informacija</a>
     
-</section>
+</div>
+@endforeach
+        </div>
+  </section>
 <div class="container mt-4">
     <h2>Oceni i ostavi komentar</h2>
     <form action="/oceni" method="post">
