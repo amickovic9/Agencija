@@ -5,6 +5,7 @@ use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\OfferController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\CommentController;
@@ -91,5 +92,7 @@ Route::get('/about',[CommentController::class, 'showComments']);
 //Contact us
 Route::post('/contact-us',[ContactUsController::class,'addContact']);
 Route::get('/admin/contact-us',[AdminController::class,'showContactUs']);
+Route::get('/admin/reply/{contactUs}',[ContactUsController::class,'showReply']);
+Route::post('/admin/send',[EmailController::class,'sendReply']);
 
 

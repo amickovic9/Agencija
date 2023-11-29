@@ -23,5 +23,12 @@ class ContactUsController extends Controller
             return redirect('/login')->with('success', 'Morate se ulogovati prvo!');                
 
     }
+    public function showReply(ContactUs $contactUs){
+        if(Auth::check() && auth()->user()->is_admin){
+             return view('adminReply',['contact'=>$contactUs]);
+
+        }
+        else return redirect('/');
+    }
     
 }
