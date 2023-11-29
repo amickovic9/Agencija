@@ -8,24 +8,28 @@
     <link rel="stylesheet" href="/css/gallery.css">
     <title>Document</title>
 </head>
-    <h1>Galerija</h1>
+<h3 style="text-align: center; color:white;">Galerija</h3>
+
 
 <body class="gallery-page">
-<div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+<div id="image-track"  data-mouse-down-at="0" data-prev-percentage="0">
 @foreach ($photos as $photo)
     <img class="image" src="{{ Storage::url('gallery/' . $photo['photo']) }}" draggable="false" />
 @endforeach
 </div>
-<form action="/gallery/upload" method="POST" enctype="multipart/form-data">
-    @csrf 
-    <input type="file" name="photo" required>      
-    <br>
-    <br>
-    <button type='submit'>Dodajte vasu fotografiju u galeriju</button>
-</form> 
+<div class="buttons-center">
+        <form action="/gallery/upload" method="POST" enctype="multipart/form-data">
+            @csrf 
+            <div style="margin-bottom: 10px;">
+                <input type="file" id="fileInput" name="photo" required style="display: none;">
+                <button type="button" id="uploadBtn" class="btn btn-outline-light">Izaberi sliku</button>
+            </div>     
+            <button type='submit' class="btn btn-outline-light">Klikni da postaviš</button>
+        </form>
+    </div>
+
 
 <script src="/js/gallery.js"></script>
-
-
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
