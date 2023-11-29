@@ -41,6 +41,7 @@
         
     </form>
 </section>
+
 <section class="middle-section" id="ponuda">
     <h3> Šta nudimo? </h3> 
     <h1>Nudimo širok spektar putničkih usluga koje obuhvataju različite vrste prevoza, personalizovane opcije ishrane, autentične kulturne doživljaje i pažljivo odabrane smještajne opcije. Vaše putovanje, bez obzira na destinaciju, prilagođava se vašim željama, obezbeđujući nezaboravna iskustva i bezbrižnu avanturu. </h1>
