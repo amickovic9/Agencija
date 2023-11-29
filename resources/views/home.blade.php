@@ -87,28 +87,25 @@
        </div>
       
     </section>
+<section class="offers-cards">
+    <div class="container">
+            @foreach($offers as $index => $offer)
+                    <div class="card">
+                        <img src="{{ Storage::url('images/' . $offer['photo']) }}" class="card-img-top" >
 
-<div class="container">
-    <div class="row">
-        @foreach($offers as $offer)
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="{{ Storage::url('images/' . $offer['photo']) }}" class="card-img-top" >
-
-
-                    <div class="card-body">
-                        <h1>{{$offer->destinacija}}</h1>
-
-                        <p class="card-text">Datum polaska: {{ $offer->datum_polaska }}</p>
-                        <p class="card-text">Datum povratka: {{ $offer->datum_povratka }}</p>
-                        <p class="card-text">Cena: {{ $offer->cena }}€</p>
-                        <a href="/reserve/{{$offer['id']}}" class="btn btn-primary">Više informacija</a>
+                        <div class="card-body">
+                            <h1>{{$offer->destinacija}}</h1>
+                            <p class="card-text">Datum polaska: {{ $offer->datum_polaska }}</p>
+                            <p class="card-text">Datum povratka: {{ $offer->datum_povratka }}</p>
+                            <p class="card-text">Cena: {{ $offer->cena }}€</p>
+                            <a href="/reserve/{{$offer['id']}}" class="btn btn-primary">Više informacija</a>
+                        </div>
                     </div>
-                </div>
-            </div>
-        @endforeach
-    </div>
-</div>
+                
+            @endforeach
+        </div>
+    
+</section>
 <div class="container mt-4">
     <h2>Oceni i ostavi komentar</h2>
     <form action="/oceni" method="post">
