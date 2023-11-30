@@ -9,13 +9,13 @@
                 <label for="destinacija">Pretraži ponude po destinaciji:</label>
                 <input type="text" class="form-control" id="destinacija" name="destinacija" value="{{ request()->input('destinacija') }}">
             </div>
-            <div class="col-md-4 mb-3">
-                <label for="polazak">Datum polaska od:</label>
-                <input type="date" class="form-control" id="polazak" name="polazak" value="{{ request()->input('polazak') }}">
+            <div>    
+                <label for="polazak">Datum polaska:</label>
+                <input type="date" class="form-control" id="polazak" name="polazak" value="{{ request()->input('polazak') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
             </div>
-            <div class="col-md-4 mb-3">
-                <label for="povratak">Datum povratka do:</label>
-                <input type="date" class="form-control" id="povratak" name="povratak" value="{{ request()->input('povratak') }}">
+            <div>
+                <label for="povratak">Datum povratka:</label>
+                <input type="date" class="form-control" id="povratak" name="povratak" value="{{ request()->input('povratak') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Pretraži</button>
@@ -38,3 +38,4 @@
         @endforeach
     </div>
 </div>
+<script src="/js/date.js"></script>
