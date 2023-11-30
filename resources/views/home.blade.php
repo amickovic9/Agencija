@@ -51,13 +51,13 @@
                 <input type="text" class="form-control" id="destinacija" name="destinacija" value="{{ request()->input('destinacija') }}">
 </div>
 <div>    
-                <label for="polazak">Polazak:</label>
-                <input type="date" class="form-control" id="polazak" name="polazak" value="{{ request()->input('polazak') }}">
+    <label for="polazak">Polazak:</label>
+    <input type="date" class="form-control" id="polazak" name="polazak" value="{{ request()->input('polazak') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
 </div>
 <div>
-                <label for="povratak">Povratak:</label>
-                <input type="date" class="form-control" id="povratak" name="povratak" value="{{ request()->input('povratak') }}">
-</div>  
+    <label for="povratak">Povratak:</label>
+    <input type="date" class="form-control" id="povratak" name="povratak" value="{{ request()->input('povratak') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
+</div>
 <div class="button-container">
     <button type="submit" name="button" class="btn btn-outline-dark">Pretraži</button>  
 </div>
