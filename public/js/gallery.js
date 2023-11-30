@@ -65,10 +65,10 @@ function handleOnMove(e, track, images) {
 function updateImagesOpacityAndPosition(images, nextPercentage) {
   for (const image of images) {
       const rect = image.getBoundingClientRect();
-      const fadeStartLeft = 150;
-      const fadeEndLeft = 100;
-      const fadeStartRight = window.innerWidth - 150;
-      const fadeEndRight = window.innerWidth - 100;
+      const fadeStartLeft = 400;
+      const fadeEndLeft = 200;
+      const fadeStartRight = window.innerWidth - 400;
+      const fadeEndRight = window.innerWidth - 200;
       let opacity = 1;
 
       if (rect.left < fadeStartLeft) {
