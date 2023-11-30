@@ -25,37 +25,37 @@ class PhotoController extends Controller
         return view('gallery',['photos' => $photosArray]);
     }
 
-public function upload(Request $request){
-    if(Auth::check()){
-        $user_id = auth()->id();
+    public function upload(Request $request){
+        if(Auth::check()){
+            $user_id = auth()->id();
 
-        if ($request->hasFile('photo')) {
-            $image = $request->file('photo');
-            $extension = $image->getClientOriginalExtension();
-            
-            $imageName = time() . '.' . $extension;
+            if ($request->hasFile('photo')) {
+                $image = $request->file('photo');
+                $extension = $image->getClientOriginalExtension();
+                
+                $imageName = time() . '.' . $extension;
 
-            // Čitanje slike i prilagođavanje dimenzija
-            $resizedImage = Image::make($image)->resize(800, null, function ($constraint) {
-                $constraint->aspectRatio();
-            })->encode($extension);
+                // Čitanje slike i prilagođavanje dimenzija
+                $resizedImage = Image::make($image)->resize(800, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->encode($extension);
 
-            // Čuvanje prilagođene slike
-            $path = 'public/gallery/' . $imageName;
-            Storage::put($path, $resizedImage->__toString());
+                // Čuvanje prilagođene slike
+                $path = 'public/gallery/' . $imageName;
+                Storage::put($path, $resizedImage->__toString());
 
-            $photo = new Photo;
-            $photo->user_id = $user_id;
-            $photo->photo = $imageName;
-            $photo->save();
+                $photo = new Photo;
+                $photo->user_id = $user_id;
+                $photo->photo = $imageName;
+                $photo->save();
 
-             return redirect('/gallery')->with('success', 'Slika je uspesno upload-ovana, nas tim proverava da li je prikladna za galeriju!');                
+                return redirect('/gallery')->with('success', 'Slika je uspesno upload-ovana, nas tim proverava da li je prikladna za galeriju!');                
 
-        } 
+            } 
+        }
+        return redirect('/login')->with('success', 'Morate se ulogovati prvo!');                
+
     }
-     return redirect('/login')->with('success', 'Morate se ulogovati prvo!');                
-
-}
 
 
     public function showUploadedView(){
