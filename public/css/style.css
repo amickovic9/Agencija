@@ -461,3 +461,73 @@ button {
    
    
 /*kontakt sekcija*/
+.contact-text { 
+    min-height: 20vh;
+    background: #3C6A6F;
+    justify-content: center;
+    color:white;
+   
+    
+
+}
+.contact-text h3 { 
+    font-size: medium;
+    padding: 2rem;
+}
+.h1 { 
+    font-size: 3rem;
+    padding-left: 2rem;
+}
+.scroller {
+    height: 3em;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    width: 15em;
+  }
+  .scroller > span {
+    position: absolute;
+    top: 0;
+    animation: slide 5s infinite;
+    font-weight: bold;
+  }
+  @keyframes slide {
+    0% {
+      top: 0;
+    }
+    25% {
+      top: -1.2em;
+    }
+    50% {
+      top: -2.4em;
+    }
+    75% {
+      top: -3.6em;
+    }
+  }
+
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-container {
+    width: 45%; 
+    padding-right: 2rem;
+    padding-top: 2rem;
+}
+
+.google-map {
+    width: 60%;
+    height: 500px; 
+    padding-left: 2rem;
+    padding-top: 2rem;
+    
+}
+iframe { 
+    border: none;
+    box-shadow:  9px 9px 18px #d9d9d9,
+             -9px -9px 18px #e7e7e7;
+    border-radius: 20px;
+}

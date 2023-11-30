@@ -183,28 +183,46 @@
 
 
 </section>
+<section class="contact-text"> 
+<body>
+      <div class="scroller">
+        <span class="h1">
+          Pozovite<br/>
+          Pišite<br/>
+          Posetite nas<br/>
+        </span>
+      </div>
+</body>
+  <h3> Vaše pitanje, sugestija ili pohvala su nam od velike važnosti. Slobodno nas kontaktirajte putem donje kontakt forme. Takodje možete da nas posetite u našoj kancelariji.
+  </section> 
 
 
-
-<section>
-    <form action="/contact-us" method="post" class="container">
-        @csrf
-        <h1>Contact us</h1>
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+<section class="contact-section">
+  <div class="google-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2869.1178398867464!2d20.90285717493987!3d44.018959328699786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4757213a3f69a34f%3A0x9acc30ed949db9b7!2z0KTQsNC60YPQu9GC0LXRgiDQuNC90LbQtdGa0LXRgNGB0LrQuNGFINC90LDRg9C60LAg0KPQvdC40LLQtdGA0LfQuNGC0LXRgtCwINGDINCa0YDQsNCz0YPRmNC10LLRhtGD!5e0!3m2!1ssr!2srs!4v1701358880064!5m2!1ssr!2srs" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="600" height="450"></iframe>
+    </div>
+    <div class="contact-container">
+        <form action="/contact-us" method="post">
+            @csrf
+            <h1>Kontakt</h1>
+            <div class="form-group">
+                <label for="name">Ime:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Poruka:</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class=""><span>Pošalji poruku</span></button>
+        </form>
+    </div>
+    
 </section>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
