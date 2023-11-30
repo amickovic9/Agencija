@@ -66,9 +66,9 @@ function updateImagesOpacityAndPosition(images, nextPercentage) {
   for (const image of images) {
       const rect = image.getBoundingClientRect();
       const fadeStartLeft = 400;
-      const fadeEndLeft = 200;
+      const fadeEndLeft = 50;
       const fadeStartRight = window.innerWidth - 400;
-      const fadeEndRight = window.innerWidth - 200;
+      const fadeEndRight = window.innerWidth - 50;
       let opacity = 1;
 
       if (rect.left < fadeStartLeft) {
