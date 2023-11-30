@@ -1,0 +1,152 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    justify-content: space-between;
+}
+/*rezervacija forma */
+.offer-details {
+    
+    margin: 3rem 2rem;
+    padding: 3rem;
+    box-shadow:  9px 9px 18px #d9d9d9,
+             -9px -9px 18px #e7e7e7;
+    border-radius: 20px;
+    flex: 1;
+}
+
+.offer-details h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.offer-details img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.offer-details p {
+    margin-bottom: 8px;
+}
+
+.reservation-form {
+    flex: 1;
+}
+
+.reservation-form h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.reservation-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+
+.input {
+    max-width: 100%;
+    background-color: #ffffff;
+    color: #242424;
+    padding: .15rem .5rem;
+    min-height: 40px;
+    border-radius: 4px;
+    outline: none;
+    border: 0.5px solid #73969B;
+    line-height: 2.15;
+    box-shadow: 0px 5px 15px -10px;
+  }
+  
+  .input:focus {
+    border-bottom: 2px solid #3C6A6F;
+    border-radius: 4px 4px 2px 2px;
+  }
+  
+  .input:hover {
+    outline: 1px solid lightgrey;
+  }
+
+  .button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #3C6A6F;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    max-width: 100%;
+    transition: all 0.5s;
+    cursor: pointer;
+   }
+   
+   .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+   }
+   
+   .button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+   }
+   
+   .button:hover span {
+    padding-right: 15px;
+   }
+   
+   .button:hover span:after {
+    opacity: 1;
+    right: 0;
+   }
+
+/* detalji ponude */
+.offer-details {
+    
+    margin: 0rem 2rem;
+    padding: 3rem;
+    box-shadow:  20px 20px 60px #dcdcdc,
+             -20px -20px 60px #e4e4e4;
+    border-radius: 20px;
+    flex: 1;
+}
+
+.offer-details h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.offer-details img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.offer-details p {
+    margin-bottom: 8px;
+}
+
+

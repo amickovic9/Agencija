@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 <style>
     .rating {
       unicode-bidi: bidi-override;
@@ -187,9 +187,9 @@
 <body>
       <div class="scroller">
         <span class="h1">
-          Pozovite<br/>
           Pišite<br/>
-          Posetite nas<br/>
+          Pozovite<br/>
+          Putujte<br/>
         </span>
       </div>
 </body>
