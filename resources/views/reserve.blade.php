@@ -13,7 +13,7 @@
 <body>
 
     @include('navbar')
-
+    
     <div class="container">
         <div class="offer-details">
             <h4>{{$offer['destinacija']}}</h4>

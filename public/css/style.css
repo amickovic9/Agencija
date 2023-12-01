@@ -6,6 +6,15 @@ body{
      
     font-family: 'Poppins', sans-serif;
 }
+body h3 { 
+    font-size: medium;
+    text-align: center;
+    padding-top: 1rem;
+}
+body h1 { 
+    padding-top: 1rem;
+    text-align: center;
+}
 /*search  sekcija*/
 .search-bar{
     background: linear-gradient(rgba(0, 0, 0, 1), transparent), url('/img/search-back.jpg');
@@ -175,21 +184,9 @@ margin: 1rem;
     opacity: 1;
 }
 
-   .container{ 
-    padding: 1rem;
-    width: 90%;
-    min-height: 50vh;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    
-   }
 
-   .card-img-top {
-    object-fit: cover;
-    border-radius: 10px 10px 0 0; 
-  }
+
+   
 
   .card-section{ 
     padding-top: 2rem;
@@ -203,13 +200,55 @@ margin: 1rem;
   .card-section h3 { 
     font-size: small;
   }
-  
-  
+  .dugme {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #3C6A6F;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
+    width: 15rem;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin:3rem;
+   }
+   .dugme:hover { 
+    text-decoration: none;
+    color: white;
+   }
+   
+   .dugme span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+   }
+   
+   .dugme span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+   }
+   
+   .dugme:hover span {
+    padding-right: 15px;
+   }
+   
+   .dugme:hover span:after {
+    opacity: 1;
+    right: 0;
+   }
 
 .card-img {
     width: 100%;
     height: 200px;
     overflow: hidden;
+    object-fit: cover;
 }
 
 .card-img-top {
@@ -246,6 +285,56 @@ margin: 1rem;
     text-decoration: none;
     display: block;
     justify-content: center;
+}
+.container {
+    max-height: 100vh;
+    width: 90%;
+    margin: auto;
+    font-family: sans-serif;
+    display: flex; 
+    justify-content: space-around; 
+    overflow: hidden;
+
+    z-index: 0;
+}
+.offer-slide {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.offer-c {
+    flex: 0 0 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: flex 0.3s ease; 
+  
+}
+
+
+.offer-c:hover {
+    flex: 2;
+    overflow: visible;
+    z-index:auto;
+
+}
+
+.card {
+    width: 100%; 
+    height: 50vh;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    margin: 3rem 0rem;
+   
+    
+
+}
+
+.offer-c:hover .card {
+    overflow: visible;
+    transform: scale(1.1);
 }
 
 
@@ -459,6 +548,20 @@ button {
              -9px -9px 18px #e7e7e7;
    }
    
+   button#nextBtn {
+    background-color: #5b777a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    width: 3rem;
+    height: 28.89vh;
+    margin-top: 3rem;
+    margin-right: 2rem;
+}
    
 /*kontakt sekcija*/
 .contact-text { 

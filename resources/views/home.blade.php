@@ -88,27 +88,31 @@
        </div>
       
     </section>
-    <section class="card-section">
-      <h1> Korisnici najviše pretražuju</h1> 
+      <h1 > Korisnici najviše pretražuju</h1> 
       <h3> Preporučujemo neodoljive destinacije koje oduzimaju dah i zadovoljavaju različite interese. </h3>
-  <div class="container">
-  @foreach($offers as $index => $offer)
-<div class="card">
-  <div class="card-img">
-<img src="{{ Storage::url('images/' . $offer['photo']) }}" class="card-img-top" >
-  </div>
-<div class="card-details">
-    <p class="text-title">{{$offer->destinacija}}</p>
-    <p class="text-body">Datum polaska: {{ $offer->datum_polaska }}</p>
-    <p class="text-body">Datum povratka: {{ $offer->datum_povratka }}</p>
-    <p class="text-body">Cena: {{ $offer->cena }}€</p>
-                       
-  </div>
-  <a href="/reserve/{{$offer['id']}}" class="card-button">Više informacija</a>
-    
+    <section class="card-section">
+      <div class="container">
+   
+    <div class="offer-slide">
+        @foreach($offers as $index => $offer)
+            <div class="offer-c">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="{{ Storage::url('images/' . $offer['photo']) }}" class="card-img-top">
+                    </div>
+                    <div class="card-details">
+                        <p class="text-title">{{$offer->destinacija}}</p>
+                        <p class="text-body">Datum polaska: {{ $offer->datum_polaska }}</p>
+                        <p class="text-body">Datum povratka: {{ $offer->datum_povratka }}</p>
+                        <p class="text-body">Cena: {{ $offer->cena }}€</p>
+                    </div>
+                    <a href="/reserve/{{$offer['id']}}" class="card-button">Više informacija</a>
+                </div>
+            </div>
+        @endforeach
+    </div>
 </div>
-@endforeach
-        </div>
+<a class="dugme" href="/offers"><span>Cela ponuda<span></a>
   </section>
   <section class="gallery-section">
       
@@ -180,7 +184,7 @@
                 </div>
             @endforeach
     </div>
-
+    <button id="nextBtn">>></button>
 
 </section>
 <section class="contact-text"> 
@@ -222,6 +226,34 @@
     </div>
     
 </section>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var currentIndex = 0;
+        var commentCards = $('.comment');
+
+        function sortByCreatedAt(comments) {
+            return comments.sort(function(a, b) {
+                return new Date(b.created_at) - new Date(a.created_at);
+            });
+        }
+
+        function showCard(index) {
+            commentCards.hide();
+            var sortedComments = sortByCreatedAt(commentCards.toArray());
+            for (var i = index; i < index + 3; i++) {
+                $(sortedComments[i % commentCards.length]).show();
+            }
+        }
+
+        showCard(currentIndex);
+
+        $('#nextBtn').on('click', function(){
+            currentIndex = (currentIndex + 1) % commentCards.length;
+            showCard(currentIndex);
+        });
+    });
+</script>
 
 <script src="/js/date.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -232,3 +264,5 @@
     
 <!DOCTYPE html>
 <html lang="en">
+
+
