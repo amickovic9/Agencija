@@ -102,9 +102,9 @@
                     </div>
                     <div class="card-details">
                         <p class="text-title">{{$offer->destinacija}}</p>
-                        <p class="text-body">Datum polaska: {{ $offer->datum_polaska }}</p>
-                        <p class="text-body">Datum povratka: {{ $offer->datum_povratka }}</p>
-                        <p class="text-body">Cena: {{ $offer->cena }}€</p>
+                        <p class="text-body">Polazak: {{ $offer->datum_polaska }}</p>
+                        <p class="text-body">Povratak: {{ $offer->datum_povratka }}</p>
+                        <p class="text-body text-body1"><b>Cena: {{ $offer->cena }}€</b></p>
                     </div>
                     <a href="/reserve/{{$offer['id']}}" class="card-button">Više informacija</a>
                 </div>

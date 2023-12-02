@@ -41,6 +41,8 @@ body h1 {
     padding-top: 10px; 
     padding-bottom: 30px !important; 
 }
+   
+
 
 
 .button-container {
@@ -153,21 +155,27 @@ margin: 1rem;
    
    .card-details {
     color: black;
-    height: 100%;
-    gap: .5em;
+    height: 50%;
+    gap: .3em;
     display: grid;
     place-content: center;
-    padding: 2rem;
+    padding: 0.5rem;
    }
    
    
    .text-body {
-    color: rgb(134, 134, 134);
+    color: #3C6A6F;
+   }
+   .text-body1 {
+    color: #3C6A6F;
+    font-size: larger;
    }
 
    .text-title {
     font-size: 1.5em;
     font-weight: 800;
+    color: #3C6A6F;
+    padding-top: 0;
    }
 
    
@@ -180,8 +188,23 @@ margin: 1rem;
 
    
 .card:hover .card-button {
-    transform: translate(-50%, -1.5rem);
+    transform: translate(-50%, -10rem);
     opacity: 1;
+    text-align: center;
+    text-decoration: none;
+    color: #3C6A6F;
+}
+.card:hover .text-title { 
+    transform: translate(-80%,-7.5rem);
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+.card:hover .card-img { 
+    filter: blur(3px);
+}
+.card:hover .text-body { 
+    transform: translateX(-80%);
 }
 
 
@@ -213,6 +236,7 @@ margin: 1rem;
     transition: all 0.5s;
     cursor: pointer;
     margin:3rem;
+    text-decoration: none;
    }
    .dugme:hover { 
     text-decoration: none;

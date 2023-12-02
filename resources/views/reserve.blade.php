@@ -15,15 +15,22 @@
     @include('navbar')
     
     <div class="container">
-        <div class="offer-details">
-            <h4>{{$offer['destinacija']}}</h4>
-            <img src="{{ Storage::url('images/' . $offer['photo']) }}" alt="Offer Image" class="offer-img">
-            <p>{{$offer['opis']}}</p>
-            <p>Datum polaska: {{$offer['datum_polaska']}}</p>
-            <p>Datum povratka: {{$offer['datum_povratka']}}</p>
-            <p>Preostali broj slobodnih mesta: {{$offer['broj_mesta']}}</p>
-            <p>Cena: {{$offer['cena']}}</p>
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <h4 class="title">{{$offer['destinacija']}}</h4>
+                <img src="{{ Storage::url('images/' . $offer['photo']) }}" alt="Offer Image" class="offer-img">
+            </div>
+            <div class="flip-card-back">
+                <p class="description">{{$offer['opis']}}</p>
+                <p>Datum polaska: {{$offer['datum_polaska']}}</p>
+                <p>Datum povratka: {{$offer['datum_povratka']}}</p>
+                <p>Preostali broj slobodnih mesta: {{$offer['broj_mesta']}}</p>
+                <p class="price">Cena: {{$offer['cena']}}€</p>
+            </div>
         </div>
+    </div>
+
 
         <div class="reservation-form">
             <form action="/reserve/{{$offer['id']}}" method="post">
@@ -39,6 +46,8 @@
             </form>
         </div>
     </div>
-
+<section class="middle"> 
+   <h1> Pogledajte i ostale destinacije koje ljudi takodje pretražuju <h1>
+</section> 
 </body>
 </html>

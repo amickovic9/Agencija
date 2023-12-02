@@ -122,42 +122,77 @@ form {
    }
 
 /* detalji ponude */
-.offer-details {
-    
-    margin: 0rem 2rem;
-    padding: 3rem;
-    box-shadow:  20px 20px 60px #dcdcdc,
-             -20px -20px 60px #e4e4e4;
-    border-radius: 20px;
-    flex: 1;
+.flip-card {
+    width: 40%;
+    height: 80vh;
+    perspective: 1000px;
+    font-family: sans-serif;
+    margin-top: 2rem;
 }
 
-.offer-details h1 {
+.title {
     font-size: 3em;
-    margin-bottom: 10px;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; 
+    color: white;
 }
-
-.offer-details img {
+.offer-img {
     width: 100%;
-    max-width: 300px;
-    height: auto;
-    margin-bottom: 10px;
+    height: 100%;
     object-fit: cover;
+    border-radius: 1rem;
 }
 
-.offer-details p {
-    margin-bottom: 8px;
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 }
 
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
 
+.flip-card-front,
+.flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid #3c6a6f;
+    border-radius: 1rem;
+    transform-origin:center;
+}
 
+.flip-card-front {
+    color: #3c6a6f;
+    z-index: 1; 
+}
 
+.flip-card-back {
+    background: linear-gradient(to bottom, #73969b, #65685e);
+    color: white;
+    transform: rotateY(180deg);
+}
 
+.description {
+    font-size: 1em;
+}
 
-
-
-
-
-
-
-
+.price {
+    font-size: 1.2em;
+}
