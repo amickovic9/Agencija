@@ -1,45 +1,57 @@
-@include('navbar')
 
-<div class="container mt-5">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kreiraj ponudu</title>
+    <link rel="stylesheet" type="text/css" href="/css/makeoffer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+@include('navbar')
+<div class="">
     <h1>Oglasi ponudu</h1>
     <form action="/create-offer" method="POST" enctype="multipart/form-data" class="mt-4">
         @csrf 
+        <div class="coolinput">
+            <label for="destinacija" class="text">Destinacija:</label>
+            <input type="text" placeholder="" name="destinacija" class="input">
+        </div>
+        <div class="coolinput">
+            <label for="opis" class="text">Opis:</label>
+            <textarea type="form-control" name="opis" class="input" required></textarea>
+        </div>
+        <div class="image">
+    <input type="file" class="form-control-file" name="photo" accept="image/*">
+</div>
 
-        <div class="form-group">
-            <label for="destinacija">Destinacija:</label>
-            <input type="text" class="form-control" name="destinacija" required>
+        <div class="input-box">
+            <label for="datum_polaska" class="text1">Datum polaska</label>
+            <input required="" placeholder="Datum polaska" name="datum_polaska" type="date">
+          </div>
+      </div>
+      <div class="input-box">
+            <label for="datum_povratka" class="text1">Datum povratka</label>
+            <input required="" placeholder="Datum povratka" name="datum_povratka" type="date">
+          </div>
+      </div>
+        <div class="coolinput">
+            <label for="broj_mesta" class="text">Broj mesta:</label>
+            <input type="number" name="broj_mesta" class="input" required>
         </div>
 
-        <div class="form-group mt-3">
-            <label for="photo">Fotografija:</label>
-            <input type="file" class="form-control-file" name="photo" accept="image/*">
+        <div class="coolinput">
+            <label for="cena" class="text">Cena:</label>
+            <input type="number" class="input" name="cena" required>
         </div>
 
-        <div class="form-group mt-3">
-            <label for="opis">Opis:</label>
-            <textarea class="form-control" name="opis" required></textarea>
-        </div>
-
-        <div class="form-group mt-3">
-            <label for="datum_polaska">Datum polaska:</label>
-            <input type="date" class="form-control" name="datum_polaska" required>
-        </div>
-
-        <div class="form-group mt-3">
-            <label for="datum_povratka">Datum povratka:</label>
-            <input type="date" class="form-control" name="datum_povratka" required>
-        </div>
-
-        <div class="form-group mt-3">
-            <label for="broj_mesta">Broj mesta:</label>
-            <input type="number" class="form-control" name="broj_mesta" required>
-        </div>
-
-        <div class="form-group mt-3">
-            <label for="cena">Cena:</label>
-            <input type="number" class="form-control" name="cena" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary mt-3">Sačuvaj ponudu</button>
+        <button type="submit" class="comm-btn">
+        <span>Objavi ponudu</span></button>
     </form>
 </div>
+</body>
+</html>

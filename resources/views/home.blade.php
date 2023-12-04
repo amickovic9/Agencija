@@ -58,8 +58,8 @@
     <label for="povratak">Povratak:</label>
     <input type="date" class="form-control" id="povratak" name="povratak" value="{{ request()->input('povratak') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
 </div>
-<div class="button-container">
-    <button type="submit" name="button" class="btn btn-outline-dark">Pretraži</button>  
+<div class="">
+    <button type="submit" name="button" class="comm-btn"><span>Pretraži<span></button>  
 </div>
 
 </div>

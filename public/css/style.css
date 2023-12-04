@@ -26,7 +26,7 @@ body h1 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    color: white;
+    color: #3C6A6F;
     
     
 }
@@ -76,8 +76,8 @@ body h1 {
     color: #73969B;
 }
 .form-row label { 
-    color: white;
-    font-style: bold;
+    color: #3C6A6F;
+    font-weight: 800;
 }
 .search-form{
     height: 25vh;
