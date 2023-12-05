@@ -141,7 +141,11 @@ button[type="submit"] {
 .btn-outline-dark {
     border-radius: 1vh; 
     font-size: 1.4vh; 
-    padding: 1vh 2.3vh; 
+    padding: 10px 15px; 
+    min-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #particle-background {
@@ -157,14 +161,50 @@ h1, h3 {
     animation: 1.2s ease-out 0s 1 slideInFromLeft;
 }
 
-@media (max-width: 600px) {
+.custom-card {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+@media (max-width: 1175px) {
+    .custom-card {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+@media (max-width: 925px) {
+    .custom-card {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+}
+
+@media (max-width: 633px) {
     .custom-card {
         flex: 0 0 100%;
         max-width: 100%;
     }
+}
+
+@media (max-width: 768px) {
+    .form-row .col-md-4, .form-row .col {
+        max-width: 50%;
+        flex: 0 0 50%;
+    }
+}
+
+@media (max-width: 576px) {
     .form-row .col-md-4, .form-row .col {
         max-width: 100%;
         flex: 0 0 100%;
+    }
+}
+@media (max-width: 576px) {
+    .btn-outline-dark {
+        padding: 8px 10px; 
+        font-size: 14px;
+        min-width: 100px;
     }
 }
 img {
