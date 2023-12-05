@@ -17,6 +17,17 @@
                 <label for="povratak">Datum povratka:</label>
                 <input type="date" class="form-control" id="povratak" name="povratak" value="{{ request()->input('povratak') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
             </div>
+            <div>
+                <label for="sort">Sortiraj po:</label>
+                    <select id="sort" name="sort">
+                        <option value="newest" {{ request('sort') == 'newest' ? 'selected' : '' }}>Najnovije</option>
+                        <option value="priceAsc" {{ request('sort') == 'priceAsc' ? 'selected' : '' }}>Cena - rastuće</option>
+                        <option value="priceDesc" {{ request('sort') == 'priceDesc' ? 'selected' : '' }}>Cena - opadajuće</option>
+                        <option value="dateAsc" {{ request('sort') == 'dateAsc' ? 'selected' : '' }}>Datum - rastuće</option>
+                        <option value="dateDesc" {{ request('sort') == 'dateDesc' ? 'selected' : '' }}>Datum - opadajuće</option>
+                    </select>
+
+            </div>
         </div>
         <button type="submit" class="btn btn-primary">Pretraži</button>
     </form>

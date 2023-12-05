@@ -48,6 +48,22 @@
     </div>
 <section class="middle"> 
    <h1> Pogledajte i ostale destinacije koje ljudi takodje pretražuju <h1>
+    <div class="row row-cols-1 row-cols-md-3">
+        @foreach ($moreOffers as $mOffer)
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <img src="{{ Storage::url('images/' . $mOffer['photo']) }}" class="card-img-top" >
+                    <div class="card-body">
+                        <h4 class="card-title">{{$mOffer['destinacija']}}</h4>
+                        <p class="card-text">Datum polaska: {{$mOffer['datum_polaska']}}</p>
+                        <p class="card-text">Datum povratka: {{$mOffer['datum_povratka']}}</p>
+                        <p class="card-text">Cena: {{$mOffer['cena']}} €</p>
+                        <a href="/reserve/{{$mOffer['id']}}" class="btn btn-primary">Više</a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
 </section> 
 </body>
 </html>

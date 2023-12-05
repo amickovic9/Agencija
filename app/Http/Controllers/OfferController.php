@@ -97,12 +97,16 @@ class OfferController extends Controller
         
     public function showOffer(Offer $offer){
         $existingReservations = Reservation::where('offer_id', $offer['id'])->sum('broj_osoba');
-
+        $moreOffers  = Offer::withCount('reservations') 
+            ->orderByDesc('reservations_count') 
+            ->take(5)
+            ->get();
         $offer['broj_mesta']-=$existingReservations;
-            return view('reserve',['offer' =>$offer]);
+            return view('reserve',['offer' =>$offer,'moreOffers' => $moreOffers]);
     }
     public function showReservations(Offer $offer){
         $reservations = $offer->reservations()->get();
+        
         return view('reservations',['reservations' => $reservations,'offer' =>$offer]);
     }
     public function offersSearch(Request $request){
@@ -118,18 +122,35 @@ class OfferController extends Controller
     if ($request->filled('povratak')) {
         $query->whereDate('datum_povratka', '<=', $request->input('povratak'));
     }
-
+    if ($request->filled('sort')) {
+        $sortOption = $request->input('sort');
+        if ($sortOption === 'priceAsc') {
+            $query->orderBy('cena', 'asc');
+        } elseif ($sortOption === 'priceDesc') {
+            $query->orderBy('cena', 'desc');
+        } elseif ($sortOption === 'dateAsc') {
+            $query->orderBy('datum_polaska', 'asc');
+        } elseif ($sortOption === 'dateDesc') {
+            $query->orderBy('datum_polaska', 'desc');
+        }
+    }
     $offers = $query->get();
     return view('offers', ['offers' => $offers]);
 
     }
-    public function showFiveOffers(){
-        $ponude = Offer::orderBy('created_at', 'desc')->take(5)->get();
+    public function showFiveOffers()
+    {
+        $ponude = Offer::withCount('reservations') 
+            ->orderByDesc('reservations_count') 
+            ->take(5)
+            ->get();
+
         $comments = Comment::orderBy('created_at', 'desc')->get();
-        foreach ($comments as $comment){
+        foreach ($comments as $comment) {
             $user = User::where('id', $comment->user_id)->first(); 
             $ime[$comment->id] = $user->name;
         }
-        return view('home',['offers' =>$ponude,'comments' => $comments, 'ime' => $ime]);
+
+        return view('home', ['offers' => $ponude, 'comments' => $comments, 'ime' => $ime]);
     }
 }
