@@ -12,9 +12,6 @@
     
 }
 
-body{
-    background-color: #033d09;
-}
 .card-body {
     display: flex;
     flex-direction: column;
