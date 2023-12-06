@@ -21,13 +21,13 @@
         </div>
 
         <div class="form-group mt-3">
-            <label for="datum_polaska">Datum polaska:</label>
-            <input type="date" class="form-control" name="datum_polaska" required>
+                <label for="polazak">Datum polaska:</label>
+                    <input type="date" class="form-control" id="polazak" name="polazak" required value="{{ request()->input('polazak') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
         </div>
 
         <div class="form-group mt-3">
-            <label for="datum_povratka">Datum povratka:</label>
-            <input type="date" class="form-control" name="datum_povratka" required>
+            <label for="povratak">Datum povratka:</label>
+                <input type="date" class="form-control" id="povratak" name="povratak" required value="{{ request()->input('povratak') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
         </div>
 
         <div class="form-group mt-3">
