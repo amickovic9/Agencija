@@ -62,13 +62,3 @@
   </button>
 </form>
 </div>
-<script> 
-function updateFileName() {
-  var input = document.getElementById('uploadImage');
-  var fileName = input.files[0] ? input.files[0].name : 'Nema izabrane slike';
-  document.getElementById('selectedFileName').innerText = fileName;
-}
-</script>
-</body>
-
-</html>
