@@ -43,3 +43,4 @@
         <button type="submit" class="btn btn-primary mt-3">Sačuvaj ponudu</button>
     </form>
 </div>
+<script src="/js/date.js"></script>
