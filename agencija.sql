@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 28, 2023 at 01:03 PM
+-- Generation Time: Dec 06, 2023 at 06:22 PM
 -- Server version: 8.0.31
 -- PHP Version: 7.4.33
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `comments`
@@ -44,7 +44,9 @@ CREATE TABLE IF NOT EXISTS `comments` (
 
 INSERT INTO `comments` (`id`, `user_id`, `komentar`, `ocena`, `created_at`, `updated_at`) VALUES
 (1, 4, 'Sve je super!', 5, '2023-11-21 15:25:56', '2023-11-21 15:25:56'),
-(5, 18, 'fsafs', 4, '2023-11-27 12:51:30', '2023-11-27 12:51:30');
+(8, 18, 'topina', 5, '2023-11-29 20:29:49', '2023-11-29 20:29:49'),
+(9, 18, 'o dadadada', 1, '2023-11-29 20:29:59', '2023-11-29 20:29:59'),
+(10, 18, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 5, '2023-11-29 20:30:27', '2023-11-29 20:30:27');
 
 -- --------------------------------------------------------
 
@@ -63,14 +65,7 @@ CREATE TABLE IF NOT EXISTS `contact_us` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `contact_us`
---
-
-INSERT INTO `contact_us` (`id`, `user_id`, `name`, `email`, `message`, `is_handled`, `created_at`, `updated_at`) VALUES
-(1, 18, 'Aleksandar', 'proba@gmail.com', 'Proba', 0, '2023-11-28 11:35:38', '2023-11-28 11:35:38');
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -144,13 +139,16 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `offers_user_id_foreign` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `offers`
 --
 
 INSERT INTO `offers` (`id`, `user_id`, `destinacija`, `opis`, `photo`, `datum_polaska`, `datum_povratka`, `broj_mesta`, `cena`, `created_at`, `updated_at`) VALUES
+(37, 18, 'Kragujevac', 'fsafsafas', '1701358119.png', '2023-11-27', '2023-12-09', 124, 124, '2023-11-30 14:28:39', '2023-11-30 14:28:39'),
+(35, 18, 'Kragujevvac', 'Ideemo', '1701358065.png', '2023-11-29', '2023-11-24', 120, 300, '2023-11-30 14:27:45', '2023-11-30 14:27:45'),
+(36, 18, 'Kragujevac', 'fsafsafsa', '1701358094.png', '2023-11-24', '2023-11-17', 150, 3, '2023-11-30 14:28:14', '2023-11-30 14:28:14'),
 (34, 18, 'dsadsa', 'safsfa', '1701093068.jpeg', '2222-02-22', '2222-02-22', 222, 2, '2023-11-27 12:51:08', '2023-11-27 12:51:08'),
 (33, 18, 'sfafsafsafa', 'fsafsa', '1701092988.jpg', '2023-11-17', '2023-11-23', 12, 12, '2023-11-27 12:49:48', '2023-11-27 12:49:48'),
 (31, 3, 'Beograd', 'ye', '1700579533.png', '2023-11-22', '2023-11-18', 121, 120, '2023-11-21 14:12:13', '2023-11-21 14:12:13');
@@ -207,7 +205,7 @@ CREATE TABLE IF NOT EXISTS `photos` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `photos`
@@ -216,7 +214,12 @@ CREATE TABLE IF NOT EXISTS `photos` (
 INSERT INTO `photos` (`id`, `user_id`, `photo`, `is_allowed`, `is_checked`, `created_at`, `updated_at`) VALUES
 (26, 18, '1701172662.jpg', 1, 1, '2023-11-28 10:57:43', '2023-11-28 10:57:47'),
 (25, 18, '1701172657.jpeg', 1, 1, '2023-11-28 10:57:38', '2023-11-28 10:57:49'),
-(24, 18, '1701128374.jpeg', 1, 1, '2023-11-27 22:39:34', '2023-11-28 11:41:46');
+(24, 18, '1701128374.jpeg', 1, 1, '2023-11-27 22:39:34', '2023-11-28 11:41:46'),
+(27, 18, '1701296292.jpeg', 1, 1, '2023-11-29 21:18:13', '2023-11-30 12:08:40'),
+(34, 18, '1701350277.png', 1, 1, '2023-11-30 12:17:57', '2023-11-30 12:18:05'),
+(33, 18, '1701350221.jpeg', 1, 1, '2023-11-30 12:17:01', '2023-11-30 12:17:10'),
+(35, 18, '1701350332.gif', 1, 1, '2023-11-30 12:18:52', '2023-11-30 12:18:59'),
+(36, 18, '1701350577.png', 1, 1, '2023-11-30 12:22:58', '2023-11-30 12:23:03');
 
 -- --------------------------------------------------------
 
@@ -237,14 +240,15 @@ CREATE TABLE IF NOT EXISTS `reservations` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `reservations`
 --
 
 INSERT INTO `reservations` (`id`, `user_id`, `offer_id`, `user_name`, `email`, `broj_telefona`, `broj_osoba`, `napomena`, `created_at`, `updated_at`) VALUES
-(12, 3, 31, 'Aleksandar Mickovic', 'amickovic9@gmail.com', '066101412', 12, 'Nema napomene', '2023-11-21 14:22:31', '2023-11-21 14:22:31');
+(12, 3, 31, 'Aleksandar Mickovic', 'amickovic9@gmail.com', '066101412', 12, 'Nema napomene', '2023-11-21 14:22:31', '2023-11-21 14:22:31'),
+(14, 18, 34, 'a', 'amickovic9@gmail.com', '15644', 222, 'Nema napomene', '2023-12-05 12:10:56', '2023-12-05 12:10:56');
 
 -- --------------------------------------------------------
 

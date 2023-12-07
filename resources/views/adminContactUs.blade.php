@@ -1,4 +1,15 @@
-@include('navbar')
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <link href="/css/admin/photos.css" rel="stylesheet">
+</head>
+
+<body>
+@include('adminnavbar')
+<main>
 <h1>Upravljanje Contact us </h1>
 @if($contacts->isEmpty())
     <p>Nema neodgovorenih pitanja</p>
@@ -20,3 +31,7 @@
     </div>
 </div>
 @endif
+</main>
+</body>
+
+</html>

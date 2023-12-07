@@ -159,30 +159,46 @@
 
   <div class="user-comments">
       
-            @foreach ($comments as $komentar)
-                <div class="comment shadow">
-                    <h6 class="">{{$ime[$komentar['id']]}}</h6>
-                    <div class="comment-info">
-                        <p class="">
-                            {{$komentar['created_at']}}
-                        </p>
-                    </div>
-                    <p class="">
-                        {{$komentar['komentar']}}
-                    </p>
-                    <div class="rating">
-                        @for ($i = 1; $i <= $komentar['ocena']; $i++)
-                            &#9733;
-                        @endfor
-                    </div>
-                    @auth
-                        @if(Auth::user()->is_admin)
-                            <a href="/admin/izbrisi-komentar/{{$komentar['id']}}">Izbrisi</a>
-                        @endif
-                    @endauth
-                    
-                </div>
-            @endforeach
+  @foreach ($comments as $komentar)
+    <div class="comment shadow">
+        <h6 class="">{{$ime[$komentar['id']]}}</h6>
+        <div class="comment-info">
+            <p class="">
+                {{$komentar['created_at']}}
+            </p>
+        </div>
+
+        @php
+            $komentarText = $komentar['komentar'];
+            $words = str_word_count($komentarText, 1);
+            $prvihPetReci = implode(' ', array_slice($words, 0, 5));
+            $ostatakReci = implode(' ', array_slice($words, 5));
+        @endphp
+
+        <span id="comment-text" class="prvih-pet-reci" data-full-text="{{ $komentarText }}">
+            {{ $prvihPetReci }}
+        </span>
+        <span id="more" class="ostatak-reci" style="display:none;">
+            {{ $ostatakReci }}
+        </span>
+        
+        @if(count($words) > 5)
+            <button onclick="myFunction(this)" class="btn">Read more</button>
+        @endif
+
+        <div class="rating">
+            @for ($i = 1; $i <= $komentar['ocena']; $i++)
+                &#9733;
+            @endfor
+        </div>
+        @auth
+            @if(Auth::user()->is_admin)
+                <a href="/admin/izbrisi-komentar/{{$komentar['id']}}">Izbrisi</a>
+            @endif
+        @endauth
+    </div>
+@endforeach
+
     </div>
     <button id="nextBtn">>></button>
 
@@ -193,7 +209,7 @@
         <span class="h1">
           Pišite<br/>
           Pozovite<br/>
-          Putujte<br/>
+          Putujte
         </span>
       </div>
 </body>
@@ -227,6 +243,23 @@
     
 </section>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    function myFunction(btn) {
+        var commentText = btn.previousElementSibling;
+        var moreText = document.getElementById("more");
+        var btnText = btn;
+
+        if (commentText.style.display === "none" || commentText.innerText === commentText.dataset.fullText) {
+            commentText.style.display = "inline";
+            btnText.innerHTML = "Read more";
+            moreText.style.display = "none";
+        } else {
+            commentText.style.display = "none";
+            btnText.innerHTML = "Read less";
+            moreText.style.display = "inline";
+        }
+    }
+</script>
 <script>
     $(document).ready(function(){
         var currentIndex = 0;

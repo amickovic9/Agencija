@@ -1,4 +1,4 @@
-@include('navbar')
+@include('adminnavbar')
 <div class="container mt-5">
     <h1>Svi korisnici</h1>
     <form action="/admin/users" method="GET" class="mt-4">

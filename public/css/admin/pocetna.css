@@ -1,0 +1,146 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+
+.main {
+    margin-left: 260px;
+    flex: 1;
+    padding: 20px;
+    overflow: hidden; 
+}
+
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5px 0 5px;
+    margin: -10px; 
+}
+
+.box {
+    color:white;
+    flex: 1;
+    min-width: 150px;
+    box-shadow: 3px 3px 10px #29494d;
+    background-color: #3C6A6F;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; 
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px; 
+    box-sizing: border-box; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.box .topic {
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+.box .topic-heading {
+  font-size: 30px;
+  letter-spacing: 3px;
+}
+
+.box:hover {
+    transform: scale(1.08);
+    background-color: #42757a;
+}
+
+
+.btn-group {
+    width: 100%;
+}
+
+.btn {
+    flex: 1;
+    border-radius: 5px !important;
+    width: 200px;
+    transition: background-color 0.3s ease
+}
+
+.btn-success {
+    background-color:#29494d !important;
+    border: #29494d !important;   
+}
+
+.btn-success:hover {
+    background-color:#3C6A6F !important;  
+}
+
+.btn-danger {
+    background-color:#6c757d !important;
+    border: #6c757d !important;  
+}
+
+.btn-danger:hover{
+    background-color:#97999a !important;
+}
+
+.requests {
+    padding: 20px; 
+}
+
+.requests h1 {
+    color: #3C6A6F; 
+}
+
+.requests p {
+    color: #6c757d; 
+}
+
+.img {
+    width: 33.33%; 
+    float: left; 
+    box-sizing: border-box; 
+    padding: 10px; 
+    box-sizing: border-box; 
+}
+
+.img img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 10px; 
+    display: block; 
+    margin-bottom: 10px; 
+}
+
+.img .btn-group {
+    display: flex; 
+    justify-content: space-between; 
+}
+
+@media screen and (max-width: 768px) {
+    .main{
+        margin-left: 50px;
+    }
+
+    .box {
+        flex-basis: 100%;
+        margin: 15px; 
+    }
+
+    .img {
+        width: 50%; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .img {
+        width: 100%; 
+    }
+
+    .box {
+        margin: 10px; 
+    }
+}
