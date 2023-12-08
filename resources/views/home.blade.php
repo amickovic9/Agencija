@@ -183,7 +183,6 @@
         </span>
         
         @if(count($words) > 5)
-            <button onclick="myFunction(this)" class="btn">Read more</button>
         @endif
 
         <div class="rating">
@@ -193,7 +192,7 @@
         </div>
         @auth
             @if(Auth::user()->is_admin)
-                <a href="/admin/izbrisi-komentar/{{$komentar['id']}}">Izbrisi</a>
+                <a href="/admin/izbrisi-komentar/{{$komentar['id']}}" class="delete-btn">Izbriši komentar</a>
             @endif
         @endauth
     </div>
@@ -243,23 +242,6 @@
     
 </section>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script>
-    function myFunction(btn) {
-        var commentText = btn.previousElementSibling;
-        var moreText = document.getElementById("more");
-        var btnText = btn;
-
-        if (commentText.style.display === "none" || commentText.innerText === commentText.dataset.fullText) {
-            commentText.style.display = "inline";
-            btnText.innerHTML = "Read more";
-            moreText.style.display = "none";
-        } else {
-            commentText.style.display = "none";
-            btnText.innerHTML = "Read less";
-            moreText.style.display = "inline";
-        }
-    }
-</script>
 <script>
     $(document).ready(function(){
         var currentIndex = 0;

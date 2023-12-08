@@ -15,7 +15,7 @@
 @include('navbar')
 <div class="offer-container">
     <h1>Oglasi ponudu</h1>
-    <form action="/create-offer" method="POST" enctype="multipart/form-data" class="mt-4">
+    <form action="/create-offer" method="POST" enctype="multipart/form-data" class="form-offer">
   @csrf 
   <div class="coolinput">
     <label for="destinacija" class="text">Destinacija:</label>

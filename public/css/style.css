@@ -114,6 +114,7 @@ body h1 {
     align-items: center;
     justify-content: center;
     min-height: 20vh;
+    padding: 0em 5em;
 
 }
 .middle-section h3 { 
@@ -559,9 +560,10 @@ button {
     padding-top: 2rem;
 }
 .comment {
+
     margin: 1rem;
     padding: 2rem;
-    height: 28.89vh;
+    height: 17em;
     width: 28.89vh;
     overflow: auto;
     background: white;
@@ -575,7 +577,7 @@ button {
    }
    
    button#nextBtn {
-    background-color: #5b777a;
+    background-color: #3C6A6F;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -584,11 +586,31 @@ button {
     font-size: 16px;
     transition: background-color 0.3s;
     width: 3rem;
-    height: 28.89vh;
+    height: 17em;
     margin-top: 3rem;
     margin-right: 2rem;
+    
 }
-   
+.delete-btn {
+    bottom: 0em;
+    width: 100%;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    background-color: #3C6A6F;
+    color: white;
+    border: 1px solid #3C6A6F;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+ .delete-btn:hover{ 
+    background-color: white;
+    color: #3C6A6F;
+    border: 1px solid #3C6A6F;
+    border-radius: 5px;
+    text-decoration: none;
+ }
 /*kontakt sekcija*/
 .contact-text { 
     min-height: 20vh;
