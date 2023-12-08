@@ -127,81 +127,59 @@
   </a>
   </section> 
 
-<section class="comment-section">
-<div class="leave-comment">
-    <h2>Oceni i ostavi komentar</h2>
-    <form action="/oceni" method="post">
-      @csrf
-      <div class="form-group">
-        <label for="rating" >Ocena:</label><br>
-        <div class="rating" required>
-          <input type="radio" id="star5" name="ocena" value="5">
-          <label for="star5"></label>
-          <input type="radio" id="star4" name="ocena" value="4">
-          <label for="star4"></label>
-          <input type="radio" id="star3" name="ocena" value="3">
-          <label for="star3"></label>
-          <input type="radio" id="star2" name="ocena" value="2">
-          <label for="star2"></label>
-          <input type="radio" id="star1" name="ocena" value="1">
-          <label for="star1"></label>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="comment">Komentar:</label>
-        <textarea class="form-control" id="comment" name="komentar" rows="4" required></textarea>
-      </div>
-      <button type="submit" class="comm-btn">
-        <span>Pošalji komentar</span></button>
-    </form>
-  </div>
-  </div>
-
-  <div class="user-comments">
-      
-  @foreach ($comments as $komentar)
-    <div class="comment shadow">
-        <h6 class="">{{$ime[$komentar['id']]}}</h6>
-        <div class="comment-info">
-            <p class="">
-                {{$komentar['created_at']}}
-            </p>
-        </div>
-
-        @php
-            $komentarText = $komentar['komentar'];
-            $words = str_word_count($komentarText, 1);
-            $prvihPetReci = implode(' ', array_slice($words, 0, 5));
-            $ostatakReci = implode(' ', array_slice($words, 5));
-        @endphp
-
-        <span id="comment-text" class="prvih-pet-reci" data-full-text="{{ $komentarText }}">
-            {{ $prvihPetReci }}
-        </span>
-        <span id="more" class="ostatak-reci" style="display:none;">
-            {{ $ostatakReci }}
-        </span>
-        
-        @if(count($words) > 5)
-        @endif
-
-        <div class="rating">
-            @for ($i = 1; $i <= $komentar['ocena']; $i++)
-                &#9733;
-            @endfor
-        </div>
-        @auth
-            @if(Auth::user()->is_admin)
-                <a href="/admin/izbrisi-komentar/{{$komentar['id']}}" class="delete-btn">Izbriši komentar</a>
-            @endif
-        @endauth
+  <section class="comment-section">
+    <div class="leave-comment">
+        <h2>Oceni i ostavi komentar</h2>
+        <form action="/oceni" method="post">
+            @csrf
+            <div class="form-group">
+                <label for="rating">Ocena:</label><br>
+                <div class="rating" required>
+                    <input type="radio" id="star5" name="ocena" value="5"><label for="star5"></label>
+                    <input type="radio" id="star4" name="ocena" value="4"><label for="star4"></label>
+                    <input type="radio" id="star3" name="ocena" value="3"><label for="star3"></label>
+                    <input type="radio" id="star2" name="ocena" value="2"><label for="star2"></label>
+                    <input type="radio" id="star1" name="ocena" value="1"><label for="star1"></label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="comment">Komentar:</label>
+                <textarea class="form-control" id="comment" name="komentar" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="comm-btn"><span>Pošalji komentar</span></button>
+        </form>
     </div>
-@endforeach
 
+    <div class="user-comments">
+        @foreach ($comments as $komentar)
+            <div class="comment shadow">
+                <h6>{{$ime[$komentar['id']]}}</h6>
+                <div class="comment-info">
+                    <p>{{$komentar['created_at']}}</p>
+                </div>
+
+                <div class="scrollable-comment">
+                    <p>{{ $komentar['komentar'] }}</p>
+                </div>
+
+                <div class="rating-and-button">
+                    <div class="rating">
+                        @for ($i = 1; $i <= $komentar['ocena']; $i++)
+                            &#9733;
+                        @endfor
+                    </div>
+                    @auth
+                        @if(Auth::user()->is_admin)
+                            <a href="/admin/izbrisi-komentar/{{$komentar['id']}}" class="delete-btn">Izbriši komentar</a>
+                        @endif
+                    @endauth
+                </div>
+            </div>
+        @endforeach
     </div>
     <button id="nextBtn">>></button>
-
 </section>
+
 <section class="contact-text"> 
 <body>
       <div class="scroller">
@@ -279,5 +257,3 @@
     
 <!DOCTYPE html>
 <html lang="en">
-
-
