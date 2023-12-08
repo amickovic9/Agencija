@@ -13,7 +13,7 @@
 </head>
 <body>
 @include('navbar')
-<div class="">
+<div class="offer-container">
     <h1>Oglasi ponudu</h1>
     <form action="/create-offer" method="POST" enctype="multipart/form-data" class="mt-4">
   @csrf 
