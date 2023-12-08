@@ -558,8 +558,8 @@ button:hover span:after {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding-top: 2.15vh;
-    margin-top: 2.15vh; 
+    padding-top: 6.2vh;
+    margin-top: 6.2vh; 
 }
 
 .comment {
@@ -601,7 +601,7 @@ button#nextBtn {
     transition: background-color 0.3s;
     width: 3rem;
     height: 17em;
-    margin-top: 3rem;
+    margin-top: 13.5vh;
     margin-right: 2rem;
 }
 
