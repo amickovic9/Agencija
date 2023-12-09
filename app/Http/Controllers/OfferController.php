@@ -112,7 +112,7 @@ class OfferController extends Controller
     public function offersSearch(Request $request){
         $query = Offer::query();
         if($request->filled('destinacija')){
-            $query->where('destinacija' , 'like' , '%' . $request['destinacija']);
+            $query->where('destinacija' , 'like' , '%' . $request['destinacija'] .'%');
         }
 
     if ($request->filled('polazak')) {

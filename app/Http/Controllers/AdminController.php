@@ -33,10 +33,10 @@ class AdminController extends Controller
             if(Auth::user()->is_admin){}{
                     $query = User::query();
             if($request->filled('name')){
-                $query->where('name', 'like','%' . $request['name']);
+                $query->where('name', 'like','%' . $request['name'].'%');
             }
             if($request->filled('email')){
-                $query->where('email', 'like','%' . $request['email']);
+                $query->where('email', 'like','%' . $request['email'].'%');
             }
             $users = $query->get();
 
@@ -118,14 +118,15 @@ class AdminController extends Controller
         if(Auth::check()){
             if(Auth::user()->is_admin){
             $query = Reservation::query();
-            if($request->filled('name')){
-                $query->where('user_name','like','%'.$request['name']);
+            if ($request->filled('name')) {
+                $query->where('user_name', 'like', '%' . $request['name'] . '%');
             }
+
             if($request->filled('email')){
-                $query->where('email','like','%' .$request['email']);
+                $query->where('email','like','%' .$request['email']. '%');
             }
             if($request->filled('broj_telefona')){
-                $query->where('broj_telefona','like','%' .$request['broj_telefona']);
+                $query->where('broj_telefona','like','%' .$request['broj_telefona'] .'%');
             }
             $reservations=$query->get();
             return view('adminReservations',['reservations' => $reservations]);
