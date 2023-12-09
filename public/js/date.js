@@ -6,14 +6,6 @@ document.getElementById('polazak').addEventListener('change', function() {
         returnInput.value = departureDate;
     }
 });
-document.getElementById('polazak').addEventListener('change', function() {
-    var departureDate = this.value;
-    var returnInput = document.getElementById('povratak');
-    returnInput.min = departureDate;
-    if (returnInput.value < departureDate) {
-        returnInput.value = departureDate;
-    }
-});
   document.addEventListener('DOMContentLoaded', function() {
     const enforceRange = (input, min, max) => {
       input.addEventListener('blur', () => {
