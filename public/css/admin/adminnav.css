@@ -19,7 +19,7 @@ body {
 
 .nav{
     width: 260px;
-    background-color: #3C6A6F;
+    background-color: #407d82;
     color: #fff;
     padding-top: 50px;
     transition: width 0.3s ease;
@@ -54,15 +54,12 @@ body {
 .nav-option:hover {
     text-decoration: none;
     color: #E6E6EE;
-    background-color: #648b8f;
+    background-color: #509aa1;
 }
 .nav-option.active {
-    background-color: #7b9fa4;
-    color: #ffffff;
-    font-weight: bold; 
+    background-color: #5dabb2;
+    color: #fff;
 }
-
-
 .nav-img {
     width: 30px;
     height: 30px;

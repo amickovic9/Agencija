@@ -12,7 +12,7 @@
 
 <body>
     @include('adminnavbar')
-    <div class="main">
+    <main>
         <div class="box-container">
         
             <div class="box box1">
@@ -72,7 +72,8 @@
                         </div>
                     
             @endforeach
-        
+</div>
+</main>
      
     
 

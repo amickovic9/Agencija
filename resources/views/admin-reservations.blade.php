@@ -1,4 +1,4 @@
-@include('navbar')
+@include('adminnavbar')
 <form action="/admin-reservations-offer/search/{{$offer['id']}}" method="GET">
    Ime: <input type="text" name="name" value="{{ request()->input('name') }}">
    Email: <input type="text" name="email" value="{{ request()->input('email') }}">

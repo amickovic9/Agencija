@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/admin/adminnav.css" rel="stylesheet">
 </head>
-<body>
+
     @include('navbar')
     
     <div class="navcontainer">
@@ -40,5 +40,5 @@
     <script src="/js/adminnav.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-</body>
+
 </html>
