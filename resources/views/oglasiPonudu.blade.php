@@ -39,23 +39,24 @@
 
   <div class="coolinput">
     <label for="datum_polaska" class="text">Datum polaska:</label>
-    <input required="" placeholder="Datum polaska" name="datum_polaska" type="date">
+    <input type="date" class="form-control" id="polazak" name="polazak" value="{{ request()->input('polazak') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
   </div>
 
   <div class="coolinput">
     <label for="datum_povratka" class="text">Datum povratka:</label>
-    <input required="" placeholder="Datum povratka" name="datum_povratka" type="date">
+    <input type="date" class="form-control" id="povratak" name="povratak" value="{{ request()->input('povratak') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
+
   </div>
 
   <div class="coolinput">
-    <label for="broj_mesta" class="text">Broj mesta:</label>
-    <input type="number" name="broj_mesta" class="input" required>
-  </div>
+  <label for="broj_mesta" class="text">Broj mesta:</label>
+  <input type="number" name="broj_mesta" class="input" min="1" max="100" required>
+</div>
 
-  <div class="coolinput">
-    <label for="cena" class="text">Cena:</label>
-    <input type="number" class="input" name="cena" required>
-  </div>
+<div class="coolinput">
+  <label for="cena" class="text">Cena:</label>
+  <input type="number" class="input" name="cena" min="1" max="100000" required>
+</div>
 
   <button type="submit" class="comm-btn">
     <span>Objavi ponudu</span>
@@ -69,3 +70,4 @@ function updateFileName() {
   document.getElementById('selectedFileName').innerText = fileName;
 }
 </script>
+<script src="/js/date.js"></script>
