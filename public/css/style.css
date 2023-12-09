@@ -26,7 +26,7 @@ body h1 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    color: white;
+    color: #3C6A6F;
     
     
 }
@@ -42,6 +42,9 @@ body h1 {
     padding-bottom: 30px !important; 
 }
    
+.form-row button {
+    margin-top: 3.3vh;
+}
 
 
 
@@ -76,8 +79,8 @@ body h1 {
     color: #73969B;
 }
 .form-row label { 
-    color: white;
-    font-style: bold;
+    color: #3C6A6F;
+    font-weight: 800;
 }
 .search-form{
     height: 25vh;
@@ -114,6 +117,7 @@ body h1 {
     align-items: center;
     justify-content: center;
     min-height: 20vh;
+    padding: 0em 5em;
 
 }
 .middle-section h3 { 
@@ -483,20 +487,20 @@ a {
     box-sizing: border-box;
 }
 
-
 .leave-comment {
-    margin: 3rem 2rem;
-    padding: 3rem;
-    box-shadow:  9px 9px 18px #d9d9d9,
-             -9px -9px 18px #e7e7e7;
-    border-radius: 20px;
+    margin: 4vh 2vh;
+    padding: 4vh;
+    box-shadow: 0.5vh 0.5vh 1vh #d9d9d9,
+                -0.5vh -0.5vh 1vh #e7e7e7;
+    border-radius: 1vh;
 }
 
 .comment-card {
-    padding: 10rem;
-    border: 1px solid #ccc;
+    padding: 5vh;
+    border: 0.1vh solid #ccc;
     display: flex;
     justify-content: space-around;
+    height: 15vh;
 }
 
 @media (max-width: 768px) {
@@ -512,68 +516,105 @@ a {
 
 button {
     display: inline-block;
-    border-radius: 4px;
+    border-radius: 0.5vh;
     background-color: #3C6A6F;
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 17px;
-    padding: 16px;
-    width: 15rem;
+    font-size: 1.5vh;
+    padding: 1.6vh; 
+    width: 15vh;
     transition: all 0.5s;
     cursor: pointer;
-    margin: 5px;
-   }
-   
-   button span {
+    margin: 0.5vh;
+}
+
+button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
-   }
-   
-   button span:after {
+}
+
+button span:after {
     content: '»';
     position: absolute;
     opacity: 0;
     top: 0;
     right: -15px;
     transition: 0.5s;
-   }
-   
-   button:hover span {
+}
+
+button:hover span {
     padding-right: 15px;
-   }
-   
-   button:hover span:after {
+}
+
+button:hover span:after {
     opacity: 1;
     right: 0;
-   }
+}
 
-   .user-comments {
+.user-comments {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding-top: 2rem;
+    padding-top: 6.2vh;
+    margin-top: 6.2vh; 
 }
+
 .comment {
-    margin: 1rem;
-    padding: 2rem;
-    height: 28.89vh;
-    width: 28.89vh;
-    overflow: auto;
+    margin: 1vh;
+    padding: 1vh;
+    height: 17em;
+    width: 12em;
     background: white;
-    border-radius: 10px;
-    transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-   }
-   
-   .shadow {
-    box-shadow:  9px 9px 18px #d9d9d9,
-             -9px -9px 18px #e7e7e7;
-   }
-   
-   button#nextBtn {
-    background-color: #5b777a;
+    border-radius: 1vh;
+    box-shadow: 0.5vh 0.5vh 1vh #d9d9d9, -0.5vh -0.5vh 1vh #e7e7e7;
+    word-wrap: break-word;
+    white-space: normal;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.comment h6 {
+    font-size: 1.2em;
+    font-weight: 600;
+
+}
+.comment-info { 
+    font-size: 0.7em;
+    padding-top: 0rem;
+}
+.scrollable-comment {
+    height: 20em;
+    overflow-y: auto;
+    margin-bottom: -1.5vh;
+    font-size: 1em;
+}
+.scrollable-comment::-webkit-scrollbar {
+    width: 0.5em;
+}
+ 
+.scrollable-comment::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(244, 243, 243, 0.3);
+    border-radius: 5px;
+    border: 1px solid #6f7778;
+}
+ 
+.scrollable-comment::-webkit-scrollbar-thumb {
+  background-color:#3C6A6F;
+  border: 1px solid #3C6A6F;
+  border-radius: 5px;
+}
+
+.shadow {
+    box-shadow: 9px 9px 18px #d9d9d9,
+                -9px -9px 18px #e7e7e7;
+}
+
+button#nextBtn {
+    background-color: #3C6A6F;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -582,11 +623,47 @@ button {
     font-size: 16px;
     transition: background-color 0.3s;
     width: 3rem;
-    height: 28.89vh;
-    margin-top: 3rem;
+    height: 17em;
+    margin-top: 13.5vh;
     margin-right: 2rem;
 }
-   
+button#nextBtn:hover { 
+    background-color: white;
+    color: #3C6A6F;
+    border: 1px solid #3C6A6F;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.rating-and-button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top:15px;
+}
+
+.delete-btn {
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    background-color: #3C6A6F;
+    color: white;
+    border: 1px solid #3C6A6F;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+.delete-btn:hover {
+    background-color: white;
+    color: #3C6A6F;
+    border: 1px solid #3C6A6F;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
 /*kontakt sekcija*/
 .contact-text { 
     min-height: 20vh;
@@ -615,7 +692,7 @@ button {
   .scroller > span {
     position: absolute;
     top: 0;
-    animation: slide 5s infinite;
+    animation: slide 3s infinite;
     font-weight: bold;
   }
   @keyframes slide {
@@ -657,4 +734,21 @@ iframe {
     box-shadow:  9px 9px 18px #d9d9d9,
              -9px -9px 18px #e7e7e7;
     border-radius: 20px;
+}
+
+#more {display: none;}
+
+.btn { 
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #3C6A6F;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size:10px;
+    padding: 10px;
+    width: 5rem;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
 }

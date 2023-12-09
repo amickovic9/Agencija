@@ -1,3 +1,11 @@
+body{
+     
+    font-family: 'Poppins', sans-serif;
+}
+.h1-title { 
+    background-color: rgba(60,106,111, 0.5);
+ 
+}
 .search-form-wrapper {
     display: flex;
     justify-content: center; 
@@ -9,7 +17,12 @@
     margin-left: auto;
     margin-right: auto;
     border-radius: 2.5vh;
+    background-color: rgba(60,106,111, 0.5);
+    color: white;
     
+}
+.form-row label { 
+    color: white;
 }
 
 .card-body {
@@ -21,8 +34,9 @@
     height: 100%; 
 }
 .glowing-text {
-    color: #ffffff;
-    -webkit-text-stroke: 1px #000000; 
+    color: #fff;
+    font-weight: 600;
+ 
 
   }
 .card {
@@ -82,7 +96,7 @@
 
 .cards-container {
     
-    background-color: rgba(6, 97, 15, 0.38);
+    background-color: rgba(60,106,111, 0.5);
     border-radius: 2.5vh;
     position: relative;
     overflow: visible; 
@@ -120,6 +134,7 @@
 .form-container {
     animation: 1.2s ease-out 0s 1 slideInFromLeft;
     visibility: visible; 
+    
 }
 
 button[type="submit"] {
