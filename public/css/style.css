@@ -160,15 +160,16 @@ margin: 1rem;
    .card-details {
     color: black;
     height: 50%;
-    gap: .3em;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     place-content: center;
-    padding: 0.5rem;
    }
    
    
    .text-body {
     color: #3C6A6F;
+    font-size: 0.8em;
+    margin:0;
    }
    .text-body1 {
     color: #3C6A6F;
@@ -186,40 +187,35 @@ margin: 1rem;
    .card:hover {
     border-color: #3C6A6F;
     box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.25);
-    transform: translateY(-0.625rem);
+   
 }
 
 
    
 .card:hover .card-button {
-    transform: translate(-50%, -10rem);
+    transform: translate(-50%, -6em);
     opacity: 1;
     text-align: center;
     text-decoration: none;
     color: #3C6A6F;
 }
 .card:hover .text-title { 
-    transform: translate(-80%,-7.5rem);
+    transform: translate(0%, -7em);
     color: white;
     border: 1px solid white;
+    background-color: #3C6A6F;
     border-radius: 5px;
+    padding-left: 0.3em;
 }
 .card:hover .card-img { 
     filter: blur(3px);
 }
-.card:hover .text-body { 
-    transform: translateX(-80%);
-}
-
-
-
-   
-
   .card-section{ 
     padding-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
   }
   .card-section h1{ 
     color: #413B2E;
@@ -514,29 +510,29 @@ a {
     }
 }
 
-button {
+.comm-btn {
     display: inline-block;
     border-radius: 0.5vh;
     background-color: #3C6A6F;
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 1.5vh;
+    font-size: 2.5vh;
     padding: 1.6vh; 
-    width: 15vh;
+    width: 15em;
     transition: all 0.5s;
     cursor: pointer;
     margin: 0.5vh;
 }
 
-button span {
+.comm-btn span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
 
-button span:after {
+.comm-btn span:after {
     content: '»';
     position: absolute;
     opacity: 0;
@@ -545,11 +541,11 @@ button span:after {
     transition: 0.5s;
 }
 
-button:hover span {
+.comm-btn:hover span {
     padding-right: 15px;
 }
 
-button:hover span:after {
+.comm-btn:hover span:after {
     opacity: 1;
     right: 0;
 }
@@ -618,21 +614,25 @@ button#nextBtn {
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: background-color 0.3s;
     width: 3rem;
-    height: 17em;
-    margin-top: 13.5vh;
+    height: 3rem;
+    margin-top: 11em;
     margin-right: 2rem;
 }
 button#nextBtn:hover { 
     background-color: white;
     color: #3C6A6F;
     border: 1px solid #3C6A6F;
-    border-radius: 5px;
+    border-radius: 25px;
     text-decoration: none;
+    
 }
 
 .rating-and-button {
@@ -653,13 +653,13 @@ button#nextBtn:hover {
     color: white;
     border: 1px solid #3C6A6F;
     border-radius: 5px;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .delete-btn:hover {
     background-color: white;
-    color: #3C6A6F;
-    border: 1px solid #3C6A6F;
+    color: red;
+    border: 1px solid red;
     border-radius: 5px;
     text-decoration: none;
 }
@@ -670,9 +670,6 @@ button#nextBtn:hover {
     background: #3C6A6F;
     justify-content: center;
     color:white;
-   
-    
-
 }
 .contact-text h3 { 
     font-size: medium;
