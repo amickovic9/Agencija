@@ -101,7 +101,7 @@
                         <img src="{{ Storage::url('images/' . $offer['photo']) }}" class="card-img-top">
                     </div>
                     <div class="card-details">
-                        <p class="text-title">{{$offer->destinacija}}</p>
+                        <p class="text-title">{{$offer->destinacija}}      </p>
                         <p class="text-body">Polazak: {{ $offer->datum_polaska }}</p>
                         <p class="text-body">Povratak: {{ $offer->datum_povratka }}</p>
                         <p class="text-body text-body1"><b>Cena: {{ $offer->cena }}€</b></p>
@@ -112,7 +112,7 @@
         @endforeach
     </div>
 </div>
-<a class="dugme" href="/offers"><span>Cela ponuda<span></a>
+<button class="dugme" href="/offers"><span>Cela ponuda<span></button>
   </section>
   <section class="gallery-section">
       
@@ -214,7 +214,7 @@
                 <label for="message">Poruka:</label>
                 <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
             </div>
-            <button type="submit" class=""><span>Pošalji poruku</span></button>
+            <button type="submit" class="comm-btn"><span>Pošalji poruku</span></button>
         </form>
     </div>
     
