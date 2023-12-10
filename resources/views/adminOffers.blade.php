@@ -1,4 +1,7 @@
 @include('navbar');
+<head>
+  
+</head>
 <div class="container mt-5">
     <h1>Sve ponude</h1>
     <form action="/admin/offers" method="get" class="mt-4">

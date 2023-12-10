@@ -49,21 +49,24 @@
             <div>   
                 <label for="destinacija">Destinacija:</label>
                 <input type="text" class="form-control" id="destinacija" name="destinacija" value="{{ request()->input('destinacija') }}">
-</div>
-<div>    
-    <label for="polazak">Polazak:</label>
-    <input type="date" class="form-control" id="polazak" name="polazak" value="{{ request()->input('polazak') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
-</div>
-<div>
-    <label for="povratak">Povratak:</label>
-    <input type="date" class="form-control" id="povratak" name="povratak" value="{{ request()->input('povratak') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
-</div>
-<div class="">
-    <button type="submit" name="button" class="comm-btn"><span>Pretraži<span></button>  
-</div>
-
-</div>
-        
+            </div>
+            <div>    
+                <label for="polazak">Polazak:</label>
+                <input type="date" class="form-control" id="polazak" name="polazak" value="{{ request()->input('polazak') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
+            </div>
+            <div>
+                <label for="povratak">Povratak:</label>
+                <input type="date" class="form-control" id="povratak" name="povratak" value="{{ request()->input('povratak') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
+            </div>
+            <div>
+                <label for="button" class="dot">.</label>
+                <button class="button-search" type="submit" name="button">
+                    <span>
+                        <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M9.145 18.29c-5.042 0-9.145-4.102-9.145-9.145s4.103-9.145 9.145-9.145 9.145 4.103 9.145 9.145-4.102 9.145-9.145 9.145zm0-15.167c-3.321 0-6.022 2.702-6.022 6.022s2.702 6.022 6.022 6.022 6.023-2.702 6.023-6.022-2.702-6.022-6.023-6.022zm9.263 12.443c-.817 1.176-1.852 2.188-3.046 2.981l5.452 5.453 3.014-3.013-5.42-5.421z"></path></svg>
+                    </span>
+                </button> 
+            </div>
+        </div>   
     </form>
 </section>
 
@@ -71,30 +74,22 @@
     <h3> Šta nudimo? </h3> 
     <h1>Nudimo širok spektar putničkih usluga koje obuhvataju različite vrste prevoza, personalizovane opcije ishrane, autentične kulturne doživljaje i pažljivo odabrane smještajne opcije. Vaše putovanje, bez obzira na destinaciju, prilagođava se vašim željama, obezbeđujući nezaboravna iskustva i bezbrižnu avanturu. </h1>
       <div class="benefits">
-      
-        
           <div class="benefits-icon">
           <img src="/img/route-solid.svg" alt=""></div>
-        
-        
           <div class="benefits-icon">
           <img src="/img/bed-solid.svg" alt=""></div>
-    
-            <div class="benefits-icon">
-            <img src="/img/plane-departure-solid.svg" alt=""></div>
-            <div class="benefits-icon">
-            <img src="/img/food-solid.svg" alt=""></div>
-        
-       </div>
-      
-    </section>
+          <div class="benefits-icon">
+          <img src="/img/plane-departure-solid.svg" alt=""></div>
+          <div class="benefits-icon">
+          <img src="/img/food-solid.svg" alt=""></div>
+      </div>  
+  </section>
       <h1 > Korisnici najviše pretražuju</h1> 
       <h3> Preporučujemo neodoljive destinacije koje oduzimaju dah i zadovoljavaju različite interese. </h3>
     <section class="card-section">
-      <div class="container">
-   
-    <div class="offer-slide">
-        @foreach($offers as $index => $offer)
+      <div class="container"> 
+            <div class="offer-slide">
+                 @foreach($offers as $index => $offer)
             <div class="offer-c">
                 <div class="card">
                     <div class="card-img">
