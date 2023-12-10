@@ -39,12 +39,12 @@
 
   <div class="coolinput">
     <label for="datum_polaska" class="text">Datum polaska:</label>
-    <input type="date" class="form-control" id="polazak" name="polazak" value="{{ request()->input('polazak') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
+    <input required="" placeholder="Datum polaska" name="datum_polaska" type="date" class="form-control" id="datum_polaska"value="{{ request()->input('datum_polaska') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
   </div>
 
   <div class="coolinput">
     <label for="datum_povratka" class="text">Datum povratka:</label>
-    <input type="date" class="form-control" id="povratak" name="povratak" value="{{ request()->input('povratak') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
+    <input class="form-control" id="datum_povratka" required="" placeholder="Datum_povratka" name="datum_povratka" type="date" value="{{ request()->input('datum_polaska') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
 
   </div>
 
@@ -69,5 +69,13 @@ function updateFileName() {
   var fileName = input.files[0] ? input.files[0].name : 'Nema izabrane slike';
   document.getElementById('selectedFileName').innerText = fileName;
 }
+document.getElementById('datum_polaska').addEventListener('change', function() {
+    var departureDate = this.value;
+    var returnInput = document.getElementById('datum_povratka');
+    returnInput.min = departureDate;
+    if (returnInput.value < departureDate) {
+        returnInput.value = departureDate;
+    }
+});
 </script>
 <script src="/js/date.js"></script>
