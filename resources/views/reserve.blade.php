@@ -15,13 +15,13 @@
     @include('navbar')
     
     <div class="container">
-    <div class="flip-card">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
+    <div class="flip-card1">
+        <div class="flip-card1-inner">
+            <div class="flip-card1-front">
                 <h4 class="title">{{$offer['destinacija']}}</h4>
                 <img src="{{ Storage::url('images/' . $offer['photo']) }}" alt="Offer Image" class="offer-img">
             </div>
-            <div class="flip-card-back">
+            <div class="flip-card1-back">
                 <p class="description">{{$offer['opis']}}</p>
                 <p>Datum polaska: {{$offer['datum_polaska']}}</p>
                 <p>Datum povratka: {{$offer['datum_povratka']}}</p>
@@ -48,22 +48,25 @@
     </div>
 <section class="middle"> 
    <h1> Pogledajte i ostale destinacije koje ljudi takodje pretražuju <h1>
-    <div class="row row-cols-1 row-cols-md-3">
+    
+</section> 
+<div class="offers-container">
         @foreach ($moreOffers as $mOffer)
-            <div class="col mb-4">
-                <div class="card h-100">
-                    <img src="{{ Storage::url('images/' . $mOffer['photo']) }}" class="card-img-top" >
-                    <div class="card-body">
-                        <h4 class="card-title">{{$mOffer['destinacija']}}</h4>
-                        <p class="card-text">Datum polaska: {{$mOffer['datum_polaska']}}</p>
-                        <p class="card-text">Datum povratka: {{$mOffer['datum_povratka']}}</p>
-                        <p class="card-text">Cena: {{$mOffer['cena']}} €</p>
-                        <a href="/reserve/{{$mOffer['id']}}" class="btn btn-primary">Više</a>
+            <div class="offers">
+                <div class="card1">
+                    <div class="card1-img">
+                    <img src="{{ Storage::url('images/' . $mOffer['photo']) }}" class="card1-img-top" >
+                        </div>
+                    <div class="card1-body">
+                        <h4 class="card1-title">{{$mOffer['destinacija']}}</h4>
+                        <p class="card1-text">Datum polaska: {{$mOffer['datum_polaska']}}</p>
+                        <p class="card1-text">Datum povratka: {{$mOffer['datum_povratka']}}</p>
+                        <p class="card1-text1">Cena: {{$mOffer['cena']}} €</p>
+                        <a href="/reserve/{{$mOffer['id']}}" class="button1">Vise informacija</a>
                     </div>
                 </div>
             </div>
         @endforeach
     </div>
-</section> 
 </body>
 </html>
