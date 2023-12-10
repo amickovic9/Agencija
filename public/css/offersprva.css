@@ -175,7 +175,7 @@ button[type="submit"] {
     font-size: 1.109375em;
 }
 .card:hover {
-    transform: scale(0.95);
+    transform: scale(0.84);
     z-index: 2;
 }
 
