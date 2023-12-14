@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 <style>
     .rating {
       unicode-bidi: bidi-override;
@@ -59,7 +61,7 @@
                 <input type="date" class="form-control" id="povratak" name="povratak" value="{{ request()->input('povratak') }}" min="{{ now()->format('Y-m-d') }}" max="{{ now()->addYears(4)->format('Y-m-d') }}">
             </div>
             <div>
-                <label for="button" class="dot">.</label>
+                <label for="button" class="">.</label>
                 <button class="button-search" type="submit" name="button">
                     <span>
                         <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M9.145 18.29c-5.042 0-9.145-4.102-9.145-9.145s4.103-9.145 9.145-9.145 9.145 4.103 9.145 9.145-4.102 9.145-9.145 9.145zm0-15.167c-3.321 0-6.022 2.702-6.022 6.022s2.702 6.022 6.022 6.022 6.023-2.702 6.023-6.022-2.702-6.022-6.023-6.022zm9.263 12.443c-.817 1.176-1.852 2.188-3.046 2.981l5.452 5.453 3.014-3.013-5.42-5.421z"></path></svg>
@@ -87,27 +89,25 @@
       <h1 > Korisnici najviše pretražuju</h1> 
       <h3> Preporučujemo neodoljive destinacije koje oduzimaju dah i zadovoljavaju različite interese. </h3>
     <section class="card-section">
-      <div class="container"> 
-            <div class="offer-slide">
-                 @foreach($offers as $index => $offer)
-            <div class="offer-c">
-                <div class="card">
-                    <div class="card-img">
-                        <img src="{{ Storage::url('images/' . $offer['photo']) }}" class="card-img-top">
+    <div class="offers-container">
+         @foreach($offers as $index => $offer)
+            <div class="offers">
+                <div class="card1">
+                    <div class="card1-img">
+                    <img src="{{ Storage::url('images/' . $offer['photo']) }}" class="card1-img-top" >
+                        </div>
+                    <div class="card1-body">
+                        <h4 class="card1-title">{{$offer['destinacija']}}</h4>
+                        <p class="card1-text">Datum polaska: {{$offer['datum_polaska']}}</p>
+                        <p class="card1-text">Datum povratka: {{$offer['datum_povratka']}}</p>
+                        <p class="card1-text1">Cena: {{$offer['cena']}} €</p>
+                        <a href="/reserve/{{$offer['id']}}" class="button1">Vise informacija</a>
                     </div>
-                    <div class="card-details">
-                        <p class="text-title">{{$offer->destinacija}}      </p>
-                        <p class="text-body">Polazak: {{ $offer->datum_polaska }}</p>
-                        <p class="text-body">Povratak: {{ $offer->datum_povratka }}</p>
-                        <p class="text-body text-body1"><b>Cena: {{ $offer->cena }}€</b></p>
-                    </div>
-                    <a href="/reserve/{{$offer['id']}}" class="card-button">Više informacija</a>
                 </div>
             </div>
         @endforeach
     </div>
-</div>
-<button class="dugme" href="/offers"><span>Cela ponuda<span></button>
+<button class="dugme" href="`/offers`">Cela ponuda</button>
   </section>
   <section class="gallery-section">
       
@@ -176,7 +176,6 @@
 </section>
 
 <section class="contact-text"> 
-<body>
       <div class="scroller">
         <span class="h1">
           Pišite<br/>
@@ -184,7 +183,6 @@
           Putujte
         </span>
       </div>
-</body>
   <h3> Vaše pitanje, sugestija ili pohvala su nam od velike važnosti. Slobodno nas kontaktirajte putem donje kontakt forme. Takodje možete da nas posetite u našoj kancelariji.
   </section> 
 
@@ -248,6 +246,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
     
 <!DOCTYPE html>
