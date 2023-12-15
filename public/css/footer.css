@@ -1,0 +1,41 @@
+footer {
+    width: 100% !important;
+    bottom: 0;
+    z-index: 1000;
+}
+footer div {
+    background-color: #3C6A6F;
+    margin: -5px 0 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+  svg {
+    width:100% !important;
+  }
+  .wave {
+    animation: wave 3s linear;
+    animation-iteration-count:infinite;
+    fill: #3C6A6F;
+  }
+  #wave2 {
+    animation-duration:5s;
+    animation-direction: reverse;
+    opacity: .6
+  }
+  #wave3 {
+    animation-duration: 7s;
+    opacity:.3;
+  }
+
+  @keyframes wave {
+    to {transform: translateX(-100%);}
+  }
+  .ikonica {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.ikonica:hover {
+    transform: translateY(-1px); 
+}
