@@ -9,7 +9,7 @@
 </head> 
 
 <link rel="stylesheet" href="/css/offersprva.css">
-<body style="background-image: url('/img/3.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+<body style="background-image: url('/img/1.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
 <div class="h1-title">    
 <h1 style="text-align:center; color:white;"><span class="glowing-text">SVE PONUDE NA JEDNOM MESTU</span></h1>
 </div> 
@@ -66,7 +66,7 @@
                                     <p class="card-text">Datum polaska: {{$offer['datum_polaska']}}</p>
                                     <p class="card-text">Datum povratka: {{$offer['datum_povratka']}}</p>
                                     <p class="card-text">Cena: {{$offer['cena']}} €</p>
-                                    <a href="/reserve/{{$offer['id']}}" class="buttonn">Više</a>
+                                    <a href="/reserve/{{$offer['id']}}" class="buttonn">Više informacija</a>
                                 </div>
                             </div>
                         </div>
