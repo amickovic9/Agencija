@@ -1,4 +1,4 @@
-@include('navbar');
+@include('adminnavbar');
 <h1>Uredi ponudu</h1>
 <form action="/admin/edit-offer/{{$offer->id}}" method="post" enctype="multipart/form-data">
     @csrf

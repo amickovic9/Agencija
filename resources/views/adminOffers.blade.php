@@ -1,9 +1,12 @@
-@include('navbar');
-<div class="container mt-5">
-    <h1>Sve ponude</h1>
-    <form action="/admin/offers" method="get" class="mt-4">
-        <div class="row">
-            <div class="col-md-4">
+@include('adminnavbar')
+<head>
+<link rel="stylesheet" href="/css/admin/offers.css">
+
+</head>
+<main>
+    
+    <form action="/admin/offers" method="get" class="form-wrapper">
+        
                 <div class="form-group">
                     <label for="destinacija">Destinacija:</label>
                     <input type="text" class="form-control" name="destinacija" value="{{ request()->input('destinacija') }}">
