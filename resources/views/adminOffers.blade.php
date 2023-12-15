@@ -1,32 +1,32 @@
-@include('navbar');
-<div class="container mt-5">
-    <h1>Sve ponude</h1>
-    <form action="/admin/offers" method="get" class="mt-4">
-        <div class="row">
-            <div class="col-md-4">
+@include('adminnavbar')
+<head>
+<link rel="stylesheet" href="/css/admin/offers.css">
+
+</head>
+<main>
+    
+    <form action="/admin/offers" method="get" class="form-wrapper">
+        
                 <div class="form-group">
-                    <label for="destinacija">Pretraži ponude po destinaciji:</label>
+                    <label for="destinacija">Destinacija:</label>
                     <input type="text" class="form-control" name="destinacija" value="{{ request()->input('destinacija') }}">
                 </div>
-            </div>
-            <div class="col-md-4">
+            
                 <div class="form-group">
-                    <label for="polazak">Datum polaska od:</label>
+                    <label for="polazak">Datum polaska:</label>
                     <input type="date" class="form-control" name="polazak" value="{{ request()->input('polazak') }}">
                 </div>
-            </div>
-            <div class="col-md-4">
+            
                 <div class="form-group">
-                    <label for="povratak">Datum povratka do:</label>
+                    <label for="povratak">Datum povratka:</label>
                     <input type="date" class="form-control" name="povratak" value="{{ request()->input('povratak') }}">
                 </div>
-            </div>
-            <div class="col-md-12 mt-3">
+            
                 <button type="submit" class="btn btn-primary">Pretraži</button>
             </div>
-        </div>
+        
     </form>
-</div>
+
 
 <table class="table">
   <thead>
@@ -65,3 +65,4 @@
   </tbody>
 
 </table>
+</main>

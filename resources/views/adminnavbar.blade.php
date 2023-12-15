@@ -19,6 +19,10 @@
                 <img src="/img/gallery.png" class="nav-img">
                 <h3> Upravljanje galerijom</h3>
             </a>
+            <a href="/admin/offers" class="nav-option option2">
+                <img src="/img/offers.png" class="nav-img">
+                <h3> Upravljanje ponudama</h3>
+            </a>
 
             <a href="/admin/reservations" class="nav-option option3">
                 <img src="/img/reservation.png" class="nav-img">
