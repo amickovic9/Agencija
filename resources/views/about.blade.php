@@ -104,3 +104,4 @@
     </div>
   </div>
 </section>
+@include('footer')
