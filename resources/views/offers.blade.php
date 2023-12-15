@@ -1,12 +1,15 @@
 @include('navbar')
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css/offersprva.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 </head> 
 
 <link rel="stylesheet" href="/css/offersprva.css">
-<body style="background-image: url('/img/3.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+<body style="background-image: url('/img/1.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
 <div class="h1-title">    
 <h1 style="text-align:center; color:white;"><span class="glowing-text">SVE PONUDE NA JEDNOM MESTU</span></h1>
 </div> 
@@ -42,28 +45,34 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-outline-dark">Pretražite</button>
+                        <button type="submit" class="button1">Pretražite</button>
                     </div>
                 </form>
             </div>
             <div class="cards-container">
-                <div id="particle-background"></div>
-                <div class="row" >
-                    @foreach ($offers as $offer)
-                        <div class="col custom-card mb-0" >
-                            <div class="card h-100">
-                                <img src="{{ Storage::url('images/' . $offer['photo']) }}" class="card-img-top" >
-                                <div class="card-body">
+            <div id="particle-background"></div>
+            <div class="row" >
+                @foreach ($offers as $offer)
+                    <div class="col-md-4 custom-card mb-0">
+                        <div class="card h-100">
+                            <div class="card-image-container">
+                                <img src="{{ Storage::url('images/' . $offer['photo']) }}" class="card-img">
+                            </div>
+                            <div class="card-text-container">
+                                <div class="card-text-top">
                                     <h4 class="card-title">{{$offer['destinacija']}}</h4>
+                                </div>
+                                <div class="card-text-bottom">
                                     <p class="card-text">Datum polaska: {{$offer['datum_polaska']}}</p>
                                     <p class="card-text">Datum povratka: {{$offer['datum_povratka']}}</p>
                                     <p class="card-text">Cena: {{$offer['cena']}} €</p>
-                                    <a href="/reserve/{{$offer['id']}}" class="btn btn-outline-dark">Više</a>
+                                    <a href="/reserve/{{$offer['id']}}" class="buttonn">Više informacija</a>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-                </div>
+                    </div>
+                @endforeach
+            </div>
             </div>
         </div>
     </div>

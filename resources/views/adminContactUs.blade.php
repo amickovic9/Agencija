@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Contact Us</title>
     <link href="/css/admin/photos.css" rel="stylesheet">
+    
 </head>
 
 <body>

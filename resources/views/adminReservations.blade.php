@@ -1,4 +1,7 @@
 @include('adminnavbar')
+<head>
+    
+</head>
 <div class="container mt-5">
     <form action="/admin/reservations" method="get" class="mt-4">
         <div class="row">

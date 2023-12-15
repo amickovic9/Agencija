@@ -1,5 +1,7 @@
 @include('navbar')
-
+<head>
+    
+</head> 
 <h1>Edit Reservation</h1>
 <form action="/admin/edit-reservation/{{$reservation->id}}" method="post" >
     @csrf

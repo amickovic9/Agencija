@@ -22,14 +22,36 @@
             @csrf 
             <div style="margin-bottom: 10px;">
                 <input type="file" id="fileInput" name="photo" required style="display: none;">
-                <button type="button" id="uploadBtn" class="btn btn-outline-light">Izaberi sliku</button>
+                <button type="button" id="uploadBtn" class="btn-upload">Izaberi sliku</button>
             </div>     
-            <button type='submit' class="btn btn-outline-light">Klikni da postaviš</button>
+            <button type='submit' class="btn-submit">Klikni da postaviš</button>
         </form>
     </div>
 
 
 <script src="/js/gallery.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script> 
+// gallery.js
+
+document.addEventListener('DOMContentLoaded', function () {
+    var imageTrack = document.getElementById('image-track');
+    var largeImage = document.createElement('img');
+    largeImage.className = 'large-image';
+    imageTrack.parentNode.insertBefore(largeImage, imageTrack.nextSibling);
+
+    imageTrack.addEventListener('click', function (event) {
+        if (event.target.tagName === 'IMG') {
+            var selectedImage = document.querySelector('.selected-image');
+            if (selectedImage) {
+                selectedImage.classList.remove('selected-image');
+            }
+
+            event.target.classList.add('selected-image');
+            largeImage.src = event.target.src;
+        }
+    });
+});
+
+</script> 
 </body>
 </html>

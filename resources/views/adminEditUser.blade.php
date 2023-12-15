@@ -1,5 +1,7 @@
 @include('navbar');
-
+<head> 
+    
+</head> 
 <h1>Uredi Korisnika</h1>
 <form action="/admin/edit-user/{{$user['id']}}" method="POST">
     @csrf
