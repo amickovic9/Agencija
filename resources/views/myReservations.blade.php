@@ -14,7 +14,7 @@
     @foreach ($reservations as $reservation)
         <div class="reservations">
             <div class="card-body">
-                <h5 class="card-title"><b>Rezervacija za ponudu:</b><a href="/reserve/{{$reservation['offer_id']}}" class="details-btn">Detalji rezervacije</a></h5>
+                <h5 class="card-title"><b>Rezervacija - </b><a href="/reserve/{{$reservation['offer_id']}}" class="details-btn">Detalji ponude</a></h5>
                 <p class="card-text"><b>Ime:</b> {{$reservation['user_name']}}</p>
                 <p class="card-text"><b>Email:</b> {{$reservation['email']}}</p>
                 <p class="card-text"><b>Broj telefona:</b> {{$reservation['broj_telefona']}}</p>

@@ -5,6 +5,12 @@
 .naslov {
     font-family: 'Poppins', sans-serif;
 }
+body{
+    background:url('/img/1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
 .container {
     display: flex;
@@ -22,6 +28,7 @@
     display: flex;
     flex-direction: column;
     transition: all 0.5s ease-in-out;
+    background-color: #fff;
 }
 
 .card-body {

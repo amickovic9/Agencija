@@ -53,13 +53,13 @@
     @include('navbar')
     
     <div class="container">
-    <div class="flip-card1">
-        <div class="flip-card1-inner">
-            <div class="flip-card1-front">
+    <div class="flip-card2">
+        <div class="flip-card2-inner">
+            <div class="flip-card2-front">
                 <h4 class="title">{{$offer['destinacija']}}</h4>
                 <img src="{{ Storage::url('images/' . $offer['photo']) }}" alt="Offer Image" class="offer-img">
             </div>
-            <div class="flip-card1-back">
+            <div class="flip-card2-back">
                 <p class="description">{{$offer['opis']}}</p>
                 <p>Datum polaska: {{$offer['datum_polaska']}}</p>
                 <p>Datum povratka: {{$offer['datum_povratka']}}</p>
@@ -91,15 +91,15 @@
 <div class="offers-container">
         @foreach ($moreOffers as $mOffer)
             <div class="offers">
-                <div class="card1">
-                    <div class="card1-img">
-                    <img src="{{ Storage::url('images/' . $mOffer['photo']) }}" class="card1-img-top" >
+                <div class="card2">
+                    <div class="card2-img">
+                    <img src="{{ Storage::url('images/' . $mOffer['photo']) }}" class="card2-img-top" >
                         </div>
-                    <div class="card1-body">
-                        <h4 class="card1-title">{{$mOffer['destinacija']}}</h4>
-                        <p class="card1-text">Datum polaska: {{$mOffer['datum_polaska']}}</p>
-                        <p class="card1-text">Datum povratka: {{$mOffer['datum_povratka']}}</p>
-                        <p class="card1-text1">Cena: {{$mOffer['cena']}} €</p>
+                    <div class="card2-body">
+                        <h4 class="card2-title">{{$mOffer['destinacija']}}</h4>
+                        <p class="card2-text">Datum polaska: {{$mOffer['datum_polaska']}}</p>
+                        <p class="card2-text">Datum povratka: {{$mOffer['datum_povratka']}}</p>
+                        <p class="card2-text1">Cena: {{$mOffer['cena']}} €</p>
                         <a href="/reserve/{{$mOffer['id']}}" class="button1">Vise informacija</a>
                     </div>
                 </div>

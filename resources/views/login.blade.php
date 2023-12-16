@@ -9,7 +9,6 @@
     
     <link href="/css/login.css" rel="stylesheet">
     <style>
-        /* Dodatni stil za margine između elemenata */
         form {
             margin-bottom: 20px;
         }
@@ -24,7 +23,7 @@
         <form action="/register" method="post">
         @csrf
           <h1>Kreiraj nalog</h1>
-          <br />
+          <br/>
           
 
           <input type="text" name="name" required id="name" placeholder="Korisnicko Ime" />

@@ -17,4 +17,7 @@ class Reservation extends Model
         'broj_osoba',
         'napomena',
     ];
+    public function offer(){
+        return $this->hasOne(Offer::class,'id');
+    }
 }
