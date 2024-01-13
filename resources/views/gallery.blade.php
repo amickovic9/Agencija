@@ -8,18 +8,25 @@
     <link rel="stylesheet" href="/css/gallery.css">
     <title>Document</title>
 </head>
-<h3 style="text-align: center; color:white;">Galerija</h3>
-
-
 <body class="gallery-page">
-<div id="image-track"  data-mouse-down-at="0" data-prev-percentage="0">
-@foreach ($photos as $photo)
-    <img class="image" src="{{ Storage::url('gallery/' . $photo['photo']) }}" draggable="false" />
-@endforeach
-</div>
-<div class="buttons-center">
+
+    <div class="image-track-container">
+        <button id="scrollLeft" class="nav-button">←</button>
+        <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+            @foreach ($photos as $photo)
+                <img class="image" src="{{ Storage::url('gallery/' . $photo['photo']) }}" draggable="false" />
+            @endforeach
+        </div>
+        <button id="scrollRight" class="nav-button">→</button>
+    </div>
+
+    <div class="large-image-wrapper">
+        <img class="large-image" src="" alt="" />
+    </div>
+
+    <div class="buttons-center">
         <form action="/gallery/upload" method="POST" enctype="multipart/form-data">
-            @csrf 
+            @csrf
             <div style="margin-bottom: 10px;">
                 <input type="file" id="fileInput" name="photo" required style="display: none;">
                 <button type="button" id="uploadBtn" class="btn-upload">Izaberi sliku</button>
@@ -28,31 +35,8 @@
         </form>
     </div>
 
-
-<script src="/js/gallery.js"></script>
-<script> 
-// gallery.js
-
-document.addEventListener('DOMContentLoaded', function () {
-    var imageTrack = document.getElementById('image-track');
-    var largeImage = document.createElement('img');
-    largeImage.className = 'large-image';
-    imageTrack.parentNode.insertBefore(largeImage, imageTrack.nextSibling);
-
-    imageTrack.addEventListener('click', function (event) {
-        if (event.target.tagName === 'IMG') {
-            var selectedImage = document.querySelector('.selected-image');
-            if (selectedImage) {
-                selectedImage.classList.remove('selected-image');
-            }
-
-            event.target.classList.add('selected-image');
-            largeImage.src = event.target.src;
-        }
-    });
-});
-
-</script> 
-
+    <script src="/js/gallery.js"></script>
+    
 </body>
 </html>
+@include('footer')
