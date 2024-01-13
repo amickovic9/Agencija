@@ -63,8 +63,14 @@
                                     <h4 class="card-title">{{$offer['destinacija']}}</h4>
                                 </div>
                                 <div class="card-text-bottom">
-                                    <p class="card-text">Datum polaska: {{$offer['datum_polaska']}}</p>
-                                    <p class="card-text">Datum povratka: {{$offer['datum_povratka']}}</p>
+                                    <div>
+                                        <p>Datum polaska:</p>
+                                        <p>{{$offer['datum_polaska']}}</p>
+                                    </div>
+                                <div>
+                                    <p>Datum povratka:</p>
+                                    <p>{{$offer['datum_povratka']}}</p>
+                                </div>
                                     <p class="card-text">Cena: {{$offer['cena']}} €</p>
                                     <a href="/reserve/{{$offer['id']}}" class="buttonn">Više informacija</a>
                                 </div>
