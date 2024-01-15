@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
 <style>
     .rating {
       unicode-bidi: bidi-override;
@@ -108,7 +107,7 @@
             </div>
         @endforeach
     </div>
-<button class="dugme" href="`/offers`">Cela ponuda</button>
+<a class="dugme" href="/offers">Cela ponuda</a>
   </section>
   <section class="gallery-section">
       
@@ -124,27 +123,28 @@
   </section> 
 
   <section class="comment-section">
-    <div class="leave-comment">
-        <h2>Oceni i ostavi komentar</h2>
-        <form action="/oceni" method="post">
-            @csrf
-            <div class="form-group">
-                <label for="rating">Ocena:</label><br>
-                <div class="rating" required>
-                    <input type="radio" id="star5" name="ocena" value="5"><label for="star5"></label>
-                    <input type="radio" id="star4" name="ocena" value="4"><label for="star4"></label>
-                    <input type="radio" id="star3" name="ocena" value="3"><label for="star3"></label>
-                    <input type="radio" id="star2" name="ocena" value="2"><label for="star2"></label>
-                    <input type="radio" id="star1" name="ocena" value="1"><label for="star1"></label>
-                </div>
+  <div class="leave-comment">
+    <h2>Oceni i ostavi komentar</h2>
+    <form action="/oceni" method="post">
+        @csrf
+        <div class="form-group">
+            <label for="rating">Ocena:</label><br>
+            <div class="rating">
+                <input type="radio" id="star5" name="ocena" value="5" required><label for="star5"></label>
+                <input type="radio" id="star4" name="ocena" value="4" required><label for="star4"></label>
+                <input type="radio" id="star3" name="ocena" value="3" required><label for="star3"></label>
+                <input type="radio" id="star2" name="ocena" value="2" required><label for="star2"></label>
+                <input type="radio" id="star1" name="ocena" value="1" required><label for="star1"></label>
             </div>
-            <div class="form-group">
-                <label for="comment">Komentar:</label>
-                <textarea class="form-control" id="comment" name="komentar" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="comm-btn"><span>Pošalji komentar</span></button>
-        </form>
-    </div>
+        </div>
+        <div class="form-group">
+            <label for="comment">Komentar:</label>
+            <textarea class="form-control" id="comment" name="komentar" rows="19" required></textarea>
+        </div>
+        <button type="submit" class="comm-btn"><span>Pošalji komentar</span></button>
+    </form>
+</div>
+
 
     <div class="user-comments">
         @foreach ($comments as $komentar)
