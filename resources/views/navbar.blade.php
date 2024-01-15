@@ -4,112 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/img/favico.png">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/navbar.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Turisticka agencija</title>
 </head>
 <body>
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/offers">Ponude</a>
-      </li>
-      
-      
-      
-      @auth
-      <li class="nav-item">
-        <a class="nav-link" href="/myReservations">Moje rezervacije</a>
-      </li>
-      
-       @if(Auth::user()->is_admin)
-       <li class="nav-item">
-        <a class="nav-link" href="/create-offer">Oglasi ponudu</a>
-      </li>
-        <li class="nav-item">
-        <a class="nav-link" href="/admin">Admin panel</a>
-      </li>
-      
-     @endif
-     @endauth
-      <li class="nav-item">
-        <a class="nav-link" href="/gallery">Galerija</a>
-      </li>
-      @auth
-      <li class="nav-item">
-        <a class="nav-link" href="/logout">Logout</a>
-      </li>
-      
-      @else
-      <li class="nav-item">
-        <a class="nav-link" href="/login">Login</a>
-      </li>
-      @endauth
-      <li class="nav-item">
-        <a class="nav-link" href="/about">O nama</a>
-      </li>
-    </ul>
-  </div>
+<div class="navcontainer1">
+<nav class="nav1">
+        
+                <a class="nav-option1 option1" href="/">Home <span class="sr-only">(current)</span></a>
+            
+            
+                <a class="nav-option1 option2" href="/offers">Ponude</a>
+            
+            
+            @auth
+            
+                <a class="nav-option1 option3" href="/myReservations">Moje rezervacije</a>
+            
+            @if(Auth::user()->is_admin)
+            
+                <a class="nav-option1 option4" href="/create-offer">Oglasi ponudu</a>
+            
+                <a class="nav-option1 option5" href="/admin">Admin panel</a>
+            
+            @endif
+            @endauth
+            
+                <a class="nav-option1 option6" href="/gallery">Galerija</a>
+            @auth
+            
+                <a class="nav-option1 option7" href="/logout">Logout</a>
+            
+            @else
+            
+                <a class="nav-option1 option8" href="/login">Login</a>
+            @endauth
+            
+                <a class="nav-option1 option9" href="/about">O nama</a>
+        
+    
 </nav>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+</div>
+
+@if(session('success'))
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/offers">Ponude</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/gallery">Galerija</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
-                @auth
-                    @if(Auth::user()->is_admin)
-                        <li class="nav-item">
-                            <a class="nav-link" href="/create-offer">Oglasi ponudu</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/admin">Admin panel</a>
-                        </li>
-                    @endif
-                    <li class="nav-item">
-                        <a class="nav-link" href="/logout">Logout</a>
-                    </li>
-                @else
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">O nama</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
-                    </li>
-                @endauth
-            </ul>
-        </div>
-    </nav>
-    @if(session('success'))
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            {{ session('success') }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
+    </div>
+@endif
+
 </body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </html>
