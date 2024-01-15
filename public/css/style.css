@@ -419,7 +419,55 @@ margin: 1rem;
     }
 }
 
- 
+/* ovo je dodato  */
+@media screen and (max-width: 1200px) {
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .google-map, .contact-container {
+        width: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .google-map {
+        height: auto;
+    }
+}
+.card-section { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.offers-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2vh;
+    margin-top: 2rem;
+}
+
+.card1 {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    height: auto;
+    width: 100%;
+    border-radius: 5px;
+    margin: 1rem;
+}
+@media screen and (max-width: 768px) {
+    .offers-container {
+        flex-direction: column;
+    }
+
+    .card1 {
+        width: 90%;
+        margin: 1rem auto;
+    }
+}
+/* do ovde je dodato ovo iznad */
   .dugme {
     display: inline-block;
     border-radius: 4px;
