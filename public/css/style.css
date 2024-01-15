@@ -239,7 +239,7 @@ flex-wrap: wrap;
 
 }
 .benefits img  { 
-height: 50px;
+height: 40px;
 margin: 1rem;
 }
 
@@ -345,129 +345,8 @@ margin: 1rem;
     background-color: #fff;
 }
 
-@media (max-width: 768px) {
-    body h1 { 
-        font-size: 1rem;
-    }
-    .search-bar h3 { 
-        font-size: 0.7rem;
-        padding-top: 0.5rem;
-    }
-    .form-row label { 
-        font-size: 0.7rem;
-        padding: 0;
-    }
-    .form-row input { 
-        height: 2rem;
-        padding-top: 0.3rem;
-        font-size:0.7rem;
-    }
-    .form-row { 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: auto;
 
-    }
-    .button-search { 
-       font-size: 2rem;
-       padding: 2px;
-       width: 10rem;
-       height: 2rem;
-       margin-bottom: 0;
-       
-
-    }
-    
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .offer-details,
-    .reservation-form,
-    .flip-card1,
-    .offers {
-        width: 90%;
-        margin: 10px 0;
-    }
-
-    .flip-card1 {
-        height: auto;
-        margin-top: 1rem;
-    }
-
-    .offer-details,
-    .reservation-form {
-        padding: 2rem;
-    }
-
-    form {
-        max-width: 100%;
-    }
-
-    .reservation-form input {
-        width: calc(100% - 16px);
-    }
-
-    .button {
-        max-width: 100%;
-    }
-    .middle h1 { 
-        font-size: 1.5em;
-    }
-}
-
-/* ovo je dodato  */
-@media screen and (max-width: 1200px) {
-    .contact-section {
-        flex-direction: column;
-        align-items: center;
-    }
-    .google-map, .contact-container {
-        width: auto;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .google-map {
-        height: auto;
-    }
-}
-.card-section { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.offers-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2vh;
-    margin-top: 2rem;
-}
-
-.card1 {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    height: auto;
-    width: 100%;
-    border-radius: 5px;
-    margin: 1rem;
-}
-@media screen and (max-width: 768px) {
-    .offers-container {
-        flex-direction: column;
-    }
-
-    .card1 {
-        width: 90%;
-        margin: 1rem auto;
-    }
-}
-/* do ovde je dodato ovo iznad */
+ 
   .dugme {
     display: inline-block;
     border-radius: 4px;
@@ -625,6 +504,7 @@ a {
     padding: 5vh;
     border: 0.1vh solid #ccc;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     height: 15vh;
 }
@@ -635,10 +515,127 @@ a {
     }
 
     .leave-comment,
-    .comment-card {
-        width: 100%;
+    .comment-card,
+    .comment  {
+        width: 95% !important;
+        
+    }
+    .comment-section h2{ 
+ 
+        font-size: 1.5rem;
+    }
+    
+    body h1 { 
+        font-size: 1.5rem;
+    }
+    .search-bar h3 { 
+        font-size: 1rem;
+        padding-top: 0.5rem;
+    }
+    .form-row label { 
+        font-size: 1rem;
+        padding: 0;
+    }
+    .form-row input { 
+        height: 2rem;
+        padding-top: 0.3rem;
+        font-size:1rem;
+    }
+    .form-row { 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        margin-bottom: 2rem;
+
+    }
+    .button-search { 
+       font-size: 2rem;
+       padding: 2px;
+       width: 10rem;
+       height: 2rem;
+       margin-bottom: 0;
+       
+
+    }
+    
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .offer-details,
+    .reservation-form,
+    .flip-card1,
+    .offers {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .flip-card1 {
+        height: auto;
+        margin-top: 1rem;
+    }
+
+    .offer-details,
+    .reservation-form {
+        padding: 2rem;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    .reservation-form input {
+        width: calc(100% - 16px);
+    }
+
+    .button {
+        max-width: 100%;
+    }
+    .middle h1 { 
+        font-size: 1em;
+    }
+    .benefits img  { 
+        height: 30px;
+        margin: 1rem;
+        }
+    .scroller {
+        height:2rem !important;
+        line-height: 3em;
+        position: relative;
+        overflow: hidden;
+        width: 15em;
+        }
+    .h1 { 
+        font-size: 2rem !important;
     }
 }
+
+
+@media (max-width: 1090px) {
+    .contact-section {
+        flex-direction: column;
+        
+    }
+    .contact-container {
+        width:95% !important;
+       
+    }
+
+    .google-map {
+        width: 100%;
+        max-width: 100%;
+    }
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+    }
+    
+
+}
+
 
 .comm-btn {
     display: inline-block;
@@ -682,17 +679,20 @@ a {
 
 .user-comments {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding-top: 6.2vh;
-    margin-top: 6.2vh; 
+    padding-top: 2vh; 
+    align-items: center;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
 }
 
 .comment {
     margin: 1vh;
     padding: 1vh;
-    height: 17em;
-    width: 10em;
+    height: 15em;
+    width: 40rem;
     background: white;
     border-radius: 1vh;
     box-shadow: 0.5vh 0.5vh 1vh #d9d9d9, -0.5vh -0.5vh 1vh #e7e7e7;
@@ -713,9 +713,9 @@ a {
     padding-top: 0rem;
 }
 .scrollable-comment {
-    height: 15em;
+    height: 5rem;
     overflow-y: auto;
-    margin-bottom: -1.5vh;
+    margin-bottom: 0vh;
     font-size: 1em;
 }
 .scrollable-comment::-webkit-scrollbar {
@@ -724,7 +724,7 @@ a {
  
 .scrollable-comment::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(244, 243, 243, 0.3);
-    border-radius: 5px;
+    border-radius: 1px;
     border: 1px solid #6f7778;
 }
  
@@ -738,6 +738,7 @@ a {
     box-shadow: 9px 9px 18px #d9d9d9,
                 -9px -9px 18px #e7e7e7;
 }
+
 
 button#nextBtn {
     background-color: #3C6A6F;
@@ -763,6 +764,9 @@ button#nextBtn:hover {
     border-radius: 25px;
     text-decoration: none;
     
+}
+button#nextBtn:active { 
+    text-decoration: none;
 }
 
 .rating-and-button {
@@ -840,27 +844,34 @@ button#nextBtn:hover {
 
 .contact-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .contact-container {
-    width: 45%; 
+    width:45%; 
     padding-right: 2rem;
-    padding-top: 2rem;
+    margin-top: 1rem;
+    padding-top: 0em;
+    box-shadow: 0.5vh 0.5vh 1vh #d9d9d9,
+                -0.5vh -0.5vh 1vh #e7e7e7;
+    border-radius: 1vh;
+    padding-left: 2rem;
+    margin-left: 0;
+   
 }
 
 .google-map {
-    width: 60%;
-    height: 500px; 
+    width: 50%;
     padding-left: 2rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
     
 }
 iframe { 
     border: none;
     box-shadow:  9px 9px 18px #d9d9d9,
              -9px -9px 18px #e7e7e7;
-    border-radius: 20px;
+    border-radius: 1vh;
 }
 
 #more {display: none;}
