@@ -15,23 +15,22 @@
     <main>
         <div class="box-container">
         
-            <div class="box box1">
+            <a href="/admin/users" class="box box1">
                 
                     <h3 class="topic-heading">{{$users}}</h3>
                     <h3 class="topic">Korisnika</h3>
                     
                  
                 
-            </div>
-            <div class="box box2">
-                
-                    
+</a>
+            <a href="/admin/offers" class="box box2" >
+                 
                         <h3 class="topic-heading">{{$offers}}</h3>    
                         <h3 class="topic">Ponuda</h3>
-                    
+            </a>
                 
-            </div>
-            <div class="box box3">
+            
+            <a href="/admin/reservations" class="box box3">
                 
                    
                         <h3 class="topic-heading">{{$reservations}}</h3>
@@ -39,14 +38,14 @@
                         
                   
                 
-            </div>
-            <div class="box box4">
+</a>
+            <a href="/admin/contact-us" class="box box4">
                 
                         <h3 class="topic-heading">{{$contactUs}}</h3>
                         <h3 class="topic">Neodgovorenih contact-us</h3>
                   
    
-            </div>
+</a>
         </div>
 
         

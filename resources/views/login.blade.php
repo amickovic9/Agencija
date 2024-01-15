@@ -1,5 +1,6 @@
-@include('navbar')
 <!DOCTYPE html>
+@include('navbar')
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">

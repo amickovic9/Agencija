@@ -1,31 +1,33 @@
 @include('adminnavbar')
 <head>
-    
+<link rel="stylesheet" href="/css/admin/offers.css">
+
 </head>
+<main>
 <div class="container mt-5">
-    <form action="/admin/reservations" method="get" class="mt-4">
-        <div class="row">
-            <div class="col-md-4">
+    <form action="/admin/reservations" method="get" class="form-wrapper">
+        
+            
                 <div class="form-group">
                     <label for="name">Ime:</label>
                     <input type="text" class="form-control" name="name" value="{{ request()->input('name') }}">
                 </div>
-            </div>
-            <div class="col-md-4">
+            
+            
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="text" class="form-control" name="email" value="{{ request()->input('email') }}">
                 </div>
-            </div>
-            <div class="col-md-4">
+           
+            
                 <div class="form-group">
                     <label for="broj_telefona">Broj telefona:</label>
                     <input type="text" class="form-control" name="broj_telefona" value="{{ request()->input('broj_telefona') }}">
                 </div>
-            </div>
-            <div class="col-md-12 mt-3">
+            
+            
                 <button type="submit" class="btn btn-primary">Pretraži</button>
-            </div>
+           
         </div>
     </form>
 </div>
@@ -53,9 +55,10 @@
                 <td>{{ $reservation->broj_telefona }}</td>
                 <td>{{ $reservation->broj_osoba }}</td>
                 <td>{{ $reservation->napomena }}</td>
-                <td><a href="/admin/edit-reservation/{{$reservation['id']}}" >Izmeni      </a> 
-        <a href="/admin/delete-reservation/{{$reservation['id']}}" style="margin-left:3px">Izbrisi</a></td>
+                <td><a href="/admin/edit-reservation/{{$reservation['id']}}" class="btn btn-success" role="button">Izmeni      </a> 
+        <a href="/admin/delete-reservation/{{$reservation['id']}}" class="btn btn-danger" role="button">Izbrisi</a></td>
             </tr>
         @endforeach
     </tbody>
 </table>
+</main>

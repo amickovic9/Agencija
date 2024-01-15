@@ -1,29 +1,27 @@
 @include('adminnavbar')
-<div class="container mt-5">
-    <h1>Svi korisnici</h1>
-    <form action="/admin/users" method="GET" class="mt-4">
-        <div class="row">
-            <div class="col-md-4">
+<head>
+<link rel="stylesheet" href="/css/admin/offers.css">
+
+</head>
+<main>
+
+    <form action="/admin/users" method="GET" class="form-wrapper">
                 <div class="form-group">
                     <label for="name">Ime:</label>
                     <input type="text" class="form-control" name="name" value="{{ request()->input('name') }}">
                 </div>
-            </div>
-            <div class="col-md-4">
+            
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="text" class="form-control" name="email" value="{{ request()->input('email') }}">
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>&nbsp;</label> 
-                    <button type="submit" class="btn btn-primary form-control">Pretraži</button>
+            
+                
+                    
+                <button type="submit" class="btn btn-primary form-control">Pretraži</button>
                 </div>
-            </div>
-        </div>
     </form>
-</div>
+
 
 <table class="table">
   <thead>
@@ -41,8 +39,8 @@
       <td>{{$user['name']}}</td>
       <td>{{$user['email']}}</td>
       <td>{{$user['is_admin']}}</td>
-      <td><a href="/admin/edit-user/{{$user['id']}}" >Izmeni      </a> 
-        <a href="/admin/delete-user/{{$user['id']}}" style="margin-left:3px">Izbrisi</a></td>
+      <td><a href="/admin/edit-user/{{$user['id']}}" class="btn btn-success" role="button">Izmeni      </a> 
+        <a href="/admin/delete-user/{{$user['id']}}" class="btn btn-danger" role="button">Izbrisi</a></td>
     </tr>
     
     @endforeach

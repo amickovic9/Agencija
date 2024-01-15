@@ -28,17 +28,17 @@
     </form>
 
 
-<table class="table">
+<table>
   <thead>
     <tr>
-      <th scope="col">User_id</th>
-      <th scope="col">Destinacija</th>
-      <th scope="col">Opis</th>
-      <th scope="col">Slika</th>
-      <th scope="col">Rezervisano</th>
-      <th scope="col">Datum polaska</th>
-      <th scope="col">Datum povratka</th>
-      <th scope="col">Akcije</th>
+      <th>User_id</th>
+      <th>Destinacija</th>
+      <th>Opis</th>
+      <th>Slika</th>
+      <th>Rezervacije</th>
+      <th>Datum polaska</th>
+      <th>Datum povratka</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -54,9 +54,9 @@
       <td>{{$offer['datum_polaska']}}</td>
       <td>{{$offer['datum_povratka']}}</td>
       <td>
-        <a href="/admin/edit-offer/{{$offer['id']}}" >Izmeni      </a> 
-        <a href="/admin/delete-offer/{{$offer['id']}}" style="margin-left:3px">Izbrisi</a>
-        <a href="/admin-reservations-offer/{{$offer['id']}}" style="margin-left:3px">Rezervacije</a>
+        <a href="/admin/edit-offer/{{$offer['id']}}" class="btn btn-success" role="button">Izmeni</a>
+        <a href="/admin-reservations-offer/{{$offer['id']}}" class="btn btn-success" role="button" >Rezervacije</a> 
+        <a href="/admin/delete-offer/{{$offer['id']}}" class="btn btn-danger" role="button">Izbrisi</a>
       </td>
     </tr>
     
