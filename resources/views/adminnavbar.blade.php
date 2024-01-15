@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/admin/adminnav.css" rel="stylesheet">
+    
 </head>
 
     @include('navbar')

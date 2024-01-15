@@ -19,6 +19,7 @@ body{
     justify-content: center;
     flex-direction: column;
     height: 100vh;
+    margin-top: 50px;
 }
 
 .container{

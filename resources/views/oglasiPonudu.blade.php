@@ -1,4 +1,4 @@
-
+@include('navbar')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +8,12 @@
     <link rel="stylesheet" type="text/css" href="/css/makeoffer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
   
 </head>
 <body>
-@include('navbar')
+
 <div class="offer-container">
     <h1>Oglasi ponudu</h1>
     <form action="/create-offer" method="POST" enctype="multipart/form-data" class="form-offer">

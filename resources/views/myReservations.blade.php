@@ -1,4 +1,4 @@
-
+@include('navbar')
 <head> 
     <title> Moje rezervacije </title> 
     <link rel="stylesheet" type="text/css" href="/css/myres.css">
@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-@include('navbar')
+
 <h1 class="naslov">Moje rezervacije</h1>
 <div class="container">
     

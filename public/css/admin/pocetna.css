@@ -16,6 +16,7 @@ main {
     background-size: cover; /* Ensure the background image covers the container */
     min-height: 100%;
     margin-left: 260px;
+    margin-top: 50px;
     flex: 1;
     padding: 20px;
     overflow: hidden; 

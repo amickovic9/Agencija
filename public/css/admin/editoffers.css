@@ -3,10 +3,12 @@ body {
     background-size: cover;
     min-height: 100%;
     border-radius: 8px; /* Add border-radius for slightly rounded edges */
+    
 }
 
 main {
     margin-left: 260px;
+    margin-bottom: 50px;
 }
 
 img {

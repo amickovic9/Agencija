@@ -1,6 +1,7 @@
 /* Base Styles */
 body {
     font-family: 'Poppins', sans-serif !important;
+    margin-top: 50px;
 }
 
 img {

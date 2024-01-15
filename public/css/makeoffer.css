@@ -4,6 +4,9 @@
   margin: 0;
   padding: 0;
 }
+body{
+  margin-top: 50px;
+}
 .offer-container{
   background: linear-gradient(rgba(0, 0, 0, 0.1), transparent),url('/img/1.jpg');
   min-height: 90vh;

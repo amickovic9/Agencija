@@ -3,7 +3,6 @@
 
 }
 body{
-     
     font-family: 'Poppins', sans-serif;
 }
 body h3 { 
@@ -99,6 +98,7 @@ body h1 {
   }
   
   .search-bar {
+    margin-top: 40px;
     position: relative;
     min-height: 90vh;
     display: flex;

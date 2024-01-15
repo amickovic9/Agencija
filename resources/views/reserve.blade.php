@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+@include('navbar')
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -50,7 +52,6 @@
 </head>
 <body>
 
-    @include('navbar')
     
     <div class="container">
     <div class="flip-card2">
