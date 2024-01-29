@@ -16,17 +16,24 @@ body {
   align-items: center;
 }
 
-#image-track {
+.image-container {
   display: flex;
-  overflow-x: auto;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
+#image-track {
+  display: flex;
+  flex-grow: 1;
+  overflow-x: auto;
+}
+
 .image {
-  width: 100px;
+  width: 15%;
   height: auto;
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 2%;
   border: 2px solid #ddd;
   border-radius: 8px;
 }
@@ -65,3 +72,14 @@ body {
   background-color: #36676c;
 }
 
+@media (max-width: 768px) {
+  .image {
+    width: 30%;
+  }
+}
+
+@media (max-width: 576px) {
+  .image {
+    width: 45%;
+  }
+}
