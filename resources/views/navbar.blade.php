@@ -6,17 +6,18 @@
     <link rel="icon" type="image/x-icon" href="/img/favico.png">
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Turisticka agencija</title>
 </head>
 <body>
 <div class="navcontainer1">
     <nav class="nav1">
+        <div class="menu-toggle" id="menuToggle">
+            <span class="menu-icon">&#9776;</span>
+        </div>
         <a class="nav-option1 option1" href="/">Home </a>
         <a class="nav-option1 option2" href="/offers">Ponude</a>
         <a class="nav-option1 option5" href="/gallery">Galerija</a>
-        
         @auth
             <a class="nav-option1 option3" href="/myReservations">Moje rezervacije</a>
         
@@ -43,6 +44,14 @@
     </div>
 @endif
 
-</body>
+<script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+        var nav1 = document.querySelector('.nav1');
+        nav1.classList.toggle('menu-open');
+    });
+</script>
 
+
+
+</body>
 </html>
