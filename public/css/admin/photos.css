@@ -18,10 +18,10 @@ body {
 
 main {
     box-sizing: border-box;
-    background: url('/img/1.jpg');
+   
     overflow-x: hidden;
-    background-size: cover; /* Ensure the background image covers the container */
-    min-height: 100%;
+    
+ 
     margin-left: 260px;
     padding: 20px;
     box-sizing: border-box;
@@ -82,7 +82,7 @@ main h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
     main {
         margin-left: 50px;
     }

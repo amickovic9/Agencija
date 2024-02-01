@@ -7,11 +7,11 @@
     <link href="/css/admin/photos.css" rel="stylesheet">
     
 </head>
-
+@include('adminnavbar');
 <body>
-    @include('adminnavbar');
+
 <main>
-    <h1>Upravljanje galerijom</h1>
+   
 @foreach ($photos as $photo)
     <div class="photo-container text-center">
 

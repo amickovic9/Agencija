@@ -1,13 +1,17 @@
-@include('navbar')
+@include('adminnavbar')
+<head>
+<link rel="stylesheet" href="/css/admin/reply.css">
+</head>
+<main>
 @if(isset($contact))
-    <div class="card">
+    
         <div class="card-body">
             <h5 class="card-title">User ID: {{ $contact['user_id'] }}</h5>
             <p class="card-text">Name: {{ $contact['name'] }}</p>
             <p class="card-text">Email: {{ $contact['email'] }}</p>
             <p class="card-text">Message: {{ $contact['message'] }}</p>
         </div>
-    </div>
+    
 @endif
 <form action="/admin/send" method="POST">
     @csrf
@@ -22,3 +26,4 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+<main>

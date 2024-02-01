@@ -1,3 +1,14 @@
-main{
-    margin-left:260px;
+
+@media screen and (max-width: 1200px) {
+    
+	td:nth-of-type(1):before { content: "User ID"; }
+	td:nth-of-type(2):before { content: "Offer ID"; }
+	td:nth-of-type(3):before { content: "Ime"; }
+	td:nth-of-type(4):before { content: "Email"; }
+	td:nth-of-type(5):before { content: "Broj telefona"; }
+	td:nth-of-type(6):before { content: "Broj osoba"; }
+	td:nth-of-type(7):before { content: "Napomena"; }
+    
+
+	
 }

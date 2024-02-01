@@ -11,9 +11,8 @@ body {
 
 main {
     box-sizing: border-box;
-    background: url('/img/1.jpg');
+    background-color:#fff;
     overflow-x: hidden;
-    background-size: cover; /* Ensure the background image covers the container */
     min-height: 100%;
     margin-left: 260px;
     margin-top: 50px;
@@ -138,7 +137,7 @@ main {
     justify-content: space-between; 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
     main{
         margin-left: 50px;
     }

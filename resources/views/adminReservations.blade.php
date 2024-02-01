@@ -1,10 +1,9 @@
 @include('adminnavbar')
 <head>
 <link rel="stylesheet" href="/css/admin/offers.css">
-
+<link rel="stylesheet" href="/css/admin/reservation.css">
 </head>
 <main>
-<div class="container mt-5">
     <form action="/admin/reservations" method="get" class="form-wrapper">
         
             
@@ -30,19 +29,19 @@
            
         </div>
     </form>
-</div>
 
-<table class="table" >
+
+<table>
     <thead>
         <tr>
-            <th scope="col">User_id</th>
-            <th scope="col">Offer_id</th>
-            <th scope="col">Ime</th>
-            <th scope="col">Email</th>
-            <th scope="col">Broj telefona</th>
-            <th scope="col">Broj osoba</th>
-            <th scope="col">Napomena</th>
-            <th scope="col">Akcije</th>
+            <th >User ID</th>
+            <th >Offer ID</th>
+            <th >Ime</th>
+            <th >Email</th>
+            <th >Broj telefona</th>
+            <th >Broj osoba</th>
+            <th >Napomena</th>
+            <th ></th>
         </tr>
     </thead>
     <tbody>

@@ -1,6 +1,7 @@
 @include('adminnavbar')
 <head>
 <link rel="stylesheet" href="/css/admin/offers.css">
+<link rel="stylesheet" href="/css/admin/users.css">
 
 </head>
 <main>
@@ -23,13 +24,13 @@
     </form>
 
 
-<table class="table">
+<table>
   <thead>
     <tr>
-      <th scope="col">Userame</th>
-      <th scope="col">Email</th>
-      <th scope="col">Is admin</th>
-      <th scope="col">Akcije</th>
+      <th >Userame</th>
+      <th >Email</th>
+      <th >Is admin</th>
+      <th ></th>
     </tr>
   </thead>
   <tbody>

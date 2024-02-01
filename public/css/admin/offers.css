@@ -75,8 +75,12 @@ table {
     margin-top: 20px;
 
 }
+td{
+    padding: 10px;
+}
 
 .btn-success {
+    margin: 5px;
     border-radius: 5px;
     width: 120px;
     background-color: #29494d !important;
@@ -88,7 +92,9 @@ table {
 }
 
 .btn-danger {
+    margin: 5px;
     border-radius: 5px;
+    width: 120px;
     background-color: rgb(94, 38, 38) !important;
     border: rgb(94, 38, 38) !important;
 }
@@ -102,13 +108,25 @@ tr:nth-of-type(odd) {
     border-collapse: collapse;
     margin-top: 20px;
 }
-/* ... (ostatak stilova) ... */
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 1200px) {
     main {
         margin-left: 50px;
     }
+    .form-wrapper {
+        flex-direction: column; /* Stack form elements vertically on smaller screens */
+        width: 100%; /* Make the form take full width */
+    }
 
+    .form-group {
+        width: 100%; /* Make form groups take full width */
+        margin-bottom: 10px; /* Adjust the margin for smaller screens */
+    }
+
+    .btn-primary {
+        width: 100%; /* Make the button take full width */
+    }
 	/* Force table to not be like tables anymore */
 	table, thead, tbody, th, td, tr { 
 		display: block; 
