@@ -19,29 +19,30 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .nav1 {
     width: 100%;
     height: 50px;
     padding-right: 20px;
-    background-color: #fff;
+    background: linear-gradient(to right, #5e8f94, #377c80);
     display: flex;
     flex-direction: row;
 }
 
 .nav-option1 {
-    color: black;
+    color: #E6E6EE;
     display: flex;
     align-items: center;
-    padding: 10px 5px 10px 5px;
-    transition: all 0.1s ease-in-out;
+    padding: 10px 15px;
     position: relative;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-option1 h3 {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 30px;
 }
 
 .nav-option1 a {
@@ -53,8 +54,12 @@ body {
 
 .nav-option1:hover {
     text-decoration: none;
-    color: #E6E6EE;
-    background-color: #509aa1;
+    color: #413B2E;
+    background-color: #fff;
+}
+
+.nav-option1:hover a {
+    color: #000;
 }
 
 .nav-option1.option6 {
