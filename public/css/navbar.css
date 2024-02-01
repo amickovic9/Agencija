@@ -115,3 +115,6 @@ body {
         display: flex;
     }
 }
+.alert {
+    margin-top: 60px;
+}
