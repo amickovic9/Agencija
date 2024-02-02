@@ -1,5 +1,7 @@
 @include('adminnavbar');
 <head>
+<meta charset="UTF-8">
+    <title>Izmeni Korisnika</title>
 <link rel="stylesheet" href="/css/admin/edit.css">
 
 </head>

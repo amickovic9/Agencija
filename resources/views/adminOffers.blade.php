@@ -1,5 +1,7 @@
 @include('adminnavbar')
 <head>
+<meta charset="UTF-8">
+    <title>Ponude</title>
 <link rel="stylesheet" href="/css/admin/offers.css">
 
 </head>

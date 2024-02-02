@@ -1,5 +1,7 @@
 @include('adminnavbar')
 <head>
+<meta charset="UTF-8">
+    <title>Rezervacije</title>
 <link rel="stylesheet" href="/css/admin/offers.css">
 <link rel="stylesheet" href="/css/admin/reservation.css">
 </head>

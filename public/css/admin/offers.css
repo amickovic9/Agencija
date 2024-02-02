@@ -103,26 +103,23 @@ tr:nth-of-type(odd) {
     border-collapse: collapse;
     margin-top: 20px;
 }
-/* ... (ostatak stilova) ... */
 
 @media screen and (max-width: 1200px) {
     main {
         margin-left: 50px;
     }
 .form-wrapper {
-        flex-direction: column; /* Stack form elements vertically on smaller screens */
-        width: 100%; /* Make the form take full width */
+        flex-direction: column;
     }
 
     .form-group {
-        width: 100%; /* Make form groups take full width */
-        margin-bottom: 10px; /* Adjust the margin for smaller screens */
+        width: 100%; 
+        margin-bottom: 10px;
     }
 
     .btn-primary {
-        width: 100%; /* Make the button take full width */
+        width: 100%;
     }
-	/* Force table to not be like tables anymore */
 	table, thead, tbody, th, td, tr { 
 		display: block; 
 	}

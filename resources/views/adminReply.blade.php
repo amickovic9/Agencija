@@ -1,5 +1,7 @@
 @include('adminnavbar')
 <head>
+<meta charset="UTF-8">
+    <title>Contact US</title>
 <link rel="stylesheet" href="/css/admin/reply.css">
 </head>
 <main>
